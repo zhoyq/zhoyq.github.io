@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="技术笔记,Spring,Spring Boot,Ant">
+<meta name="description" content="【Spring】使用 ANT 构建 Spring Boot 工程">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【Spring】使用 ANT 构建 Spring Boot 工程</h1>
+            </a>
+            <p style="font-size: 10px;">2020-04-19&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/技术笔记" class="custom-color-red">技术笔记</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <blockquote>
+<p>这件事可做，但是做的时候有点无奈而已。</p>
+</blockquote>
+<!-- more -->
+<p>我知道你一定会说，用 <code>maven</code> 就行了为什么还要用 <code>ant</code>，变态......不巧的是，某银行就有这方面的要求。所以还是回忆了一下这个技术。</p>
+<p>首先原来的项目是基于 <code>maven</code> 的，所以第一步就是下载依赖，然后是打包成 <code>spring</code> 的 <code>jar</code> 包。</p>
+<p>需要两个额外的 <code>jar</code> 包，放在 <code>bin</code> 目录下：</p>
+<ul>
+<li><code>maven-ant-tasks-2.1.3.jar</code></li>
+<li><code>spring-boot-antlib-2.0.5.RELEASE.jar</code></li>
+</ul>
+<p><code>ant</code> 使用 <code>build</code> 作为输出的目录结构，区别于 <code>target</code>。</p>
+<p>下面是 <code>build.xml</code> 配置：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns:artifact=&quot;antlib:org.apache.maven.artifact.ant&quot;</span><br><span class="line">         xmlns:spring-boot=&quot;antlib:org.springframework.boot.ant&quot;</span><br><span class="line">         name=&quot;projectName&quot; default=&quot;default&quot; basedir=&quot;bin&quot;&gt;</span><br><span class="line">    &lt;description&gt;Builds, tests, and runs the project dsolrcloud.&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置开发环境 --&gt;</span><br><span class="line">    &lt;property environment=&quot;env&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;spring-boot.version&quot; value=&quot;2.0.5.RELEASE&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;version&quot; value=&quot;1.0&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;project&quot; value=&quot;projectName&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;package&quot; value=&quot;projectName&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;domain&quot; value=&quot;com.zhoyq&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 项目源代码目录 --&gt;</span><br><span class="line">    &lt;property name=&quot;src.dir&quot; location=&quot;${user.dir}/src/main/java&quot;/&gt;</span><br><span class="line">    &lt;!-- javac编译后生成的class文件路径 --&gt;</span><br><span class="line">    &lt;property name=&quot;build.dir&quot; location=&quot;${user.dir}/build/classes&quot; /&gt;</span><br><span class="line">    &lt;!-- 最终生成jar包的路径 --&gt;</span><br><span class="line">    &lt;property name=&quot;dist.dir&quot; location=&quot;${user.dir}/build/dist&quot;/&gt;</span><br><span class="line">    &lt;!-- 项目配置文件路径 --&gt;</span><br><span class="line">    &lt;property name=&quot;config.dir&quot; location=&quot;${user.dir}/src/main/resources&quot; /&gt;</span><br><span class="line">    &lt;!-- 项目生成JavaDoc文件路径  --&gt;</span><br><span class="line">    &lt;property name=&quot;doc.dir&quot; location=&quot;${user.dir}/build/doc&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- maven-ant-tasks 下载maven依赖jar包的存放路径  --&gt;</span><br><span class="line">    &lt;property name=&quot;lib.dir&quot; location=&quot;${user.dir}/build/dependency&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;path id=&quot;classpath&quot;&gt;</span><br><span class="line">        &lt;fileset dir=&quot;${lib.dir}&quot; includes=&quot;**/*.jar&quot;/&gt;</span><br><span class="line">    &lt;/path&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;clean&quot; description=&quot;清理ant编译文件&quot;&gt;</span><br><span class="line">        &lt;delete dir=&quot;${user.dir}/build&quot; /&gt;</span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;mkdir&quot; description=&quot;建立文件夹&quot;&gt;</span><br><span class="line">        &lt;mkdir dir=&quot;${dist.dir}&quot;/&gt;</span><br><span class="line">        &lt;mkdir dir=&quot;${build.dir}&quot;/&gt;</span><br><span class="line">        &lt;mkdir dir=&quot;${lib.dir}&quot;/&gt;</span><br><span class="line">        &lt;mkdir dir=&quot;${doc.dir}&quot;/&gt; </span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;dependency&quot; depends=&quot;mkdir&quot; description=&quot;配置ant自动下载maven的依赖包&quot;&gt;</span><br><span class="line">        &lt;!-- 下载maven依赖--&gt;</span><br><span class="line">        &lt;path id=&quot;maven-ant-tasks.classpath&quot; path=&quot;${user.dir}/bin/maven-ant-tasks-2.1.3.jar&quot; /&gt;</span><br><span class="line">        &lt;typedef resource=&quot;org/apache/maven/artifact/ant/antlib.xml&quot;</span><br><span class="line">                 uri=&quot;antlib:org.apache.maven.artifact.ant&quot;</span><br><span class="line">                 classpathref=&quot;maven-ant-tasks.classpath&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;artifact:dependencies filesetId=&quot;mavenlib&quot; pathId=&quot;mavenclasspath&quot; useScope=&quot;runtime&quot;&gt;</span><br><span class="line">            &lt;pom file=&quot;${user.dir}/pom.xml&quot; /&gt;</span><br><span class="line">        &lt;/artifact:dependencies&gt;</span><br><span class="line"></span><br><span class="line">        &lt;copy todir=&quot;${lib.dir}&quot;&gt;</span><br><span class="line">            &lt;fileset refid=&quot;mavenlib&quot; /&gt;</span><br><span class="line">            &lt;mapper type=&quot;flatten&quot; /&gt;</span><br><span class="line">        &lt;/copy&gt;</span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;compile&quot; depends=&quot;dependency&quot; description=&quot;编译代码&quot;&gt;</span><br><span class="line">        &lt;!-- 编译所有的Java代码 --&gt;</span><br><span class="line">        &lt;javac srcdir=&quot;${src.dir}&quot;</span><br><span class="line">               destdir=&quot;${build.dir}&quot;</span><br><span class="line">               encoding=&quot;UTF-8&quot;</span><br><span class="line">               includeantruntime=&quot;no&quot;</span><br><span class="line">               excludes=&quot;**/test/*,**/test/bean/*,**/*.svn,*.svn&quot;</span><br><span class="line">               includes=&quot;**/*.java&quot;</span><br><span class="line">               source=&quot;1.8&quot;</span><br><span class="line">               target=&quot;1.8&quot;</span><br><span class="line">               deprecation=&quot;true&quot;</span><br><span class="line">               failonerror=&quot;true&quot;</span><br><span class="line">               debug=&quot;true&quot;&gt;</span><br><span class="line">            &lt;classpath refid=&quot;classpath&quot; /&gt;</span><br><span class="line">        &lt;/javac&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 把所有文件copy到build目录 --&gt;</span><br><span class="line">        &lt;copy todir=&quot;${build.dir}&quot;&gt;</span><br><span class="line">            &lt;fileset dir=&quot;${config.dir}&quot; includes=&quot;**/*&quot;/&gt;</span><br><span class="line">        &lt;/copy&gt;</span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 生成Javadoc 文档 --&gt;</span><br><span class="line">    &lt;target name=&quot;javadoc&quot; description=&quot;生成Javadoc文档&quot;&gt;</span><br><span class="line">        &lt;delete dir=&quot;${doc.dir}&quot;/&gt;</span><br><span class="line">        &lt;mkdir dir=&quot;${doc.dir}&quot;/&gt;</span><br><span class="line">        &lt;javadoc packagenames=&quot;com.zhoyq.*&quot; sourcepath=&quot;${src.dir}&quot; destdir=&quot;${doc.dir}&quot;</span><br><span class="line">                 windowtitle=&quot;${project} Javadoc&quot; use=&quot;yes&quot;</span><br><span class="line">                 linksource=&quot;no&quot; splitindex=&quot;yes&quot; encoding=&quot;UTF-8&quot;</span><br><span class="line">                 docencoding=&quot;GBK&quot; locale=&quot;zh_CN&quot;&gt;</span><br><span class="line">            &lt;classpath refid=&quot;classpath&quot;/&gt;</span><br><span class="line">            &lt;packageset dir=&quot;${src.dir}&quot; defaultexcludes=&quot;yes&quot;&gt;</span><br><span class="line">                &lt;include name=&quot;${domain}/${package}/**&quot;/&gt;</span><br><span class="line">            &lt;/packageset&gt;</span><br><span class="line">        &lt;/javadoc&gt;</span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;package&quot; depends=&quot;compile&quot; description=&quot;打jar包&quot; &gt;</span><br><span class="line">        &lt;tstamp&gt;</span><br><span class="line">            &lt;format property=&quot;TIME&quot; pattern=&quot;yyMMddHHmm&quot;/&gt;</span><br><span class="line">        &lt;/tstamp&gt;  </span><br><span class="line">        &lt;path id=&quot;spring-boot-antlib.classpath&quot; path=&quot;${user.dir}/bin/spring-boot-antlib-2.0.5.RELEASE.jar&quot; /&gt;</span><br><span class="line">        &lt;typedef resource=&quot;org/springframework/boot/ant/antlib.xml&quot;</span><br><span class="line">                 uri=&quot;antlib:org.springframework.boot.ant&quot;</span><br><span class="line">                 classpathref=&quot;spring-boot-antlib.classpath&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;spring-boot:exejar destfile=&quot;${dist.dir}/${project}-${version}-${TIME}.jar&quot;</span><br><span class="line">                classes=&quot;${build.dir}&quot;</span><br><span class="line">                start-class=&quot;com.zhoyq.App&quot;&gt; </span><br><span class="line">            &lt;lib&gt;</span><br><span class="line">                &lt;fileset dir=&quot;${lib.dir}&quot; /&gt;</span><br><span class="line">            &lt;/lib&gt;</span><br><span class="line">        &lt;/spring-boot:exejar&gt;</span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">    &lt;target name=&quot;default&quot; depends=&quot;clean, package, javadoc&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/target&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>修改对应参数，然后运行 <code>ant</code> 即可。</p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/Spring">#Spring</a>
+            <a href="/tags/Spring Boot">#Spring Boot</a>
+            <a href="/tags/Ant">#Ant</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【Spring】使用 ANT 构建 Spring Boot 工程";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

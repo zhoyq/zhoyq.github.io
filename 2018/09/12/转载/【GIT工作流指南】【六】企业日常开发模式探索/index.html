@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,GIT,工作流指南,开发模式">
+<meta name="description" content="【GIT工作流指南】【六】企业日常开发模式探索">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【GIT工作流指南】【六】企业日常开发模式探索</h1>
+            </a>
+            <p style="font-size: 10px;">2018-09-12&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p><a href="https://github.com/xirong">xirong</a> 结合自己所在公司使用git的版本分支开发过程，进行了总结。</p>
+<!-- more -->
+<h2>企业日常开发模式探索</h2>
+<p>在看这部分前，请先回顾阅读业界认可的成功的 Git Branch Work Flow 模型 <a href="http://nvie.com/posts/a-successful-git-branching-model/">A Successful Git Branching Model</a> ，了解日常开发中的场景，有助于熟悉下面的使用过程。</p>
+<p>在企业开发中，使用 Git 作为版本控制软件最看重的还是结合公司自己搭建的 <a href="https://about.gitlab.com/">Gitlab</a>，将 Code Review 加入打包部署持续集成的流程中，这样，代码开发完成，提交测试前，便可以对开发人员提交的代码进行 Review，发现潜在的问题，及时指导，对于新人来讲，也能更快更好的学习。</p>
+<p>解决的需求场景如下：</p>
+<ul>
+<li>能支持日常迭代开发、紧急线上bug修复、多功能并行开发</li>
+<li>大概50人左右的团队，平日迭代项目较多，且周期短（1~2周一个迭代）</li>
+<li>能够通过tag重建整个系统</li>
+<li>支持code review</li>
+<li>所有上线的代码必须都是经过测试保证，且能自动同步到下一次的迭代中</li>
+<li>能和公司的项目管理/持续集成系统整合</li>
+</ul>
+<p><img src="/attaches/7D0DB00BFB7DC61BA9C10FBB3B7107BE.png" alt="图片" class="img-responsive" /></p>
+<p>上图就是 xirong 团队在日常开发中总结出来的适合企业开发的模式，下面进行简单的介绍，方便大家学习了解。（本模式适合敏捷开发流程）</p>
+<ol>
+<li>迭代需求会、冲刺会后确定本次迭代的目标后，将迭代内容视为一个项目，在 Gitlab 上创建一个 Repository，初始化工程代码结构，根据上线日期，比如20150730上线，开出分支 release20150730、dev20150730 两个分支，dev 分支作为日常开发主干分支，release 分支作为提测打包、Code Review 的分支。</li>
+<li>迭代开始，日常开发进行中，开发人员在 dev 分支上进行 Commit、Push 代码，并且解决掉日常协同开发中的冲突等问题，等到达到提测条件的时候，提测者，首先 Merge Master 分支上的最新代码 <code>git merge --no-ff  origin/master</code> ，使得 Master 分支上的变更更新到迭代开发分支dev上面，之后，在 Gitlab 上面发起 <code>pull request</code> 请求，并指定 Code Review 人，请求的分支选择本次上线的 release 分支，即 release20150730。</li>
+<li>被指定 Code Review 的人，对发起者的代码 Review 后，决定是否可以提交测试，若有问题，评论注释代码后，提交者对代码进行进行修改，重复步骤2，直到代码 Review 者认为 Ok。之后便可以借助自己公司的打包部署，对这些代码发布到测试环境验证。</li>
+<li>步骤2-3重复多次后，就会达到一个稳定可发布的版本，即上线版本，上线后，将 release 版本上面最后的提交（图中0.2.4上线对应处）合并到 Master 分支上面，并打 Tag0.3。至此，一次完整的迭代开发完成。</li>
+<li>若此次上线后，不久发现生产环境有 Bug 需要修复，则从 Tag 处新开分支 release_bugfix_20150731、dev_bugfix_20150731 ，开发人员从 dev_bugfix_20150731分支上进行开发，提测code review在 release_bugfix_20150731 分支上，具体步骤参考2-3，测试环境验证通过后，发布到线上，验证OK，合并到 Master 分支，并打 Tag0.2.3，此次 Bug 修复完毕，专为解 Bug 而生的这两个分支可以退伍了，删除release_bugfix_20150731、dev_bugfix_20150731两分支即可。（所有的历史 Commit 信息均已经提交到了 Master 分支上，不用担心丢失）</li>
+</ol>
+<p>这样经过上面的1-5步骤，企业日常迭代开发中的代码版本控制基本上就 Ok 了。</p>
+<h2>更新 2016-11</h2>
+<p><strong>Git 分支开发部署模型</strong> 的一些使用原则如下:</p>
+<p><img src="/attaches/C122A29D255013BEBC78DFD255911F55.jpg" alt="" class="img-responsive" /></p>
+<ul>
+<li>master：master永远是线上代码，最稳定的分支，存放的是随时可供在生产环境中部署的代码，当开发活动告一段落，产生了一份新的可供部署的代码时，发布成功之后，代码才会由 aone2 提交到 master，master 分支上的代码会被更新。应用上 aone2 后禁掉所有人的 master的写权限</li>
+<li>develop：保存当前最新开发成果的分支。通常这个分支上的代码也是可进行每日夜间发布的代码，只对开发负责人开放develop权限。</li>
+<li>feature: 功能特性分支，每个功能特性一个 feature/ 分支，开发完成自测通过后合并入 develop 分支。可以从 master 或者develop 中拉出来。</li>
+<li>hotfix: 紧急bug分支修复分支。修复上线后，可以直接合并入master。</li>
+</ul>
+<p><img src="/attaches/4BB567BEB43CAA3178F04FF552D8E178.jpg" alt="" class="img-responsive" /></p>
+<p>Git-Develop 分支模式是基于 Git 代码库设计的一种需要严格控制发布质量和发布节奏的开发模式。develop 作为固定的持续集成和发布分支，并且分支上的代码必须经过 CodeReview 后才可以提交到 Develop 分支。它的基本流程如下：</p>
+<ul>
+<li>每一个需求/变更都单独从Master上创建一条Branch分支；</li>
+<li>用户在这个Branch分支上进行Codeing活动；</li>
+<li>代码达到发布准入条件后aone上提交Codereview，Codereview通过后代码自动合并到Develop分支；</li>
+<li>待所有计划发布的变更分支代码都合并到Develop后，系统再 rebase master 代码到Develop 分支，然后自行构建，打包，部署等动作。</li>
+<li>应用发布成功后Aone会基于Develop分支的发布版本打一个“当前线上版本Tag”基线；</li>
+<li>应用发布成功后Aone会自动把Develop分支的发布版本合并回master；</li>
+</ul>
+<h2>几篇业界的讨论文章</h2>
+<ul>
+<li><a href="https://www.jianshu.com/p/f23f72251abc">git rebase 和 git merge 的区别</a></li>
+<li><a href="http://insights.thoughtworkers.org/gitflow-consider-harmful/">Gitflow 有害论</a> 作者对 Gitflow 流程的使用过程中的吐槽，文章留言引起了强烈的讨论，可以关注下。</li>
+<li><a href="http://scottchacon.com/2011/08/31/github-flow.html">GitHub Flow</a> scottchacon 讲述在 GitHub 工作中日常流程以及对每一点进行详细的介绍。</li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/07/google-monolithic-source-repository.html">谷歌的代码管理</a> 谷歌和 Facebook 都只有一个代码仓库，全公司的代码都放在这个库里，这里是阮一峰老师写的文章。</li>
+<li><a href="http://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext">Why Google Stores Billions of Lines of Code in a Single Repository</a></li>
+</ul>
+<h2>博主使用的git客户端应用</h2>
+<p>单工程管理<code>GitKraken</code>;
+多工程管理<code>giteye</code>;
+附：文档管理 <code>zeal</code>（windows） 或者 <code>dash</code>（macos、IOS）</p>
+<p>最终还是建议读者去看一下git官方的书:<a href="https://git-scm.com/book/en/v2">git-scm</a></p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/GIT">#GIT</a>
+            <a href="/tags/工作流指南">#工作流指南</a>
+            <a href="/tags/开发模式">#开发模式</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【GIT工作流指南】【六】企业日常开发模式探索";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

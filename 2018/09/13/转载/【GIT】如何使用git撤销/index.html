@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,GIT,撤销">
+<meta name="description" content="【GIT】如何使用git撤销">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【GIT】如何使用git撤销</h1>
+            </a>
+            <p style="font-size: 10px;">2018-09-13&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p>版本管理最有用的地方就是可以撤销发生的问题。在<code>GIT</code>中，撤销可以有很多细微的不同。当创建新的提交的时候，<code>GIT</code>会存储当时仓库的快照，这样就可以使用<code>GIT</code>回顾工程之前的版本。在这片文章里，我将会重现一些需要做撤销操作的场景，并且展示如何使用<code>GIT</code>进行处理。</p>
+<!-- more -->
+<h2>撤销一个公共的改变</h2>
+<p>场景：你刚刚运行了<code>git push</code>，提交已经改变的数据。但是在众多提交中你发现了一个问题，希望撤销那个提交。</p>
+<p>命令：<code>git revert &lt;sha&gt;</code></p>
+<p>解释：<code>git revert</code> 会创建一个新的提交，但是它会是提供的SHA对应的提交的一个逆操作。如果旧的提交叫做<code>matter</code>的话，新的提交就会命名为<code>anti-matter</code>，所有删除的操作都会添加到新的分支里，所有添加操作都会在新分支里删除。</p>
+<p>这是<code>GIT</code>最安全、最基础的撤销操作，因为这个操作不改变历史提交。接下来可以使用<code>git push</code>提交刚刚的改变了。</p>
+<h2>修改最后一次提交的消息</h2>
+<p>场景：你刚刚运行了命令<code>git commit -m &quot;Fxies bug #42&quot;</code>，提交了最后一次消息，但是在<code>git push</code>之前你发现应该是&quot;Fixes bug #42&quot;。</p>
+<p>命令：<code>git commit --amend</code> 或者 <code>git commit --amend -m &quot;Fixes bug #42&quot;</code></p>
+<p>解释：<code>git commit --amend</code>将会用新创建的包含前一次提交改变所有内容的提交来更新替换最近一次的提交。如果没有任何改变，这样将仅仅会重写上一次的提交信息。</p>
+<h2>撤销本地改变</h2>
+<p>场景：猫走过你的键盘，莫名其妙的保存了修改，之后编辑器崩溃了，但是你还没有提交修改。你想恢复文件，仅仅是恢复到上一次提交的版本。</p>
+<p>命令：<code>git checkout -- &lt;bad filename&gt;</code></p>
+<p>解释：<code>git checkout</code> 会把文件修改到前一次已知提交。你应该提供一个分支名称或者指定SHA用来恢复，或者默认情况下，<code>GIT</code>会假设你想要检出<code>HEAD</code>，当前检出分支的最新提交。</p>
+<p>记住：这种方式撤销的改变是不能恢复的。因为改变就没有提交过，所以<code>GIT</code>不能帮助恢复这些文件。确定你知道你放弃的文件内容，或者比较来确认。</p>
+<h2>重置本地改变</h2>
+<p>场景：你在本地进行了几次提交，还没有推送到远程，但是看上去都不是很好，你想要撤销最新的三个提交，就像从来没提交过一样。</p>
+<p>命令：<code>git reset &lt;last good SHA&gt;</code> 或者 <code>git reset --hard &lt;last good SHA&gt;</code></p>
+<p>解释：<code>git reset</code> 会恢复历史到指定的SHA对应的提交。就好像那些提交根本没发生过。默认情况下，<code>git reset</code> 保存工作目录的改变。提交删除后，内容却还在磁盘上。这是最安全的方式，但是通常，你想要撤销提交并且删除改变，这时候就可以使用<code>--hard</code>。</p>
+<h2>在撤销本地之后重做</h2>
+<p>场景：你进行了几次提交，使用<code>git reset --hard</code>撤销了改变，然后想要那些改变再恢复。</p>
+<p>命令：<code>git reflog</code> 和 <code>git reset</code> 或者 <code>git checkout</code></p>
+<p>解释：<code>git reflog</code> 是一个很强大的历史恢复工具。基本上可以恢复任何提交。</p>
+<p>你可能很熟悉<code>git log</code>命令，这个命令会列出提交列表。<code>git reflog</code>很相似，但是会显示<code>HEAD</code>改变的时刻。</p>
+<p>附加说明：</p>
+<ul>
+<li><code>HEAD</code>仅改变。<code>HEAD</code>会在你更换分支时、提交代码时（<code>git commit</code>）和重置目录时（<code>git reset</code>）改变，但是不会在你<code>git checkout -- &lt;bad filename&gt;</code>时改变。（就像之前的场景，那些改变并没有提交，所以不能使用reflog恢复。）</li>
+<li><code>git reflog</code>不会永远保存。<code>GIT</code>会周期性地清理无法获取的对象。不要寄希望于找到上个月的提交内容。</li>
+<li>你的reflog仅仅是你自己的。你不能使用reflog还原其他开发者的未推送提交。</li>
+</ul>
+<p><img src="/attaches/A86CE866E8DAE61FEE06CF0B2C436C96.png" alt="" class="img-responsive" /></p>
+<p>所以...如何使用reflog重做一个或者多个之前撤销的提交呢？它基于你想要达成的目的：</p>
+<ul>
+<li>如果想要恢复工程提交的历史，就像之前那样。使用<code>git reset --hard &lt;SHA&gt;</code>；</li>
+<li>如果你想恢复一个或者多个工程文件，单不改变历史提交。使用<code>git checkout &lt;SHA&gt; -- &lt;filename&gt;</code>；</li>
+<li>如果你想准确的恢复仓库众多提交中的一个。使用<code>git cherry-pick &lt;SHA&gt;</code>；</li>
+</ul>
+<h2>重用分支</h2>
+<p>场景：你做了一些提交，然后发现自己在master分支检出的。你希望在其他分支做这些提交。</p>
+<p>命令：<code>git branch feature</code>，<code>git reset --hard origin/master</code> 和 <code>git checkout feature</code></p>
+<p>解释：你可能会使用<code>git checkout -b &lt;name&gt;</code>创建新分支，这是一种创建分支并检出的简单写法，但是你并不想马上更换分支。这里<code>git branch feature</code>创建了一个称作feature的新分支，指向最新的提交，但是并没有检出到master分支。</p>
+<p>下一步，<code>git reset --hard</code>在所有提交之前将master分支重置到origin/master分支。不要担心，它们仍然在feature上可用。</p>
+<p>最后，<code>git checkout</code>转分支到新的拥有所有最近改变的feature分支。</p>
+<h2>及时保存分支</h2>
+<p>场景：你基于master分支创建feature分支，但是master分支远落后于origin/master分支。现在master已经和origin/master分支同步了，你希望提交feature的起点是现在的master分支，代替之前的。</p>
+<p>命令：<code>git checkout feature</code> 和 <code>git rebase master</code></p>
+<p>解释：你可以使用<code>git reset</code>（没有--hard）命令，然后<code>git checkout -b &lt;new branch name&gt;</code>创建新的分支重新提交，但是那样会丢失提交的历史。有更好的办法。</p>
+<p><code>git rebase master</code> 做了如下几件事情：</p>
+<ul>
+<li>第一，它定位了当前分支和master分支共同的祖先。</li>
+<li>然后，它重置了当前分支到祖先，缓存了所有祖先之后的提交。</li>
+<li>最后，将当前分支提前拼接到master分支结尾，并且恢复缓存提交到master最后的一次提交之后。</li>
+</ul>
+<h2>混合撤销或者重做</h2>
+<p>场景：你开起了一个特性开发，开发过程中你意识到，有更好的解决方式。你已经提交了很多次了，但是你只是需要一部分提交，希望另外一部分消失。</p>
+<p>命令：<code>git rebase -i &lt;earlier SHA&gt;</code></p>
+<p>解释：<code>-i</code>代表交互模式。它就像之前所说的rebase命令一样，但是在恢复提交之前，它会暂停允许你定义恢复的每一条提交。</p>
+<p><code>rebase -i</code>将会在你的默认编辑器中打开一个命令列表，就像这样：</p>
+<p><img src="/attaches/5FCAD4339B6D22E6227FCB31A1E214D0.png" alt="" class="img-responsive" /></p>
+<p>第一列代表提交选择的命令；第二列代表提交的对应SHA值；默认情况下，<code>rebase -i</code>假设每条提交都会应用，使用<code>pick</code>命令。</p>
+<p>丢弃提交的方式就是删除提交所在行。如果你不希望再看到有问题的提交，你可以直接删除上面图片中的第一行和三四行。</p>
+<p>如果你想保留提交的内容到那时修改提交消息的话，需要使用<code>reword</code>命令。仅仅是替换<code>pick</code>单词即可。这样就能够马上重写提交消息，但是这样并不起作用，<code>rebase -i</code>忽略了SHA列之后的内容。之后的内容其实只是帮助我们理解前面的内容。当完成了<code>rebase -i</code>之后，你需要重新写提交消息。</p>
+<p>如果你想合并两条提交，你需要使用<code>squash</code>和<code>fixup</code>，像这样：</p>
+<p><img src="/attaches/E2EEDE62BD8645F8B0D9AE859D99D473.png" alt="" class="img-responsive" /></p>
+<p><code>squash</code>和<code>fixup</code>将会合并之前的提交。在上图中，<code>0835fe2</code> 和 <code>6943e85</code>将会合并成一条；<code>38f5e4e</code> 和 <code>af67f82</code>将会合并为另外一条。</p>
+<p>当选则<code>squash</code>，GIT将会给合并后的提交添加一个新的提交消息；<code>fixup</code>将会把第一条提交的消息添加到新的提交里。在这里，<code>af67f82</code>是“ooops”，仅仅使用<code>38f5e4e</code>的提交消息；但是<code>0835fe2</code> 和 <code>6943e85</code>合并后，你会写一条新的提交消息；</p>
+<p>当你保存并且推出编辑器，GIT将会按顺序从上到下应用你的提交。你可以改变提交顺序。如果你想，你可以通过调整顺序合并 <code>af67f82</code> 和 <code>0835fe2</code>，就像这样：</p>
+<p><img src="/attaches/F0B33D0906E990B89F4E7618E41C631F.png" alt="" class="img-responsive" /></p>
+<h2>修复一个早期的提交</h2>
+<p>场景：你在之前的提交中忘记提交了一些文件，你想给它添加这个文件。你还没有推送，但是那并不是最近的提交，所以不能使用<code>commit --amend</code></p>
+<p>命令：<code>git commit --squash &lt;SHA of the earlier commit&gt;</code> 和 <code>git rebase --autosquash -i &lt;even earlier SHA&gt;</code></p>
+<p>解释：<code>git commit --squash</code>将会创建一个新的分支，携带消息&quot;squash! Earlier commit&quot;。（你可以手动创建提交，并写上上边的信息，但是<code>commit --squash</code>保存了一些输入。）</p>
+<p>如果你不想提前写一些消息的话，你也可以使用<code>git commit --fixup</code>。在这个场景中，最好使用<code>commit --fixup</code>，因为在rebase过程中，你仅仅想要使用早期提交的消息。</p>
+<p><code>rebase --autosquash -i</code> 会执行交互式的rebase编辑，但是编辑器会使用任何<code>squash</code> 和 <code>fixup</code>已经适配的提交展现列表，就像这样：</p>
+<p><img src="/attaches/0CE2D8A7DC4FDE12D93067DF5724FCD2.png" alt="" class="img-responsive" /></p>
+<p>当使用<code>--squash</code> 和 <code>--fixup</code>时,你可能不记得你想要修复的提交的SHA。你可能觉得使用GIT的<code>^</code>和<code>~</code>操作很难。<code>HEAD^</code>代表<code>HEAD</code>之前的一条提交。<code>HEAD~4</code>代表<code>HEAD</code>之前的4条提交或者组合在一起，五条纪录之前。</p>
+<h2>停止记录一个已经记录的文件</h2>
+<p>前提：你添加了log文件到仓库中，每次运行程序都保存log的修改，你已经把log放到了忽略文件中，但是文件始终在那里怎么样撤销跟踪文件呢？</p>
+<p>命令：<code>git rm --cached *.log</code></p>
+<p>解释：忽略文件本身是阻止跟踪文件改变的，但是如果一个文件已经添加并且提交之后，GIT将会一致跟踪文件的改变。</p>
+<p><a href="https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/">阅读原文</a></p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/GIT">#GIT</a>
+            <a href="/tags/撤销">#撤销</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【GIT】如何使用git撤销";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

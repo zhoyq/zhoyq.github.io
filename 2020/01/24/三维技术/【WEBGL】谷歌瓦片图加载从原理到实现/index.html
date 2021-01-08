@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="三维技术,WEBGL,谷歌瓦片">
+<meta name="description" content="【WEBGL】谷歌瓦片图加载从原理到实现">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【WEBGL】谷歌瓦片图加载从原理到实现</h1>
+            </a>
+            <p style="font-size: 10px;">2020-01-24&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/三维技术" class="custom-color-red">三维技术</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p>年前为 <code>NothingJs</code> 实现了一个扩展 <code>NJ_lod_ground</code>，目标是简单实现加载谷歌瓦片。为了让读者更加容易的理解，我直接改成了 <code>WebGL</code> 实例（总代码800行左右、依赖glMatrix）。并且把相关内容整理到本文，希望能帮助到刚刚入门的同学。</p>
+<p>工程地址在文章结尾。</p>
+<!-- more -->
+<h2>WGS84 大地坐标系 和 Web 墨卡托投影</h2>
+<p><code>GIS</code> 领域最离不开的就是坐标变换，首先要搞清楚的就是地球上的一个点如何变换成地图上的一个点。文章不会详细讲解变换方法，因为本文重点并不是算法。但是还是要说清楚整个过程，我们已经清楚地球本身不是一个规则的球体，为了计算方便，需要有一个标准的大地坐标系来简化计算，而 <code>WGS84（World Geodetic System一1984 Coordinate System）</code> 就是这样一个坐标系。但是大地坐标系是三维坐标系，要映射到二维地图上还需要一步，就是投影变换（仿射变换），比如墨卡托投影。</p>
+<p><code>Web 墨卡托</code> 定义的大地坐标系是 <code>WGS84</code> 坐标系，投影方式与墨卡托投影类似，但是投影时地球不再当做是椭球体而是半径是6378137米的标准球体。</p>
+<p>首先我们先简单了解一下 <code>Web 墨卡托投影</code> 的历史：</p>
+<ul>
+<li>2005年 - 谷歌在谷歌地图中首次使用，当时的 <code>Web墨卡托</code> 使用者还称其为 <code>世界墨卡托（World Mercator）- Spherical Mercator (unofficial deprecated ESRI)</code>，代号 <code>WKID 54004</code>。</li>
+<li>2006年 - <code>OSGeo</code> 在提出的 <code>TMS - Tile Map Service</code> 标准中使用代号 <code>OSGEO:41001（WGS84 / Simple Mercator）- Spherical Mercator (unofficial deprecated OSGEO / Tile Map Service)</code>。</li>
+<li>2007年 - <code>Christopher Schmidt（OpenLayers的重要贡献者之一）</code> 在通过一次 <code>GIS</code> 讨论中为了在 <code>OpenLayers</code> 中使用谷歌投影，提出给 <code>Web墨卡托</code> 使用一个统一的代号 <code>900913 - 形似 Google</code>，并在OpenLayers的 <code>OpenLayers/Layer/SphericalMercator.js</code> 中正式使用代号 <code>900913</code>。</li>
+<li>2008年 - <code>EPSG</code> 在6.15版本中正式给谷歌地图投影赋予 CRS 代号 <code>EPSG:3785（Popular Visualisation CRS / Mercator）</code>，这也是 <code>Web墨卡托</code> 正式被 <code>EPSG</code> 组织承认。</li>
+<li>2009年 - <code>EPSG</code> 使用新代号 <code>EPSG:3857</code> 代替之前的 <code>EPSG:3785</code>，给谷歌地图投影方法命名为 <code>“公共可视化伪墨卡托投影（PVPM）”</code>。</li>
+<li>至今 - <code>EPSG:3857（WGS 84 / Pseudo-Mercator）</code> 代号是 <code>web墨卡托</code> 的正式代号。</li>
+</ul>
+<h2>谷歌瓦片</h2>
+<p>经过投影变换后，地理坐标就变成了平面地图坐标。考虑到需要地图的精度有大有小（缩放），所以将地图分级：顶层为0级，由一张256像素见方的图片存储，向后每多一级，像素是当前级别的4倍。由此便组成了一个金字塔式的地图瓦片层级结构，每张瓦片的大小固定为256像素的方形。</p>
+<p><img src="/attaches/F28150AA96C6FF1DEFA266C399C8E3D6.png" alt="瓦片金字塔" class="img-responsive" /></p>
+<p>有了地图瓦片还需要对地图瓦片进行编号才行，谷歌采用XYZ表示瓦片的坐标和显示级别（缩放级别），其中XY的原点在左上角，X从左向右，Y从上向下，Z则表示显示级别（缩放级别）。</p>
+<p>假如我们需要一张256像素的世界卫星地图，我们可以在浏览器访问：<code>http://mt2.google.cn/vt/lyrs=s&amp;hl=zh-CN&amp;gl=cn&amp;x=0&amp;y=0&amp;z=0</code></p>
+<h2>如何决定缩放级别</h2>
+<p>了解了投影和瓦片获取方式，还是不能实现一个简单的地图，我们还需要知道什么条件下加载哪些瓦片图。我程序里处理方式比较简单，需要知道当前显示级别，然后根据显示级别和摄像机与地平面的交点推导出中心瓦片坐标，然后在按中心瓦片坐标计算当前需要加载的全部瓦片坐标。</p>
+<p>最重要的一点就是，如何获取当前级别呢？我并没有去想计算级别的方法，因为 <code>WebGIS</code> 领域里，开源的 <code>Cesium</code> 发展非常不错，于是就在 <code>Cesium</code> 源码中搜索了一下，找到了相关代码，借鉴这部分代码很快就完成了我们需要的方法。</p>
+<p>不多说，上代码：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过给定参数计算纹素间距, 核心就是理解视坐标</span></span><br><span class="line"><span class="comment">// 注意：这里为了计算方便 仅仅算了纵向的像素间距</span></span><br><span class="line"><span class="keyword">function</span> getCurrentTexelSpacing(camera, screen, pos) {</span><br><span class="line">  <span class="comment">// 相机 和 相机朝向与地面的交点 的距离</span></span><br><span class="line">  <span class="keyword">const</span> distanceToPos = glMatrix.vec3.distance(camera.position, pos);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实际上是 </span></span><br><span class="line">  <span class="comment">// Math.tan(相机yFov / 2.0) * distanceToPos = 纹素间距 * 屏幕高度 / 2.0</span></span><br><span class="line">  <span class="keyword">return</span> (2.0 * Math.tan(camera.yfov / 2.0) * distanceToPos) / screen[1];</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过零级别的纹素间距定义当前级别</span></span><br><span class="line"><span class="comment">// 零级别的纹素间距是一定的，即 2.0 * Math.PI * 地球半径 / 256 = 地球周长 / 256</span></span><br><span class="line"><span class="keyword">function</span> getLevel(texelSpacing) {</span><br><span class="line">  <span class="keyword">const</span> twoToTheLevelPower = levelZeroTexelSpacing / texelSpacing;</span><br><span class="line">  <span class="comment">// 实际上计算的是 2 的几次方是 twoToTheLevelPower 这样就不难理解了</span></span><br><span class="line">  <span class="keyword">const</span> level = Math.log(twoToTheLevelPower) / Math.log(2);</span><br><span class="line">  <span class="keyword">const</span> rounded = Math.round(level);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Math.max(rounded | 0, 0);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// camera 相机</span></span><br><span class="line"><span class="comment">// screen 渲染的长宽</span></span><br><span class="line"><span class="comment">// pos 相机朝向与地面夹角（这个夹角算法也是 Cesium 里的原始方法）</span></span><br><span class="line"><span class="keyword">function</span> getCurrentLevel(camera, screen, pos) {</span><br><span class="line">  <span class="keyword">const</span> texelSpacing = getCurrentTexelSpacing(camera, screen, pos);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> getLevel(texelSpacing);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>核心代码就这些，<code>getCurrentLevel</code> 就是获取当前显示级别的方法（当然我对原始方法稍微修改了一下以适应本地代码）。</p>
+<p>通过代码以及注释不难理解，实际上缩放级别是通过 显示级别0下的纹素间距 和 摄像机位置与其朝向同地面的交点间距离上的纹素间距 比值决定的。</p>
+<h2>坐标转换</h2>
+<p>知道了当前级别还是不能实现一个简单的地图，因为是使用 <code>WebGL</code> 绘制的，所以还需要知道如何通过级别确定需要绘制的顶点坐标，这个就涉及到坐标转换的问题了。</p>
+<p>假如我们知道了一个瓦片的 <code>XYZ</code>，如何获取一个瓦片所涉及到的正方形在世界坐标系下的顶点信息呢？有了目标我们再查看 <code>Cesium</code> ，就能很快找到需要的代码，然后借鉴之。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取某个级别横向瓦片数量</span></span><br><span class="line"><span class="keyword">function</span> getNumberOfXTilesAtLevel(level) {</span><br><span class="line">  <span class="keyword">return</span> numberOfLevelZeroTilesX &lt;&lt; level;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取某个级别纵向瓦片数量</span></span><br><span class="line"><span class="keyword">function</span> getNumberOfYTilesAtLevel(level) {</span><br><span class="line">  <span class="keyword">return</span> numberOfLevelZeroTilesY &lt;&lt; level;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 瓦片坐标 转 经纬度边界坐标（东西南北）</span></span><br><span class="line"><span class="keyword">function</span> tileXYToRadians(x, y, level) {</span><br><span class="line">  <span class="comment">// 获取整个世界地图的区域边界（弧度）</span></span><br><span class="line">  <span class="keyword">const</span> rectangle = boundary;</span><br><span class="line">  <span class="comment">// 获取当前显示级别横向纵向瓦片数量</span></span><br><span class="line">  <span class="keyword">const</span> xTiles = getNumberOfXTilesAtLevel(level);</span><br><span class="line">  <span class="keyword">const</span> yTiles = getNumberOfYTilesAtLevel(level);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 计算每个瓦片的宽度（弧度）</span></span><br><span class="line">  <span class="keyword">const</span> xTileWidth = rectangle.width / xTiles;</span><br><span class="line">  <span class="keyword">const</span> west = x * xTileWidth + rectangle.west;</span><br><span class="line">  <span class="keyword">const</span> east = (x + 1) * xTileWidth + rectangle.west;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 计算每个瓦片的高度（弧度）</span></span><br><span class="line">  <span class="keyword">const</span> yTileHeight = rectangle.height / yTiles;</span><br><span class="line">  <span class="keyword">const</span> north = rectangle.north - y * yTileHeight;</span><br><span class="line">  <span class="keyword">const</span> south = rectangle.north - (y + 1) * yTileHeight;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回边界信息 弧度</span></span><br><span class="line">  <span class="keyword">return</span> {</span><br><span class="line">    west,</span><br><span class="line">    south,</span><br><span class="line">    east,</span><br><span class="line">    north</span><br><span class="line">  };</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弧度经纬度信息 转换成 世界坐标</span></span><br><span class="line"><span class="keyword">function</span> tileLonlatRadians2world(lonlat) {</span><br><span class="line">  <span class="keyword">const</span> x = ((lonlat[0]) / boundary.width) * WIDTH;</span><br><span class="line">  <span class="keyword">const</span> y = ((-lonlat[1]) / boundary.height) * HEIGHT;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [x, y];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>由源码可知，通过 <code>tileXYToRadians</code> 可以根据当前瓦片信息转换成边界弧度信息，再通过 <code>tileLonlatRadians2world</code> 由弧度信息可以获取世界坐标信息。</p>
+<h2>预备知识</h2>
+<p>好了，我们了解了投影，瓦片，级别和坐标之后，我们就可以着手写这个瓦片加载程序了。</p>
+<p>但是再看源码之前还需要了解一些相关知识：</p>
+<ul>
+<li><a href="https://www.zhoyq.com/2020/01/22/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF/%E3%80%90WebGL%E3%80%91WebGL%20API%20%E8%AF%A6%E8%A7%A3/">WebGL API</a>。</li>
+<li>前端鼠标事件相关操作，可以查看源码了解。</li>
+<li>前端类的封装以及闭包方式（为了简化开发环境和提高兼容性，源码并没有采用es6编写）。</li>
+</ul>
+<h2>工程文件说明</h2>
+<div class="table-responsive"><table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>css/main.css</code></td>
+<td>全局样式</td>
+</tr>
+<tr>
+<td><code>js/Camera.js</code></td>
+<td>摄像机对象</td>
+</tr>
+<tr>
+<td><code>js/gl-matrix-min.js</code></td>
+<td>数学计算库压缩版</td>
+</tr>
+<tr>
+<td><code>js/gl-matrix.js</code></td>
+<td>数学计算库</td>
+</tr>
+<tr>
+<td><code>js/mouse-utils.js</code></td>
+<td>鼠标事件工具类</td>
+</tr>
+<tr>
+<td><code>js/Quad.js</code></td>
+<td>瓦片对象</td>
+</tr>
+<tr>
+<td><code>js/tiles-utils.js</code></td>
+<td>瓦片相关工具类</td>
+</tr>
+<tr>
+<td><code>js/webgl-utils.js</code></td>
+<td>gl相关工具类</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>html页面</td>
+</tr>
+<tr>
+<td><code>main.js</code></td>
+<td>主要运行过程</td>
+</tr>
+</tbody>
+</table></div>
+<h2>实例</h2>
+<p><div class="pad-no mar-btm" style="height: 400px;"><iframe src="https://zhoyq.gitee.io/from-principle-to-implementation-of-webgl-loading-google-tiles/" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true"></iframe></div></p>
+<h2>已知问题</h2>
+<p>这部分是因为工程本身是为了简化代码说明瓦片加载过程，所以就忽略了部分问题，如果读者有兴趣可以自己着手解决这部分问题。</p>
+<ul>
+<li>采样 - 目前使用的是前向渲染，用的是默认硬件采样方式。</li>
+<li>坐标抖动 - 这个是坐标计算精度的问题。</li>
+<li>摄像机操作 - 摄像机操作还比较生硬，平移速度没有根据缩放而变化；嵌入iframe鼠标操作并没有兼容。</li>
+<li>瓦片加载方式 - 瓦片加载方式是按级别加载的， 并不会平滑过渡，也不会按照需要加载不同级别的瓦片。</li>
+</ul>
+<h2>引用</h2>
+<ul>
+<li><a href="http://www.rivermap.cn/docs/show-1829.html">GCJ02/BD09/80/54/2000常用坐标系详解-第六节（二）</a></li>
+<li><a href="https://segmentfault.com/a/1190000011276788?utm_source=tag-newest">瓦片地图原理</a></li>
+<li><a href="https://www.cnblogs.com/fwc1994/p/6519229.html">WebGIS前端瓦片地图显示原理及实现</a></li>
+<li><a href="https://www.cnblogs.com/naaoveGIS/category/600559.html">从底层谈，WebGIS 原理、设计、实现</a></li>
+<li><a href="https://www.cnblogs.com/tuncaysanli/p/3805421.html">Web墨卡托投影</a></li>
+<li><a href="https://blog.csdn.net/iispring/article/details/8565177">Web Mercator投影与反投影计算公式</a></li>
+<li><a href="https://blog.csdn.net/weixin_30906701/article/details/95465439">墨卡托投影坐标系（Mercator Projection）原理及实现C代码</a></li>
+<li><a href="https://blog.csdn.net/youngkingyj/article/details/23365849">OpenStreetMap/Google/百度/Bing瓦片地图服务(TMS)</a></li>
+</ul>
+<h2>源码</h2>
+<p><script src="https://gitee.com/zhoyq/from-principle-to-implementation-of-WebGL-loading-Google-tiles/widget_preview"></script></p>
+<style>/*use*/
+.pro_name a{color: #4183c4;}
+.osc_git_title{background-color: #fff;}
+.osc_git_box{background-color: #fff;}
+.osc_git_box{border-color: #E3E9ED;}
+.osc_git_info{color: #666;}
+.osc_git_main a{color: #9B9B9B;}
+</style>
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/WEBGL">#WEBGL</a>
+            <a href="/tags/谷歌瓦片">#谷歌瓦片</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【WEBGL】谷歌瓦片图加载从原理到实现";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

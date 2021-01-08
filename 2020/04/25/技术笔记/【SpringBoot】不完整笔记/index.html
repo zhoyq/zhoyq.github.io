@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="技术笔记,SpringBoot">
+<meta name="description" content="【SpringBoot】不完整笔记">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【SpringBoot】不完整笔记</h1>
+            </a>
+            <p style="font-size: 10px;">2020-04-25&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/技术笔记" class="custom-color-red">技术笔记</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p>这个笔记不完整。</p>
+<!-- more -->
+<p><strong>@Transactional 事物隔离级别</strong></p>
+<ul>
+<li>Atomic（原子性）</li>
+<li>Consistency（一致性）</li>
+<li>Isolation（隔离性）</li>
+<li>Durability（持久性）</li>
+</ul>
+<p><strong>隔离级别</strong></p>
+<ul>
+<li>未提交读：允许一个事务读取另一个事物未提交的数据（可能引发脏读、不可重复读、幻读）</li>
+<li>读写提交：一个事物只能读取另外一个事物已经提交的数据，不能读取未提交的数据（可能引发不可重复读、幻读）</li>
+<li>可重复读：客服读写提交中的不可重复读现象（可能引发幻读）</li>
+<li>串行化：要求所有的SQL按照顺序执行，保证了数据的一致性</li>
+</ul>
+<p><strong>使用隔离级别</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(isolation = Isolation.SERIALIZABLE) // 串行化</span><br><span class="line">public int insertUser(){</span><br><span class="line">    // ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>redis配置</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">    &lt;exclusions&gt;</span><br><span class="line">        &lt;!-- 不适用 lettuce 客户端 --&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;io.lettuce&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;lettuce-core&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">    &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 使用 jedis 客户端 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;redis.clients&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jedis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>使用 <code>jedis</code> 客户端需要自定义Bean <code>RedisConnectionFactory</code></li>
+<li>为了查询 <code>redis</code> 显示字符串, 需要自定义Bean <code>RedisTemplate</code>, 并设置字符串序列化方式</li>
+</ul>
+<p><strong>RedisTemplate操作</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private ReidsTemplate rt;</span><br><span class="line"></span><br><span class="line">// 地理位置操作接口</span><br><span class="line">rt.opsForGeo();</span><br><span class="line">// 散列操作接口</span><br><span class="line">rt.opsForHash();</span><br><span class="line">// 基数操作接口</span><br><span class="line">rt.opsForHyperLogLog();</span><br><span class="line">// 列表操作接口</span><br><span class="line">rt.opsForList();</span><br><span class="line">// 集合操作接口</span><br><span class="line">rt.opsForSet();</span><br><span class="line">// 字符串操作接口</span><br><span class="line">rt.opsForValue();</span><br><span class="line">// 有序集合操作接口</span><br><span class="line">rt.opsForZSet();</span><br><span class="line"></span><br><span class="line">// ## 绑定操作 - 用于连续处理 key 键对应值</span><br><span class="line">rt.boundGeoOps(&quot;key&quot;);</span><br><span class="line">// ... 其他方法不再赘述</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Redis事物操作</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">redisTemplate.opsForValue().set(&quot;key1&quot;, &quot;value1&quot;);</span><br><span class="line"></span><br><span class="line">List list = (List)redisTemplate.execute((RedisOperations operations) -&gt; {</span><br><span class="line">    // 设置要监控key1</span><br><span class="line">    operations.watch(&quot;key1&quot;);</span><br><span class="line">    // 开启事务，在exec命令执行前，全部都只是进入队列</span><br><span class="line">    operations.multi();</span><br><span class="line">    operations.opsForValue().set(&quot;key2&quot;, &quot;value2&quot;);</span><br><span class="line">    // operations.opsForValue().increment(&quot;key1&quot;, 1);// ①</span><br><span class="line">    // 获取值将为null，因为redis只是把命令放入队列</span><br><span class="line">    Object value2 = operations.opsForValue().get(&quot;key2&quot;);</span><br><span class="line">    System.out.println(&quot;命令在队列，所以value为null【&quot;+ value2 +&quot;】&quot;);</span><br><span class="line">    operations.opsForValue().set(&quot;key3&quot;, &quot;value3&quot;);</span><br><span class="line">    Object value3 = operations.opsForValue().get(&quot;key3&quot;);</span><br><span class="line">    System.out.println(&quot;命令在队列，所以value为null【&quot;+ value3 +&quot;】&quot;);</span><br><span class="line">    // 执行exec命令，将先判别key1是否在监控后被修改过，如果是则不执行事务，否则就执行事务</span><br><span class="line">    return operations.exec();// ②</span><br><span class="line">});</span><br><span class="line">System.out.println(list);</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Redis流水线</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Long start = System.currentTimeMillis();</span><br><span class="line">List list = (List)redisTemplate.executePipelined((RedisOperations operations) -&gt; {</span><br><span class="line">    for (int i=1; i&lt;=100000; i++) {</span><br><span class="line">        operations.opsForValue().set(&quot;pipeline_&quot; + i, &quot;value_&quot; + i);</span><br><span class="line">        String value = (String) operations.opsForValue().get(&quot;pipeline_&quot; + i);</span><br><span class="line">        if (i == 100000) {</span><br><span class="line">            System.out.println(&quot;命令只是进入队列，所以值为空【&quot; + value +&quot;】&quot;);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return null;</span><br><span class="line">});</span><br><span class="line">Long end = System.currentTimeMillis();</span><br><span class="line">System.out.println(&quot;耗时：&quot; + (end - start) + &quot;毫秒。&quot;);</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Redis发布订阅</strong></p>
+<ul>
+<li>实现 <code>MessageListener</code> 消息监听器</li>
+<li>创建Bean <code>RedisMessageListenerContainer</code></li>
+</ul>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@Autowired</span><br><span class="line">private ThreadPoolTaskScheduler taskScheduler;</span><br><span class="line">@Autowired</span><br><span class="line">private RedisConnectionFactory connectionFactory;</span><br><span class="line"></span><br><span class="line">@Bean</span><br><span class="line">public ThreadPoolTaskScheduler initTaskScheduler() {</span><br><span class="line">    ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();</span><br><span class="line">    taskScheduler.setPoolSize(20);</span><br><span class="line">    return taskScheduler;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">@Bean</span><br><span class="line">public RedisMessageListenerContainer initRedisContainer() {</span><br><span class="line">    RedisMessageListenerContainer container = new RedisMessageListenerContainer();</span><br><span class="line">    // Redis连接工厂</span><br><span class="line">    container.setConnectionFactory(connectionFactory);</span><br><span class="line">    // 设置运行任务池</span><br><span class="line">    container.setTaskExecutor(taskScheduler);</span><br><span class="line">    // 定义监听渠道，名称为topic1</span><br><span class="line">    Topic topic = new ChannelTopic(&quot;topic1&quot;);</span><br><span class="line">    // 使用监听器监听Redis的消息</span><br><span class="line">    // redisMsgListener 是自定义的消息监听器</span><br><span class="line">    container.addMessageListener(redisMsgListener, topic);</span><br><span class="line">    return container;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Redis使用Lua脚本</strong></p>
+<ul>
+<li>使用 DefaultRedisScript 创建脚本实例</li>
+<li>使用 redisTemplate.execute 方法执行脚本实例</li>
+</ul>
+<blockquote>
+<ul>
+<li>Redis 2.6 以后支持了 Lua</li>
+<li>脚本执行具备原子性</li>
+</ul>
+</blockquote>
+<p><strong>Redis缓存</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  cache:</span><br><span class="line">    type: REDIS</span><br><span class="line">    cache-names: test</span><br><span class="line">    redis:</span><br><span class="line">      cache-null-values: true</span><br><span class="line">#      key-prefix:</span><br><span class="line">      time-to-live: 0ms</span><br><span class="line">#      use-key-prefix: true</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>相关注解: <code>@EnableCaching</code>, <code>@CachePut</code>, <code>@Cacheable</code>, <code>@CacheEvict</code>.</li>
+</ul>
+<p><strong>MongoDB配置</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mongodb --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-mongodb&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure><figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  data:</span><br><span class="line">    mongodb:</span><br><span class="line">      database: test</span><br><span class="line">      host: localhost</span><br><span class="line">      port: 27017</span><br><span class="line">      password: 123456</span><br><span class="line">      username: 123456</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>使用 <code>@Document</code> <code>@Id</code> <code>@Field</code> 等定义POJO</p>
+</blockquote>
+<p><strong>MongoDB持久化接口</strong></p>
+<ul>
+<li>使用 <code>MongoTemplate</code> 进行</li>
+<li>使用 <code>MongoRepository</code> 进行， 需要单独使用 <code>@EnableMongoRepository</code> 注解</li>
+<li>基础方法不够用， 可以使用自定义查询注解 <code>@Query</code> 或者实现 <code>&lt;接口名&gt;Impl</code>（这种命名时约定方式，可以通过注解EnableMongoRepository修改配置） 类即可</li>
+<li>使用WebFlux可以改成 <code>ReactiveMongoRepository</code></li>
+</ul>
+<p><strong>异步调用</strong></p>
+<ul>
+<li>相关注解 <code>@EnableAsync</code> <code>@Async</code></li>
+<li>相关接口 <code>AsyncConfigurer</code></li>
+</ul>
+<p><strong>异步消息AMQ</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--依赖于starter，这样可以使用自动配置--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-activemq&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!--依赖于连接池，这样就可以启用JMS连接池--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;activemq-pool&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure><figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  jms:</span><br><span class="line">    pub-sub-domain: true # 是否使用发布订阅模式，默认为false，即用的是点对点的模式</span><br><span class="line">    template:</span><br><span class="line">      default-destination: activemq.default.destination # 默认目的地址</span><br><span class="line">  activemq:</span><br><span class="line">    packages:</span><br><span class="line">      trust-all: true # 信任所有包</span><br><span class="line">    broker-url: tcp://localhost:61616 # ActiveMQ地址</span><br><span class="line">    user: admin # 用户名</span><br><span class="line">    password: admin # 密码</span><br><span class="line">    pool:</span><br><span class="line">      enabled: true # 是否启用连接池</span><br><span class="line">      max-connections: 50 # 连接池最大连接数配置</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>通过 <code>@JmsListener</code> 进行配置监听消息</li>
+<li>直接使用 JmsTemplate 发送消息</li>
+</ul>
+<p><strong>使用AMQP（RabbitMQ）</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-amqp&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure><figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  rabbitmq:</span><br><span class="line">    host: localhost # RabbitMQ 服务器地址</span><br><span class="line">    port: 5672 # RabbitMQ 端口</span><br><span class="line">    username: admin # RabbitMQ 用户</span><br><span class="line">    password: admin # RabbitMQ 密码</span><br><span class="line">    publisher-confirms: true # 是否确认发送的消息已经被消费</span><br><span class="line"></span><br><span class="line"># 并非整体配置</span><br><span class="line"># rabbitmq:</span><br><span class="line">#   queue:</span><br><span class="line">#    msg: spring-boot-queue-msg # RabbitMQ 的消息队列名称，由它发送字符串</span><br><span class="line">#    user: spring-boot-queue-user # RabbitMQ 的消息队列名称，由它发送用户对象</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>使用 <code>RabbitTemplate</code> 进行发送消息操作</li>
+<li>使用 <code>@RabbitListener</code> 进行消息监听</li>
+</ul>
+<p><strong>定时任务</strong></p>
+<ul>
+<li>相关注解 <code>@Scheduled</code>（可以配合 <code>@Async</code> 使用） <code>@@EnableScheduling</code></li>
+</ul>
+<p><strong>WebSocket</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>需要自定义Bean <code>ServerEndpointExporter</code></li>
+<li>配置注解 <code>@ServerEndpoint</code> <code>@OnOpen</code> <code>@OnClose</code> <code>@OnMessage</code> <code>@OnError</code></li>
+</ul>
+<p><strong>STOMP</strong></p>
+<blockquote>
+<p>为了解决 webSocket 的兼容性问题</p>
+</blockquote>
+<ul>
+<li>使用注解 <code>@EnableWebSocketMessageBroker</code> 启动STOMP</li>
+<li>使用接口配置 <code>WebSocketMessageBrokerConfigurer</code></li>
+</ul>
+<p><strong>热部署</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure><figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  devtools:</span><br><span class="line">    lovereload:</span><br><span class="line">      enabled: true # 是否启用一个livereload.com 兼容的服务器</span><br><span class="line">      port: 35729 # 端口livereload.com服务器端口</span><br><span class="line">    restart:</span><br><span class="line">      enabled: true # 是否启用自动重启功能</span><br><span class="line">      additional-exclude: # 在原来的基础上新增不重启服务的文件夹目录</span><br><span class="line">      additional-paths: # 在原来的基础上新增重启服务的文件夹目录</span><br><span class="line">      exclude: META-INF/maven/**,META-INF/resources/**,resources/**,static/**,public/**,templates/**,**/*Test.class,**/*Tests.class,git.properties # 不重启服务的文件夹配置</span><br><span class="line">      poll-interval: 1000 # 设置对路径变化进行监测的时间间隔（以毫秒为单位）</span><br><span class="line">      quiet-period: 400 # 在没有改变任何classpath的情况下，在重启被触发前的静默时长（以毫秒计）</span><br><span class="line">      trigger-file: # 设置触发文件，当需要实际触发重启检查时，则需要修改这个文件</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>使用 shift+ctrl+alt+&quot;/&quot; （IDEA中的快捷键） 选择&quot;Registry&quot; 然后勾选 compiler.automake.allow.when.app.running</p>
+</blockquote>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/SpringBoot">#SpringBoot</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【SpringBoot】不完整笔记";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

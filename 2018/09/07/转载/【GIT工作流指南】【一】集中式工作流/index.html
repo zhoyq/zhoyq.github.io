@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,GIT,工作流指南,集中式">
+<meta name="description" content="【GIT工作流指南】【一】集中式工作流">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【GIT工作流指南】【一】集中式工作流</h1>
+            </a>
+            <p style="font-size: 10px;">2018-09-07&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p><code>GIT工作流指南</code>，由 <a href="https://github.com/xirong">xirong</a> 整理自 <a href="https://github.com/oldratlee">oldratlee</a> 的<code>GitHub</code>，方便统一的学习回顾，在此感谢下面两位的贡献。</p>
+<ol>
+<li>原文链接：<a href="https://www.atlassian.com/git/workflows">Git Workflows and Tutorials</a></li>
+<li>简体中文：由 <a href="https://github.com/oldratlee">oldratlee</a> 翻译在 <code>GitHub</code> 上 <a href="https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/README.md"><code>Git</code>工作流指南</a></li>
+</ol>
+<!-- more --> 
+<p>如果你的开发团队成员已经很熟悉<code>Subversion</code>，集中式工作流让你无需去适应一个全新流程就可以体验<code>Git</code>带来的收益。这个工作流也可以作为向更<code>Git</code>风格工作流迁移的友好过渡。
+<img src="/attaches/C8A7DCC387473FF7B118375B67FEBCC9.png" alt="Git Workflows: SVN-style" class="img-responsive" /></p>
+<p>使用<code>Git</code>加强开发的工作流，相比<code>SVN</code>，<code>Git</code>有以下两个优势:</p>
+<ol>
+<li>首先，每个开发者可以有属于自己的整个工程的本地拷贝。隔离的环境让各个开发者的工作和项目的其他部分修改独立开来，即自由地提交到自己的本地仓库，先完全忽略上游的开发，直到方便的时候再把修改反馈上去。</li>
+<li>其次，<code>Git</code>提供了强壮的分支和合并模型。</li>
+</ol>
+<h2>工作方式</h2>
+<p>像<code>Subversion</code>一样，集中式工作流以中央仓库作为项目所有修改的单点实体。相比<code>SVN</code>缺省的开发分支<code>trunk</code>，<code>Git</code>叫做<code>master</code>，所有修改提交到这个分支上。本工作流只用到<code>master</code>这一个分支。</p>
+<p>首先，开发者克隆中央仓库。在自己的项目拷贝中，像<code>SVN</code>一样的编辑文件和提交修改；但修改是存在本地的，和中央仓库是完全隔离的。开发者可以把和上游的同步延后到一个方便时间点。</p>
+<p>然后，开发者发布修改到正式项目中，开发者要把本地<code>master</code>分支的修改<code>push</code>到中央仓库中。这相当于<code>svn commit</code>操作，但<code>push</code>操作会把所有还不在中央仓库的本地提交都推上去。</p>
+<p><img src="/attaches/9AD16EE8AF30AEB1FFF57707740987BD.png" alt="git-workflow-svn-push-local" class="img-responsive" /></p>
+<h2>冲突解决</h2>
+<p>中央仓库代表了正式项目，所以提交历史应该被尊重且是稳定不变的。如果开发者本地的提交历史和中央仓库有分歧，<code>Git</code>会拒绝<code>push</code>提交否则会覆盖已经在中央库的正式提交。</p>
+<p><img src="/attaches/F2D124D04CCC0CA7266E52F26ED2C376.png" alt="git-workflow-svn-managingconflicts" class="img-responsive" /></p>
+<p>在开发者提交自己功能修改到中央库前，需要先<code>fetch</code>在中央库的新增提交，<code>rebase</code>自己提交到中央库提交历史之上。
+这样做的意思是在说，『我要把自己的修改加到别人已经完成的修改上。』最终的结果是一个完美的线性历史，就像以前的<code>SVN</code>的工作流中一样。</p>
+<p>如果本地修改和上游提交有冲突，<code>Git</code>会暂停<code>rebase</code>过程，给你手动解决冲突的机会。<code>Git</code>解决合并冲突，用和生成提交一样的<code>git status</code>和<code>git add</code>命令，很一致方便。还有一点，如果解决冲突时遇到麻烦，<code>Git</code>可以很简单中止整个<code>rebase</code>操作，重来一次（或者让别人来帮助解决）。</p>
+<h2>示例</h2>
+<p>让我们一起逐步分解来看看一个常见的小团队如何用这个工作流来协作的。有两个开发者小明和小红，看他们是如何开发自己的功能并提交到中央仓库上的。</p>
+<h3>有人先初始化好中央仓库</h3>
+<p><img src="/attaches/BA20478118AA78E12EA9F2DC969EDEB6.png" alt="" class="img-responsive" /></p>
+<p>第一步，有人在服务器上创建好中央仓库。如果是新项目，你可以初始化一个空仓库；否则你要导入已有的<code>Git</code>或<code>SVN</code>仓库。</p>
+<p>中央仓库应该是个裸仓库（<code>bare repository</code>），即没有工作目录（<code>working directory</code>）的仓库。可以用下面的命令创建：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host</span><br><span class="line">git init --bare /path/to/repo.git</span><br></pre></td></tr></tbody></table></figure>
+<p>确保写上有效的<code>user</code>（<code>SSH</code>的用户名），<code>host</code>（服务器的域名或IP地址），<code>/path/to/repo.git</code>（你想存放仓库的位置）。
+注意，为了表示是一个裸仓库，按照约定加上<code>.git</code>扩展名到仓库名上。</p>
+<h3>所有人克隆中央仓库</h3>
+<p><img src="/attaches/AB1C3D20A8546603EAA601360549C027.png" alt="" class="img-responsive" /></p>
+<p>下一步，各个开发者创建整个项目的本地拷贝。通过<code>git clone</code>命令完成：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://user@host/path/to/repo.git</span><br></pre></td></tr></tbody></table></figure>
+<p>基于你后续会持续和克隆的仓库做交互的假设，克隆仓库时<code>Git</code>会自动添加远程别名<code>origin</code>指回‘父’仓库。</p>
+<h3>小明开发功能</h3>
+<p><img src="/attaches/01D7B9F39440E432135780DD8F159D20.png" alt="" class="img-responsive" /></p>
+<p>在小明的本地仓库中，他使用标准的<code>Git</code>过程开发功能：编辑、暂存（<code>Stage</code>）和提交。
+暂存是指，用来准备一个提交，但可以不用把工作目录中所有的修改内容都包含进来。
+这样你可以创建一个高度聚焦的提交，尽管你本地修改很多内容。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status # 查看本地仓库的修改状态</span><br><span class="line">git add # 暂存文件</span><br><span class="line">git commit # 提交文件</span><br></pre></td></tr></tbody></table></figure>
+<p>请记住，因为这些命令生成的是本地提交，小明可以按自己需求反复操作多次，而不用担心中央仓库上有了什么操作。
+对需要多个更简单更原子分块的大功能，这个做法是很有用的。</p>
+<h3>小红开发功能</h3>
+<p><img src="/attaches/6F419A4596807A987025F4D04F3C2B48.png" alt="" class="img-responsive" /></p>
+<p>与此同时，小红在自己的本地仓库中用相同的编辑、暂存和提交过程开发功能。和小明一样，她也不关心中央仓库有没有新提交；
+当然更不关心小明在他的本地仓库中的操作，因为所有本地仓库都是私有的。</p>
+<h3>小明发布功能</h3>
+<p><img src="/attaches/6F1CEB157D0BDBE31B58F4CD3A599532.png" alt="" class="img-responsive" /></p>
+<p>一旦小明完成了他的功能开发，会发布他的本地提交到中央仓库中，这样其它团队成员可以看到他的修改。他可以用下面的<code>git push</code>命令：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+<p>注意，<code>origin</code>是在小明克隆仓库时<code>Git</code>创建的远程中央仓库别名。<code>master</code>参数告诉<code>Git</code>推送的分支。
+由于中央仓库自从小明克隆以来还没有被更新过，所以<code>push</code>操作不会有冲突，成功完成。</p>
+<h3>小红试着发布功能</h3>
+<p><img src="/attaches/5C78A63AEC5F75481BF133FED7046C96.png" alt="" class="img-responsive" /></p>
+<p>一起来看看在小明发布修改后，小红<code>push</code>修改会怎么样？她使用完全一样的<code>push</code>命令：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+<p>但她的本地历史已经和中央仓库有分岐了，<code>Git</code>拒绝操作并给出下面很长的出错消息：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">error: failed to push some refs to '/path/to/repo.git'</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')</span><br><span class="line">hint: before pushing again.</span><br><span class="line">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span><br></pre></td></tr></tbody></table></figure>
+<p>这避免了小红覆写正式的提交。她要先<code>pull</code>小明的更新到她的本地仓库合并上她的本地修改后，再重试。</p>
+<h3>小红在小明的提交之上<code>rebase</code></h3>
+<p><img src="/attaches/351F6E0C3666984095C92FF10DAAED82.png" alt="" class="img-responsive" /></p>
+<p>小红用<code>git pull</code>合并上游的修改到自己的仓库中。
+这条命令类似<code>svn update</code>——拉取所有上游提交命令到小红的本地仓库，并尝试和她的本地修改合并：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></tbody></table></figure>
+<p><code>--rebase</code>选项告诉<code>Git</code>把小红的提交移到同步了中央仓库修改后的<code>master</code>分支的顶部，如下图所示：</p>
+<p><img src="/attaches/B7DDCCB145575BE7266B0EABCED1CE48.png" alt="" class="img-responsive" /></p>
+<p>如果你忘加了这个选项，<code>pull</code>操作仍然可以完成，但每次<code>pull</code>操作要同步中央仓库中别人修改时，提交历史会以一个多余的『合并提交』结尾。
+对于集中式工作流，最好是使用<code>rebase</code>而不是生成一个合并提交。</p>
+<h3>小红解决合并冲突</h3>
+<p><img src="/attaches/BB0C1667A0E07C16E2F3FCD234F18DFA.png" alt="" class="img-responsive" /></p>
+<p><code>rebase</code>操作过程是把本地提交一次一个地迁移到更新了的中央仓库<code>master</code>分支之上。
+这意味着可能要解决在迁移某个提交时出现的合并冲突，而不是解决包含了所有提交的大型合并时所出现的冲突。
+这样的方式让你尽可能保持每个提交的聚焦和项目历史的整洁。反过来，简化了哪里引入<code>Bug</code>的分析，如果有必要，回滚修改也可以做到对项目影响最小。</p>
+<p>如果小红和小明的功能是不相关的，不大可能在<code>rebase</code>过程中有冲突。如果有，<code>Git</code>在合并有冲突的提交处暂停<code>rebase</code>过程，输出下面的信息并带上相关的指令：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFLICT (content): Merge conflict in &lt;some-file&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/attaches/8DBE0538648A5A395815FDEFCE7CB2DB.png" alt="" class="img-responsive" /></p>
+<p><code>Git</code>很赞的一点是，任何人可以解决他自己的冲突。在这个例子中，小红可以简单的运行<code>git status</code>命令来查看哪里有问题。
+冲突文件列在<code>Unmerged paths</code>（未合并路径）一节中：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Unmerged paths:</span><br><span class="line"># (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)</span><br><span class="line"># (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)</span><br><span class="line">#</span><br><span class="line"># both modified: &lt;some-file&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>接着小红编辑这些文件。修改完成后，用老套路暂存这些文件，并让<code>git rebase</code>完成剩下的事：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;some-file&gt; </span><br><span class="line">git rebase --continue</span><br></pre></td></tr></tbody></table></figure>
+<p>要做的就这些了。<code>Git</code>会继续一个一个地合并后面的提交，如其它的提交有冲突就重复这个过程。</p>
+<p>如果你碰到了冲突，但发现搞不定，不要惊慌。只要执行下面这条命令，就可以回到你执行<code>git pull --rebase</code>命令前的样子：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --abort</span><br></pre></td></tr></tbody></table></figure>
+<h3>小红成功发布功能</h3>
+<p><img src="/attaches/20357E89A77EA5D358C0DC8BEA37B553.png" alt="" class="img-responsive" /></p>
+<p>小红完成和中央仓库的同步后，就能成功发布她的修改了：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+<p>如你所见，仅使用几个<code>Git</code>命令我们就可以模拟出传统<code>Subversion</code>开发环境。对于要从<code>SVN</code>迁移过来的团队来说这太好了，但没有发挥出<code>Git</code>分布式本质的优势。</p>
+<p>如果你的团队适应了集中式工作流，但想要更流畅的协作效果，绝对值得探索一下 <code>功能分支工作流</code> 的收益。
+通过为一个功能分配一个专门的分支，能够做到一个新增功能集成到正式项目之前对新功能进行深入讨论。</p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/GIT">#GIT</a>
+            <a href="/tags/工作流指南">#工作流指南</a>
+            <a href="/tags/集中式">#集中式</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【GIT工作流指南】【一】集中式工作流";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

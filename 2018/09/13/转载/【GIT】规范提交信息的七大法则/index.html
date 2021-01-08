@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,GIT,提交信息">
+<meta name="description" content="【GIT】规范提交信息的七大法则">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【GIT】规范提交信息的七大法则</h1>
+            </a>
+            <p style="font-size: 10px;">2018-09-13&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <blockquote>
+<p>喜欢条理吧，它能保护你的时间和精力。</p>
+</blockquote>
+<!-- more -->
+<p><img src="/attaches/5073E854C5DBA1C45BB9FABC465AFECA.png" alt="" class="img-responsive" /></p>
+<h2>简介：为什么好的提交信息那么重要？</h2>
+<p>如果你浏览任意一个GIT仓库的日志，你可能就会发现它的提交消息多少有点混乱。比如，看看<a href="https://github.com/spring-projects/spring-framework/commits/e5f4b49?author=cbeams">spring-framework</a>仓库的早期提交：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git log --oneline -5 --author cbeams --before &quot;Fri Mar 26 2009&quot;</span><br><span class="line"></span><br><span class="line">e5f4b49 Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build.</span><br><span class="line">2db0f12 fixed two build-breaking issues: + reverted ClassMetadataReadingVisitor to revision 794 + eliminated ConfigurationPostProcessorTests until further investigation determines why it causes downstream tests to fail (such as the seemingly unrelated ClassPathXmlApplicationContextTests)</span><br><span class="line">147709f Tweaks to package-info.java files</span><br><span class="line">22b25e0 Consolidated Util and MutableAnnotationUtils classes into existing AsmUtils</span><br><span class="line">7f96f57 polishing</span><br></pre></td></tr></tbody></table></figure>
+<p>然后把这些跟<a href="https://github.com/spring-projects/spring-framework/commits/5ba3db?author=philwebb">近期的提交</a>做对比：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git log --oneline -5 --author pwebb --before &quot;Sat Aug 30 2014&quot;</span><br><span class="line"></span><br><span class="line">5ba3db6 Fix failing CompositePropertySourceTests</span><br><span class="line">84564a0 Rework @PropertySource early parsing logic</span><br><span class="line">e142fd1 Add tests for ImportSelector meta-data</span><br><span class="line">887815f Update docbook dependency and generate epub</span><br><span class="line">ac8326d Polish mockito usage</span><br></pre></td></tr></tbody></table></figure>
+<p>你更喜欢哪个呢？</p>
+<p>前者长短不一，后者干净整齐；
+前者这种情况总会发生，后者绝不会突然发生；</p>
+<p>但是大多数仓库的日志看起来像是前者，有很多问题。<a href="https://github.com/torvalds/linux/commits/master">Linux kernel</a>仓库和<a href="https://github.com/git/git/commits/master">GIT本身</a>仓库就是很好的实例。看看<a href="https://github.com/spring-projects/spring-boot/commits/master">Spring Boot</a>，或者任何由<a href="https://github.com/tpope/vim-pathogen/commits/master">Tim Pope</a>管理的仓库。这些仓库的贡献者知道精心设计的提交信息是交流上下文改变的最好方式。<code>diff</code>将会告诉你改变了什么，但是只有提交信息能正确的告诉你为什么。Peter Hutterer这样说：</p>
+<blockquote>
+<p>Re-establishing the context of a piece of code is wasteful. We can’t avoid it completely, so our efforts should go to reducing it [as much] as possible. Commit messages can do exactly that and as a result, a commit message shows whether a developer is a good collaborator.</p>
+</blockquote>
+<p>如果你对GIT的提交信息没有什么想法，那一定是你并没有花费太多时间使用<code>git log</code>和相关工具。这里有一个恶性循环：由于提交历史的杂乱无章，一个人就不会花时间去使用维护它，即而，导致更多杂乱无章的纪录。</p>
+<p>精心设计的日志是美好的，有用的。<code>git blame</code>、<code>revert</code>，<code>rebase</code>，<code>log</code>，<code>shortlog</code>和其他的子命令变得鲜活，查看别人的提交和请求变得更有价值，并且可以迅速完成。了解几个月甚至几年以前的事情不仅变得可能，而且非常有效。</p>
+<p>一个工程的长期成功在于它的可维护性，维护者维护工程的时候，几乎没有任何工具比工程日志更有效果。学习怎样维护日志是很值得的。一开始可能是争论但是随后会变成习惯，最终成为所有参与者的骄傲和生产力的源泉。</p>
+<p>自这篇文章里，我提到基本健康提交的元素：如何书写个人提交信息。还有其它重要的练习比如合并提交（commit squashing）我并没有提到。可能会在今后的文章里提到。</p>
+<p>大多数开发语言都对习惯用语有完善的约定，例如，名称、格式等。这些公约有一些不同，但是大多数开发人员都认为选择一个并坚持使用它远比每个人都做自己的事情时所发生的混乱更好。其实团队日志也是一样的。为了创造一个有用并且可看的历史，团队应该有一个提交信息的公约，定义至少一下三件事：</p>
+<ul>
+<li>样式。</li>
+<li>内容。</li>
+<li>元数据。</li>
+</ul>
+<p>幸运地是，已经有一些成熟的约定规定了如何创建提交信息。实际上，其中许多都是以某些Git命令的运行方式来假设的。你不用创造什么，仅仅是遵守以下几条规则而已。</p>
+<h2>提交信息的几条规范</h2>
+<blockquote>
+<p>记住：这些都已经说过无数遍了。</p>
+</blockquote>
+<ul>
+<li>每个主题和内容之间要空一行</li>
+<li>主题最多50个字</li>
+<li>主题首字母大写（英文的话）</li>
+<li>不要在主题尾部使用句号</li>
+<li>在主题中蕴含命令的口吻（实际上是动宾短语类）</li>
+<li>内容需要优化每行文本到72个字符（因为git本身是右对齐的，而且并不会自动优化显示文字）</li>
+<li>使用内容解释是什么，为什么，怎么办之类的问题</li>
+</ul>
+<p>例如：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Summarize changes in around 50 characters or less</span><br><span class="line"></span><br><span class="line">More detailed explanatory text, if necessary. Wrap it to about 72</span><br><span class="line">characters or so. In some contexts, the first line is treated as the</span><br><span class="line">subject of the commit and the rest of the text as the body. The</span><br><span class="line">blank line separating the summary from the body is critical (unless</span><br><span class="line">you omit the body entirely); various tools like `log`, `shortlog`</span><br><span class="line">and `rebase` can get confused if you run the two together.</span><br><span class="line"></span><br><span class="line">Explain the problem that this commit is solving. Focus on why you</span><br><span class="line">are making this change as opposed to how (the code explains that).</span><br><span class="line">Are there side effects or other unintuitive consequences of this</span><br><span class="line">change? Here's the place to explain them.</span><br><span class="line"></span><br><span class="line">Further paragraphs come after blank lines.</span><br><span class="line"></span><br><span class="line"> - Bullet points are okay, too</span><br><span class="line"></span><br><span class="line"> - Typically a hyphen or asterisk is used for the bullet, preceded</span><br><span class="line">   by a single space, with blank lines in between, but conventions</span><br><span class="line">   vary here</span><br><span class="line"></span><br><span class="line">If you use an issue tracker, put references to them at the bottom,</span><br><span class="line">like this:</span><br><span class="line"></span><br><span class="line">Resolves: #123</span><br><span class="line">See also: #456, #789</span><br></pre></td></tr></tbody></table></figure>
+<h3>主题和内容之间要空一行</h3>
+<p>来自<code>git commit</code>的消息：</p>
+<blockquote>
+<p>Though not required, it’s a good idea to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. The text up to the first blank line in a commit message is treated as the commit title, and that title is used throughout Git. For example, Git-format-patch(1) turns a commit into email, and it uses the title on the Subject line and the rest of the commit in the body.</p>
+</blockquote>
+<p>第一步，并不是每一个提交都需要主题和内容。有时候一行就足够了，特别是修改非常简单的时候。例如：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fix typo in introduction to user guide</span><br></pre></td></tr></tbody></table></figure>
+<p>不用说很多；如果说读者想要知道究竟怎么回事，她完全可以看一下修改内容，比如使用<code>git show</code>或者<code>git diff</code>或者<code>git log -p</code>。</p>
+<p>如果你提交了这些信息，可以使用<code>-m</code>直接提交信息：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m&quot;Fix typo in introduction to user guide&quot;</span><br></pre></td></tr></tbody></table></figure>
+<p>然而，当一个提交需要解释和内容的时候，你就需要写内容了。例如：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Derezz the master control program</span><br><span class="line"></span><br><span class="line">MCP turned out to be evil and had become intent on world domination.</span><br><span class="line">This commit throws Tron's disc into MCP (causing its deresolution)</span><br><span class="line">and turns it back into a chess game.</span><br></pre></td></tr></tbody></table></figure>
+<p>这时候使用<code>-m</code>选项就有点力不从心了。你最好能在一个编辑器里写这些内容。如果你并没有命令行使用的编辑器，可以看一下<a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">this section of Pro Git</a>。</p>
+<p>在任何情况下，在浏览日志时，主体与身体的分离都会得到回报。以下是完整的日志：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit 42e769bdf4894310333942ffc5a15151222a87be</span><br><span class="line">Author: Kevin Flynn &lt;kevin@flynnsarcade.com&gt;</span><br><span class="line">Date:   Fri Jan 01 00:00:00 1982 -0200</span><br><span class="line"></span><br><span class="line"> Derezz the master control program</span><br><span class="line"></span><br><span class="line"> MCP turned out to be evil and had become intent on world domination.</span><br><span class="line"> This commit throws Tron's disc into MCP (causing its deresolution)</span><br><span class="line"> and turns it back into a chess game.</span><br></pre></td></tr></tbody></table></figure>
+<p>使用<code>git log --oneline</code>， 仅仅输出一行主题：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git log --oneline</span><br><span class="line">42e769 Derezz the master control program</span><br></pre></td></tr></tbody></table></figure>
+<p>使用 <code>git shortlog</code>，通过用户分组，仅显示主题：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ git shortlog</span><br><span class="line">Kevin Flynn (1):</span><br><span class="line">      Derezz the master control program</span><br><span class="line"></span><br><span class="line">Alan Bradley (1):</span><br><span class="line">      Introduce security program &quot;Tron&quot;</span><br><span class="line"></span><br><span class="line">Ed Dillinger (3):</span><br><span class="line">      Rename chess program to &quot;MCP&quot;</span><br><span class="line">      Modify chess program</span><br><span class="line">      Upgrade chess program</span><br><span class="line"></span><br><span class="line">Walter Gibbs (1):</span><br><span class="line">      Introduce protoype chess program</span><br></pre></td></tr></tbody></table></figure>
+<p>GIT有很多上下文需要主题和内容，但是如果没有空行的话，上下文就不会很好的工作。</p>
+<h3>主题最多50个字</h3>
+<p>50个字符并不是硬性标准，仅仅是经验之谈。这样能确保可读性，强制作者思考组织语言。</p>
+<blockquote>
+<p>Tip: If you’re having a hard time summarizing, you might be committing too many changes at once. Strive for atomic commits (a topic for a separate post).（简而言之，如果描述太长就分开提交）</p>
+</blockquote>
+<p>Github就有这些规则，如果太长他就会提醒你：</p>
+<p><img src="/attaches/0E962DC2B879B9DE3A2F19A68AAEF5AD.png" alt="" class="img-responsive" /></p>
+<p>并且会截断超过72个字符的主题。</p>
+<p><img src="/attaches/6A0D0338B0109800B01C1272C2660418.png" alt="" class="img-responsive" /></p>
+<p>所以限制到50个字符, 考虑将长度硬性限制到72个字符。</p>
+<h3>主题首字母大写（英文的话）</h3>
+<p>就像标题写的，很简单，首字母大写。例如：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Accelerate to 88 miles per hour</span><br></pre></td></tr></tbody></table></figure>
+<p>代替</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">accelerate to 88 miles per hour</span><br></pre></td></tr></tbody></table></figure>
+<h3>不要在主题尾部使用句号</h3>
+<p>主题行中不需要使用句号。 此外，当你试图将它们保持在50个或更少字符时，空间是宝贵的。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Open the pod bay doors</span><br></pre></td></tr></tbody></table></figure>
+<p>代替</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Open the pod bay doors.</span><br></pre></td></tr></tbody></table></figure>
+<h3>在主题中蕴含命令的口吻</h3>
+<p>命令的口吻意思是“表达的时候就好像是在发出命令或指示”。下面是几个例子：</p>
+<ul>
+<li>收拾你的房间</li>
+<li>关门</li>
+<li>把垃圾带出去</li>
+</ul>
+<p>你现在正在阅读的七条规则中的每一条都在使用命令的口吻。</p>
+<p>命令听起来有点粗鲁；这就是为什么我们不经常使用它。但它对于Git提交主题来说是完美的。其中一个原因是，<strong>只要代表作者创建提交，Git就会使用命令</strong>。</p>
+<p>例如，当你使用<code>git merge</code>时创建的默认消息是：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Merge branch 'myfeature'</span><br></pre></td></tr></tbody></table></figure>
+<p>使用时<code>git revert</code>：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Revert &quot;Add the thing with the stuff&quot;</span><br><span class="line"></span><br><span class="line">This reverts commit cc87791524aedd593cff5a74532befe7ab69ce9d.</span><br></pre></td></tr></tbody></table></figure>
+<p>或者在GitHub拉取请求上单击“合并”按钮时：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Merge pull request #123 from someuser/somebranch</span><br></pre></td></tr></tbody></table></figure>
+<p>因此，当你在命令式中编写提交消息时，你需要遵循Git自己的内置约定。例如：</p>
+<ul>
+<li>Refactor subsystem X for readability</li>
+<li>Update getting started documentation</li>
+<li>Remove deprecated methods</li>
+<li>Release version 1.0.0</li>
+</ul>
+<p>一开始以这种方式书写可能有点尴尬。我们更习惯于在指示性情绪中说话，这完全是事实。这就是为什么提交消息最​​终会像这样读取：</p>
+<ul>
+<li>Fixed bug with Y</li>
+<li>Changing behavior of X</li>
+</ul>
+<p>有时候，提交消息会被写成对其内容的描述：</p>
+<ul>
+<li>More fixes for broken stuff</li>
+<li>Sweet new API methods</li>
+</ul>
+<p>为了消除所有的混淆，以下是一个简单的规则去纠正问题。</p>
+<p><strong>正确的Git提交主题应始终能够完成以下句子</strong>：If applied, this commit will <em><code>your subject line here</code></em></p>
+<p>例如：</p>
+<ul>
+<li>If applied, this commit will <em><code>refactor subsystem X for readability</code></em></li>
+<li>If applied, this commit will <em><code>update getting started documentation</code></em></li>
+<li>If applied, this commit will <em><code>remove deprecated methods</code></em></li>
+<li>If applied, this commit will <em><code>release version 1.0.0</code></em></li>
+<li>If applied, this commit will <em><code>merge pull request #123 from user/branch</code></em></li>
+</ul>
+<p>注意：这不适用于其他非命令性的主题：</p>
+<ul>
+<li>If applied, this commit will <em><code>fixed bug with Y</code></em></li>
+<li>If applied, this commit will <em><code>changing behavior of X</code></em></li>
+<li>If applied, this commit will <em><code>more fixes for broken stuff</code></em></li>
+<li>If applied, this commit will <em><code>sweet new API methods</code></em></li>
+</ul>
+<blockquote>
+<p>Remember: Use of the imperative is important only in the subject line. You can relax this restriction when you’re writing the body.</p>
+</blockquote>
+<h3>内容需要优化每行文本到72个字符</h3>
+<p>GIT从来不自动包装文本。当你在文本编辑器中写内容的时候，记得注意右边距，手动包装文本。</p>
+<p>建议以72个字符执行此操作，以便Git有足够的空间来缩进文本，同时仍然保持整体不超过80个字符。</p>
+<p>一个好的文本编辑器可以在这里帮到你。 例如，在编写Git提交时，可以很容易地配置Vim以将文本行限制为72个字符。然而，IDE为提交消息中的文本提供智能支持方面非常糟糕（尽管在最近的版本中，IDEA终于在这方面做得更好了）。</p>
+<h3>使用内容解释是什么，为什么，怎么办之类的问题</h3>
+<p><a href="https://github.com/bitcoin/bitcoin/commit/eb0b56b19017ab5c16c745e6da39c53126924ed6">Bitcoin Core</a>的提交就是一个解释改变了什么和为什么改变的很好的例子：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">commit eb0b56b19017ab5c16c745e6da39c53126924ed6</span><br><span class="line">Author: Pieter Wuille &lt;pieter.wuille@gmail.com&gt;</span><br><span class="line">Date:   Fri Aug 1 22:57:55 2014 +0200</span><br><span class="line"></span><br><span class="line">   Simplify serialize.h's exception handling</span><br><span class="line"></span><br><span class="line">   Remove the 'state' and 'exceptmask' from serialize.h's stream</span><br><span class="line">   implementations, as well as related methods.</span><br><span class="line"></span><br><span class="line">   As exceptmask always included 'failbit', and setstate was always</span><br><span class="line">   called with bits = failbit, all it did was immediately raise an</span><br><span class="line">   exception. Get rid of those variables, and replace the setstate</span><br><span class="line">   with direct exception throwing (which also removes some dead</span><br><span class="line">   code).</span><br><span class="line"></span><br><span class="line">   As a result, good() is never reached after a failure (there are</span><br><span class="line">   only 2 calls, one of which is in tests), and can just be replaced</span><br><span class="line">   by !eof().</span><br><span class="line"></span><br><span class="line">   fail(), clear(n) and exceptions() are just never called. Delete</span><br><span class="line">   them.</span><br></pre></td></tr></tbody></table></figure>
+<p>看看完整的差异，想想作者节省了同事和未来提交者多少时间。 如果他没有这样做，这段提交可能会永远丢失。</p>
+<p>在大多数情况下，您可以省略有关如何进行更改的详细信息。 在这方面，代码通常是不言自明的（如果代码太复杂，需要在内容中解释，那就是源代码注释的用途）。 只需要解释你做出改变的原因，改变之前的事情是如何运行的（并且这样运行的问题），他们现在的工作方式，以及为什么你决定以现在的方式解决它。</p>
+<p>未来你可能会因此受益。</p>
+<p><a href="http://chris.beams.io/posts/git-commit/">阅读原文</a></p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/GIT">#GIT</a>
+            <a href="/tags/提交信息">#提交信息</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【GIT】规范提交信息的七大法则";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

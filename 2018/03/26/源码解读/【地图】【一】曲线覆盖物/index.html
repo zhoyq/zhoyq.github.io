@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="源码解读,百度地图,高德地图,曲线覆盖物">
+<meta name="description" content="【地图】【一】曲线覆盖物">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【地图】【一】曲线覆盖物</h1>
+            </a>
+            <p style="font-size: 10px;">2018-03-26&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/源码解读" class="custom-color-red">源码解读</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <blockquote>
+<p>文章所有涉及到的内容均可以在 https://gitee.com/zhoyq/examples/tree/master/mapExt 中获取。本文会先后以百度地图v3.0和高德地图v1.4.5为基础进行进行开发。</p>
+</blockquote>
+<!-- more -->
+<h2>起因</h2>
+<p>因为之前一直使用地图方面的API开发网站，有时候会看到地图API画出来的圆形有棱角，感觉像是折线扩展，经过翻查百度地图以及高德地图的源代码，才发现真的是使用折线实现的。有时候需要几率很准确的曲线甚至有曲率等数据，所以萌生了开发曲线覆盖物的想法。</p>
+<h2>原理</h2>
+<p>地图上的图形都是缩放不改变精度的，所以还是使用SVG开发比较好，为了尽可能好的完成项目，避开问题，使用了一个SVG控制的库<code>RaphaelJs</code>,通过地图中的自定义图层挂载SVG图层，完成绘制以及缩放等功能。</p>
+<h2>特性</h2>
+<p>实现了SVG PATH中的C和M命令，可以绘制简单的曲线（可以在此基础上实现更多命令）；</p>
+<h2>实例开发</h2>
+<h3>百度地图</h3>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 挂载SVG控制库到百度地图对象上</span></span><br><span class="line">    BMap.Raphael = BMap.Raphael || Raphael;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 创建曲线绘制命令对象</span></span><br><span class="line">    <span class="comment">// 使用 SVGPATH 命令进行曲线绘制</span></span><br><span class="line">    <span class="keyword">function</span> CurveCommand(c,params){</span><br><span class="line">        <span class="comment">// 命令参数 目前支持M和C</span></span><br><span class="line">        <span class="keyword">this</span>._c = c;</span><br><span class="line">        <span class="comment">// 命令具体参数</span></span><br><span class="line">        <span class="keyword">this</span>._params = params;  </span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 挂载曲线命令对象到百度地图对象上</span></span><br><span class="line">    BMap.CurveCommand = CurveCommand;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建曲线类</span></span><br><span class="line">    <span class="keyword">function</span> Curve(commandList,opts){</span><br><span class="line">        <span class="comment">// 命令列表</span></span><br><span class="line">        <span class="keyword">this</span>._cl = commandList; </span><br><span class="line">        <span class="comment">// 样式</span></span><br><span class="line">        <span class="keyword">this</span>._opts = opts; </span><br><span class="line">        <span class="comment">// 显示标识</span></span><br><span class="line">        <span class="comment">// this._show = false; </span></span><br><span class="line">        <span class="keyword">var</span> me = <span class="keyword">this</span>;</span><br><span class="line">        <span class="comment">// 移除事件</span></span><br><span class="line">        <span class="keyword">function</span> removeEvent(){</span><br><span class="line">            me._map = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">this</span>.removeEventListener(<span class="string">'remove'</span>,removeEvent)</span><br><span class="line">        } </span><br><span class="line">        <span class="keyword">this</span>.addEventListener(<span class="string">'remove'</span>,removeEvent);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 将曲线对象挂载到百度地图覆盖物上</span></span><br><span class="line">    Curve.prototype = <span class="keyword">new</span> BMap.Overlay();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过命令列表获得真正的用于绘制的SVGPATH命令</span></span><br><span class="line">    Curve.prototype.__getSvgPath = <span class="keyword">function</span>(){</span><br><span class="line">        <span class="keyword">var</span> buf = <span class="string">''</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = 0;i&lt;<span class="keyword">this</span>._cl.length;i++){</span><br><span class="line">            <span class="keyword">var</span> cc = <span class="keyword">this</span>._cl[i];</span><br><span class="line">            buf += cc._c;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> j=0;j&lt;cc._params.length;j++){</span><br><span class="line">                <span class="keyword">var</span> pbuf = <span class="keyword">this</span>._map.pointToOverlayPixel(cc._params[j]);</span><br><span class="line">                buf += pbuf.x+&quot; &quot;+pbuf.y;</span><br><span class="line">                <span class="keyword">if</span>(j!=cc._params.length-1){</span><br><span class="line">                    buf += &quot; &quot;;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> buf;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据百度覆盖物实现对应方法</span></span><br><span class="line">    <span class="comment">// 初始化覆盖物</span></span><br><span class="line">    Curve.prototype.initialize = <span class="keyword">function</span>(map){</span><br><span class="line">        <span class="comment">// 地图引用</span></span><br><span class="line">        <span class="keyword">this</span>._map = map; </span><br><span class="line">        <span class="keyword">var</span> svgP = <span class="keyword">this</span>.__getSvgPath();</span><br><span class="line">        <span class="comment">// 设置图层</span></span><br><span class="line">        <span class="keyword">var</span> div = <span class="keyword">this</span>.container = document.createElement(<span class="string">'div'</span>);</span><br><span class="line">        div.style.cssText = <span class="string">'position:absolute;top:0px;left:0px;z-index:199;'</span>;</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">this</span>._paper = BMap.Raphael(div,1800,1600);</span><br><span class="line">        <span class="keyword">this</span>._paper.setViewBox(-500,-500,1800,1600);</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">this</span>.obj = <span class="keyword">this</span>._paper.path(svgP);</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>._opts){</span><br><span class="line">            <span class="keyword">this</span>.obj.attr(<span class="keyword">this</span>._opts);</span><br><span class="line">        }<span class="keyword">else</span>{</span><br><span class="line">            <span class="keyword">this</span>.obj.attr({</span><br><span class="line">                &quot;stroke-width&quot;:4,</span><br><span class="line">                &quot;cursor&quot;:&quot;pointer&quot;,</span><br><span class="line">                &quot;stroke&quot;:&quot;#3a6bdb&quot;,</span><br><span class="line">                &quot;stroke-opacity&quot;:0.7</span><br><span class="line">            });</span><br><span class="line">        } </span><br><span class="line">        <span class="keyword">this</span>._map.getPanes().markerPane.appendChild(div);</span><br><span class="line">        div.firstChild.style.cssText=<span class="string">'position:absolute;top:-500px;left:-500px;width:1800px;height:1600px;'</span>;</span><br><span class="line">        <span class="keyword">return</span> div;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制曲线覆盖物</span></span><br><span class="line">    Curve.prototype.draw = <span class="keyword">function</span>(){</span><br><span class="line">        <span class="keyword">var</span> map   = <span class="keyword">this</span>._map,</span><br><span class="line">            point = map.pixelToPoint(<span class="keyword">new</span> BMap.Pixel(0, 0)),</span><br><span class="line">            pixel = map.pointToOverlayPixel(point);</span><br><span class="line">        <span class="keyword">this</span>.container.firstChild.style.left = (pixel.x-500) + &quot;px&quot;;</span><br><span class="line">        <span class="keyword">this</span>.container.firstChild.style.top  = (pixel.y-500) + &quot;px&quot;; </span><br><span class="line">        <span class="keyword">this</span>._paper.setViewBox(pixel.x-500,pixel.y-500,1800,1600);</span><br><span class="line">        <span class="keyword">var</span> svgPath = <span class="keyword">this</span>.__getSvgPath();</span><br><span class="line">        <span class="keyword">this</span>.obj.attr({</span><br><span class="line">            path:svgPath</span><br><span class="line">        });</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取地图对象</span></span><br><span class="line">    Curve.prototype.getMap = <span class="keyword">function</span>(){</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._map;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取命令列表</span></span><br><span class="line">    Curve.prototype.getCommandList = <span class="keyword">function</span>(){</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._cl;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置命令列表</span></span><br><span class="line">    Curve.prototype.setCommandList = <span class="keyword">function</span>(cl){</span><br><span class="line">      <span class="keyword">this</span>._cl = cl;</span><br><span class="line">      <span class="keyword">var</span> svgPath = <span class="keyword">this</span>.__getSvgPath();</span><br><span class="line">      <span class="keyword">this</span>.obj[0].setAttribute(<span class="string">'d'</span>,svgPath);</span><br><span class="line">    };</span><br><span class="line">    <span class="comment">// 挂载曲线覆盖物到爆肚地图对象上</span></span><br><span class="line">    BMap.Curve = Curve;</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="http://zhoyq.gitee.io/examples/mapExt/Curve.js">源码</a> <a href="http://zhoyq.gitee.io/examples/mapExt/Curve.html">实例</a></p>
+<p>注意：百度地图直接使用这段代码时，使用缩放会出现中心点漂移的现象，主要原因是中心点计算出现的问题，需要在源代码的基础上添加一行代码解决这个bug <code>new BMap.Polyline([new BMap.Point(116.404, 39.905),new BMap.Point(116.414, 39.905)]).hide();</code> 。</p>
+<h3>高德地图</h3>
+<p>最近看了1.4.5版本的地图API，高德居然自己实现了贝塞尔曲线，值得点赞。那就可以使用原生API了，这里就不再另外实现。也不要说希望百度跟上脚步，发展还是要看需求，也许百度用户对曲线的要求并不高。</p>
+<h2>总结</h2>
+<p>总结来看，高德还是与时俱进的，更新稳定而高效。相比之下百度地图API却迟迟变化不大。但是实际使用的时候，我更喜欢百度API这种对二次开发友好的接口设计，暴露一些底层类提供实现，这样我们自己就能定义自己的组件库了，并不是说高德的插件模式不好，见仁见智吧。我自己还是喜欢对象继承这种扩展模式，在javascript里增加类体系本身就让我觉得高兴。</p>
+<p>PS. 我看了一下高德地图的API更新，2017年11月29号更新的贝塞尔曲线，我自己心里还是很欣慰的。因为那个时候的需求如今终于被官方实现了。</p>
+<p><script src="https://gitee.com/zhoyq/examples/widget_preview"></script></p>
+<style>/*use*/
+.pro_name a{color: #4183c4;}
+.osc_git_title{background-color: #fff;}
+.osc_git_box{background-color: #fff;}
+.osc_git_box{border-color: #E3E9ED;}
+.osc_git_info{color: #666;}
+.osc_git_main a{color: #9B9B9B;}
+</style>
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/百度地图">#百度地图</a>
+            <a href="/tags/高德地图">#高德地图</a>
+            <a href="/tags/曲线覆盖物">#曲线覆盖物</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【地图】【一】曲线覆盖物";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

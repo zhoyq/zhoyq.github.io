@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>衷于栖</title>
+    <subtitle>衷于栖，留于行</subtitle>
+    <link href="/atom.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2021-01-08T11:10:21.021Z</updated>
+    <id>/</id>
+    <author>
+        <name>衷于栖</name>
+    </author>
+    <generator uri="https://www.zhoyq.com">衷于栖</generator>
+    <entry>
+        <title>【JT808】JT808服务虚拟终端预发布v0.0.x版本</title>
+        <link href="/2020/10/07/%E8%BD%A6%E8%81%94%E7%BD%91/%E3%80%90JT808%E3%80%91JT808%E6%9C%8D%E5%8A%A1%E8%99%9A%E6%8B%9F%E7%BB%88%E7%AB%AF%E9%A2%84%E5%8F%91%E5%B8%83v0.0.x%E7%89%88%E6%9C%AC"/>
+        <id>/2020/10/07/车联网/【JT808】JT808服务虚拟终端预发布v0.0.x版本</id>
+        <published>2020-10-07T00:00:00.000Z</published>
+        <updated>2020-10-07T00:00:00.000Z</updated>
+        <summary type="html">&lt;h2&gt;预发布版本 v0.0.x 功能（x指代多个版本）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完成基本程序结构&lt;/li&gt;
+&lt;li&gt;支持自动升级（预发布版本暂未使用）&lt;/li&gt;
+&lt;li&gt;支持终端注册、终端注册应答命令&lt;/li&gt;
+&lt;li&gt;支持终端鉴权、平台通用应答命令&lt;/li&gt;
+&lt;li&gt;支持终端注销命令&lt;/li&gt;
+&lt;li&gt;支持终端心跳命令（心跳间隔 30s）&lt;/li&gt;
+&lt;li&gt;支持 JT/T 808 2011、2013、2019 版本协议的切换（尚不完整）&lt;/li&gt;
+&lt;li&gt;支持链接自动注册、鉴权功能&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        <category term="车联网" scheme="/categories/%E8%BD%A6%E8%81%94%E7%BD%91"/>
+        <category term="JT808" scheme="/tags/JT808"/>
+    </entry>
+    <entry>
+        <title>【JT808】JT808服务发布v1.0.0版本</title>
+        <link href="/2020/10/06/%E8%BD%A6%E8%81%94%E7%BD%91/%E3%80%90JT808%E3%80%91JT808%E6%9C%8D%E5%8A%A1%E5%8F%91%E5%B8%83v1.0.0%E7%89%88%E6%9C%AC"/>
+        <id>/2020/10/06/车联网/【JT808】JT808服务发布v1.0.0版本</id>
+        <published>2020-10-06T00:00:00.000Z</published>
+        <updated>2020-10-06T00:00:00.000Z</updated>
+        <summary type="html">&lt;h2&gt;版本 v1.0.0 功能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;支持内嵌或者服务数据库 &lt;code&gt;HsqlDB&lt;/code&gt;（理论上兼容 &lt;code&gt;MariaDB&lt;/code&gt;、&lt;code&gt;Mysql&lt;/code&gt; 数据库，如果遇到问题可以提交 &lt;a href="https://github.com/iov-pro/jt808-server/issues"&gt;&lt;code&gt;ISSUE&lt;/code&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;支持自动创建表结构&lt;/li&gt;
+&lt;li&gt;支持多租户的数据结构&lt;/li&gt;
+&lt;li&gt;支持完整存储 808 协议相关数据&lt;/li&gt;
+&lt;li&gt;依赖 &lt;a href="https://github.com/zhoyq/spring-boot-starter-jt808"&gt;spring-boot-starter-jt808&lt;/a&gt; 最新版本&lt;/li&gt;
+&lt;li&gt;默认会添加测试用设备和车辆&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        <category term="车联网" scheme="/categories/%E8%BD%A6%E8%81%94%E7%BD%91"/>
+        <category term="JT808" scheme="/tags/JT808"/>
+    </entry>
+    <entry>
+        <title>【JT808】Spring Boot Stater Jt808 简单源码解读</title>
+        <link href="/2020/05/30/%E8%BD%A6%E8%81%94%E7%BD%91/%E3%80%90JT808%E3%80%91Spring+Boot+Stater+Jt808+%E7%AE%80%E5%8D%95%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB"/>
+        <id>/2020/05/30/车联网/【JT808】Spring Boot Stater Jt808 简单源码解读</id>
+        <published>2020-05-30T00:00:00.000Z</published>
+        <updated>2020-05-30T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;新开源 &lt;a href="https://github.com/zhoyq/spring-boot-starter-jt808"&gt;Spring Boot Starter Jt808&lt;/a&gt; 已经有一段时间了，新版本已经支持了 &lt;code&gt;2011&lt;/code&gt;、&lt;code&gt;2013&lt;/code&gt;、&lt;code&gt;2019&lt;/code&gt; 版本的协议解析，并完善了自定义消息的功能，还是值得期待的。&lt;/p&gt;
+&lt;p&gt;本文主要说明 &lt;a href="https://github.com/zhoyq/spring-boot-starter-jt808"&gt;Spring Boot Starter Jt808&lt;/a&gt; 的启动流程，配置项以及一些细节，读懂本文需要先了解字节码和 &lt;code&gt;SpringBoot&lt;/code&gt; 等技术知识。&lt;/p&gt;
+</summary>
+        <category term="车联网" scheme="/categories/%E8%BD%A6%E8%81%94%E7%BD%91"/>
+        <category term="JT808" scheme="/tags/JT808"/>
+    </entry>
+    <entry>
+        <title>【工作】我在UN的三年经历</title>
+        <link href="/2020/05/30/%E9%9A%8F%E7%AC%94/%E3%80%90%E5%B7%A5%E4%BD%9C%E3%80%91%E6%88%91%E5%9C%A8UN%E7%9A%84%E4%B8%89%E5%B9%B4%E7%BB%8F%E5%8E%86"/>
+        <id>/2020/05/30/随笔/【工作】我在UN的三年经历</id>
+        <published>2020-05-30T00:00:00.000Z</published>
+        <updated>2020-05-30T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;有人悲欢离合，月有阴--圆缺，此事古难全。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- 人有悲欢离合，月有阴晴圆缺，此事古难全 --&gt;
+&lt;!-- 有人悲欢离合，月有阴--圆缺，此事古难全 --&gt;
+&lt;!-- 有人-------，----无情----，--------- --&gt;
+</summary>
+        <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94"/>
+        <category term="工作经历" scheme="/tags/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86"/>
+    </entry>
+    <entry>
+        <title>【Gitlab】gitlab-ci速成</title>
+        <link href="/2020/05/01/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E3%80%90Gitlab%E3%80%91gitlab-ci%E9%80%9F%E6%88%90"/>
+        <id>/2020/05/01/技术笔记/【Gitlab】gitlab-ci速成</id>
+        <published>2020-05-01T00:00:00.000Z</published>
+        <updated>2020-05-01T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;要使用 &lt;code&gt;Gitlab&lt;/code&gt; 提供的 &lt;code&gt;CI/CD&lt;/code&gt; 功能，需要在仓库根目录创建一个文件 &lt;code&gt;.gitlab-ci.yml&lt;/code&gt;，这样 &lt;code&gt;Gitlab&lt;/code&gt; 每次提交都会运行这个配置文件。在 &lt;code&gt;Gitlab&lt;/code&gt; 中基础的 &lt;code&gt;CI/CD&lt;/code&gt; 单元是作业（job）。一个作业代表运行在一个特殊提交上下文里的 &lt;code&gt;bash&lt;/code&gt; 脚本。你可能有一个作业用来运行测试，另一个运行构建或者部署。在这个配置文件中，作业应该放在顶层映射，当然要排除 &lt;code&gt;Gitlab CI/CD&lt;/code&gt; 保留的顶层映射。&lt;/p&gt;
+</summary>
+        <category term="技术笔记" scheme="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"/>
+        <category term="Gitlab" scheme="/tags/Gitlab"/>
+        <category term="CI/CD" scheme="/tags/CI%2FCD"/>
+    </entry>
+    <entry>
+        <title>【项目管理】名词速递</title>
+        <link href="/2020/04/27/%E7%AE%A1%E7%90%86/%E3%80%90%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E3%80%91%E5%90%8D%E8%AF%8D%E9%80%9F%E9%80%92"/>
+        <id>/2020/04/27/管理/【项目管理】名词速递</id>
+        <published>2020-04-27T00:00:00.000Z</published>
+        <updated>2020-04-27T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;记录几个项目管理的名词，方便以后查找。&lt;/p&gt;
+</summary>
+        <category term="管理" scheme="/categories/%E7%AE%A1%E7%90%86"/>
+        <category term="PRINCE2" scheme="/tags/PRINCE2"/>
+        <category term="PMBOK" scheme="/tags/PMBOK"/>
+        <category term="ICB" scheme="/tags/ICB"/>
+        <category term="lean6sigma" scheme="/tags/lean6sigma"/>
+        <category term="CMMI" scheme="/tags/CMMI"/>
+    </entry>
+    <entry>
+        <title>【项目管理】简短的说一下SCRUM DEVOPS OKR</title>
+        <link href="/2020/04/26/%E7%AE%A1%E7%90%86/%E3%80%90%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E3%80%91%E7%AE%80%E7%9F%AD%E7%9A%84%E8%AF%B4%E4%B8%80%E4%B8%8BSCRUM+DEVOPS+OKR"/>
+        <id>/2020/04/26/管理/【项目管理】简短的说一下SCRUM DEVOPS OKR</id>
+        <published>2020-04-26T00:00:00.000Z</published>
+        <updated>2020-04-26T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我相信，好的体系总是是简单的，但是细节复杂而有序。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="管理" scheme="/categories/%E7%AE%A1%E7%90%86"/>
+        <category term="SCRUM" scheme="/tags/SCRUM"/>
+        <category term="DEVOPS" scheme="/tags/DEVOPS"/>
+        <category term="OKR" scheme="/tags/OKR"/>
+    </entry>
+    <entry>
+        <title>【SpringBoot】不完整笔记</title>
+        <link href="/2020/04/25/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E3%80%90SpringBoot%E3%80%91%E4%B8%8D%E5%AE%8C%E6%95%B4%E7%AC%94%E8%AE%B0"/>
+        <id>/2020/04/25/技术笔记/【SpringBoot】不完整笔记</id>
+        <published>2020-04-25T00:00:00.000Z</published>
+        <updated>2020-04-25T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;这个笔记不完整。&lt;/p&gt;
+</summary>
+        <category term="技术笔记" scheme="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"/>
+        <category term="SpringBoot" scheme="/tags/SpringBoot"/>
+    </entry>
+    <entry>
+        <title>创新的任务</title>
+        <link href="/2020/04/24/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%88%9B%E6%96%B0%E7%9A%84%E4%BB%BB%E5%8A%A1"/>
+        <id>/2020/04/24/读书笔记/创新的任务</id>
+        <published>2020-04-24T00:00:00.000Z</published>
+        <updated>2020-04-24T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;前三章读后感 - 用户目标达成理论是什么&lt;/p&gt;
+</summary>
+        <category term="读书笔记" scheme="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"/>
+        <category term="创新" scheme="/tags/%E5%88%9B%E6%96%B0"/>
+        <category term="可维护" scheme="/tags/%E5%8F%AF%E7%BB%B4%E6%8A%A4"/>
+    </entry>
+    <entry>
+        <title>代码不朽 - 编写可维护软件的十大要则</title>
+        <link href="/2020/04/23/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%BB%A3%E7%A0%81%E4%B8%8D%E6%9C%BD+-+%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%8D%81%E5%A4%A7%E8%A6%81%E5%88%99"/>
+        <id>/2020/04/23/读书笔记/代码不朽 - 编写可维护软件的十大要则</id>
+        <published>2020-04-23T00:00:00.000Z</published>
+        <updated>2020-04-23T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;可维护性是软件质量的一个特征，而性能是另一个特征。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="读书笔记" scheme="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"/>
+        <category term="代码" scheme="/tags/%E4%BB%A3%E7%A0%81"/>
+        <category term="可维护" scheme="/tags/%E5%8F%AF%E7%BB%B4%E6%8A%A4"/>
+        <category term="原则" scheme="/tags/%E5%8E%9F%E5%88%99"/>
+    </entry>
+    <entry>
+        <title>【Spring】SpringCloud不完整总结</title>
+        <link href="/2020/04/20/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E3%80%90Spring%E3%80%91SpringCloud%E4%B8%8D%E5%AE%8C%E6%95%B4%E6%80%BB%E7%BB%93"/>
+        <id>/2020/04/20/技术笔记/【Spring】SpringCloud不完整总结</id>
+        <published>2020-04-20T00:00:00.000Z</published>
+        <updated>2020-04-20T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;本文不完整介绍 &lt;code&gt;SpringCloud&lt;/code&gt; 最小化可用解决方案。&lt;/p&gt;
+</summary>
+        <category term="技术笔记" scheme="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"/>
+        <category term="Spring Cloud" scheme="/tags/Spring+Cloud"/>
+    </entry>
+    <entry>
+        <title>【Spring】使用 ANT 构建 Spring Boot 工程</title>
+        <link href="/2020/04/19/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E3%80%90Spring%E3%80%91%E4%BD%BF%E7%94%A8+ANT+%E6%9E%84%E5%BB%BA+Spring+Boot+%E5%B7%A5%E7%A8%8B"/>
+        <id>/2020/04/19/技术笔记/【Spring】使用 ANT 构建 Spring Boot 工程</id>
+        <published>2020-04-19T00:00:00.000Z</published>
+        <updated>2020-04-19T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这件事可做，但是做的时候有点无奈而已。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="技术笔记" scheme="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"/>
+        <category term="Spring" scheme="/tags/Spring"/>
+        <category term="Spring Boot" scheme="/tags/Spring+Boot"/>
+        <category term="Ant" scheme="/tags/Ant"/>
+    </entry>
+    <entry>
+        <title>【应用】SpringCloud网关路由节点编辑器</title>
+        <link href="/2020/04/18/%E5%BA%94%E7%94%A8/%E3%80%90%E5%BA%94%E7%94%A8%E3%80%91SpringCloud%E7%BD%91%E5%85%B3%E8%B7%AF%E7%94%B1%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8"/>
+        <id>/2020/04/18/应用/【应用】SpringCloud网关路由节点编辑器</id>
+        <published>2020-04-18T00:00:00.000Z</published>
+        <updated>2020-04-18T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;最近有些时间做了一个 SpringCloudGateway 路由的节点编辑器&lt;/p&gt;
+</summary>
+        <category term="应用" scheme="/categories/%E5%BA%94%E7%94%A8"/>
+        <category term="SpringCloud" scheme="/tags/SpringCloud"/>
+        <category term="路由节点编辑器" scheme="/tags/%E8%B7%AF%E7%94%B1%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8"/>
+    </entry>
+    <entry>
+        <title>【WEBGL】谷歌瓦片图加载从原理到实现</title>
+        <link href="/2020/01/24/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF/%E3%80%90WEBGL%E3%80%91%E8%B0%B7%E6%AD%8C%E7%93%A6%E7%89%87%E5%9B%BE%E5%8A%A0%E8%BD%BD%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E5%AE%9E%E7%8E%B0"/>
+        <id>/2020/01/24/三维技术/【WEBGL】谷歌瓦片图加载从原理到实现</id>
+        <published>2020-01-24T00:00:00.000Z</published>
+        <updated>2020-01-24T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;年前为 &lt;code&gt;NothingJs&lt;/code&gt; 实现了一个扩展 &lt;code&gt;NJ_lod_ground&lt;/code&gt;，目标是简单实现加载谷歌瓦片。为了让读者更加容易的理解，我直接改成了 &lt;code&gt;WebGL&lt;/code&gt; 实例（总代码800行左右、依赖glMatrix）。并且把相关内容整理到本文，希望能帮助到刚刚入门的同学。&lt;/p&gt;
+&lt;p&gt;工程地址在文章结尾。&lt;/p&gt;
+</summary>
+        <category term="三维技术" scheme="/categories/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF"/>
+        <category term="WEBGL" scheme="/tags/WEBGL"/>
+        <category term="谷歌瓦片" scheme="/tags/%E8%B0%B7%E6%AD%8C%E7%93%A6%E7%89%87"/>
+    </entry>
+    <entry>
+        <title>【WebGL】WebGL API 详解</title>
+        <link href="/2020/01/22/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF/%E3%80%90WebGL%E3%80%91WebGL+API+%E8%AF%A6%E8%A7%A3"/>
+        <id>/2020/01/22/三维技术/【WebGL】WebGL API 详解</id>
+        <published>2020-01-22T00:00:00.000Z</published>
+        <updated>2020-01-22T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;基于 &lt;a href="/attaches/FAAD61EAB3377ED8376ECDC2A15BF452.idl"&gt;WebGL Specifications&lt;/a&gt; 最全面的API释疑。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;20201224 更新，删除其他标题，分类到对应标题下并添加注释&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="三维技术" scheme="/categories/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF"/>
+        <category term="WebGL" scheme="/tags/WebGL"/>
+        <category term="API" scheme="/tags/API"/>
+    </entry>
+    <entry>
+        <title>【博客更新】2020新版</title>
+        <link href="/2020/01/20/%E4%BB%8B%E7%BB%8D/%E3%80%90%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E3%80%912020%E6%96%B0%E7%89%88"/>
+        <id>/2020/01/20/介绍/【博客更新】2020新版</id>
+        <published>2020-01-20T00:00:00.000Z</published>
+        <updated>2020-01-20T00:00:00.000Z</updated>
+        <summary type="html">&lt;p&gt;用了很长时间的 &lt;code&gt;Hexo&lt;/code&gt; 博客，各方面都很满意。静态化本身对博客应用来说是真的很有亲和力，访问速度不仅快，更新也方便，所以改版后还是保留这一特性。&lt;/p&gt;
+</summary>
+        <category term="介绍" scheme="/categories/%E4%BB%8B%E7%BB%8D"/>
+        <category term="博客改版" scheme="/tags/%E5%8D%9A%E5%AE%A2%E6%94%B9%E7%89%88"/>
+    </entry>
+    <entry>
+        <title>【GLTF】自定义地图瓦片扩展 NJ_lod_ground</title>
+        <link href="/2019/11/21/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF/%E3%80%90GLTF%E3%80%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9B%BE%E7%93%A6%E7%89%87%E6%89%A9%E5%B1%95+NJ_lod_ground"/>
+        <id>/2019/11/21/三维技术/【GLTF】自定义地图瓦片扩展 NJ_lod_ground</id>
+        <published>2019-11-21T00:00:00.000Z</published>
+        <updated>2019-11-21T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这个扩展为 GlTF 场景增加地图瓦片扩展，主要是为 &lt;a href="https://www.nothingjs.com"&gt;NothingJs&lt;/a&gt; 网站实现的。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="三维技术" scheme="/categories/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF"/>
+        <category term="自定义扩展" scheme="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95"/>
+        <category term="NJ_lod_ground" scheme="/tags/NJ_lod_ground"/>
+    </entry>
+    <entry>
+        <title>【GLTF】自定义天空盒扩展 NJ_skybox</title>
+        <link href="/2019/11/10/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF/%E3%80%90GLTF%E3%80%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%A9%E7%A9%BA%E7%9B%92%E6%89%A9%E5%B1%95+NJ_skybox"/>
+        <id>/2019/11/10/三维技术/【GLTF】自定义天空盒扩展 NJ_skybox</id>
+        <published>2019-11-10T00:00:00.000Z</published>
+        <updated>2019-11-10T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这个扩展为 GlTF 场景增加天空盒定义，主要是为 &lt;a href="https://www.nothingjs.com"&gt;NothingJs&lt;/a&gt; 网站实现的。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="三维技术" scheme="/categories/%E4%B8%89%E7%BB%B4%E6%8A%80%E6%9C%AF"/>
+        <category term="自定义扩展" scheme="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95"/>
+        <category term="NJ_skybox" scheme="/tags/NJ_skybox"/>
+    </entry>
+    <entry>
+        <title>【书信】郭德纲写给郭麒麟的信</title>
+        <link href="/2019/06/13/%E8%BD%AC%E8%BD%BD/%E3%80%90%E4%B9%A6%E4%BF%A1%E3%80%91%E9%83%AD%E5%BE%B7%E7%BA%B2%E5%86%99%E7%BB%99%E9%83%AD%E9%BA%92%E9%BA%9F%E7%9A%84%E4%BF%A1"/>
+        <id>/2019/06/13/转载/【书信】郭德纲写给郭麒麟的信</id>
+        <published>2019-06-13T00:00:00.000Z</published>
+        <updated>2019-06-13T00:00:00.000Z</updated>
+        <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;早早就有这么一封书信，记录下来时刻警醒。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        <category term="转载" scheme="/categories/%E8%BD%AC%E8%BD%BD"/>
+        <category term="郭德纲" scheme="/tags/%E9%83%AD%E5%BE%B7%E7%BA%B2"/>
+        <category term="郭麒麟" scheme="/tags/%E9%83%AD%E9%BA%92%E9%BA%9F"/>
+    </entry>
+    <entry>
+        <title>【Node】Node依赖下载加速</title>
+        <link href="/2019/03/11/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E3%80%90Node%E3%80%91Node%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F"/>
+        <id>/2019/03/11/技术笔记/【Node】Node依赖下载加速</id>
+        <published>2019-03-11T00:00:00.000Z</published>
+        <updated>2019-03-11T00:00:00.000Z</updated>
+        <summary type="html">&lt;!--  more --&gt;
+&lt;h2&gt;临时指定镜像源&lt;/h2&gt;
+&lt;figure class="well highlight"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre&gt;&lt;span class="line"&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="line"&gt;npm install &amp;lt;registry-name&amp;gt; --registry https://registry.npmjs.org&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;永久设置&lt;/h2&gt;
+&lt;figure class="well highlight"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre&gt;&lt;span class="line"&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class="line"&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="line"&gt;npm config set registry https://registry.npm.taobao.org&lt;/span&gt;&lt;br&gt;&lt;span class="line"&gt;npm config set registry https://registry.npmjs.org  &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;安装定制的cnpm命令行工具&lt;/h2&gt;
+&lt;figure class="well highlight"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;pre&gt;&lt;span class="line"&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="line"&gt;npm install -g cnpm --registry=https://registry.npm.taobao.org&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;npm镜像源站点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://registry.npmjs.org"&gt;https://registry.npmjs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://r.cnpmjs.org"&gt;https://r.cnpmjs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://registry.npm.taobao.org"&gt;https://registry.npm.taobao.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        <category term="技术笔记" scheme="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0"/>
+        <category term="node" scheme="/tags/node"/>
+    </entry>
+</feed>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,GIT,工作流指南,Pull_Request">
+<meta name="description" content="【GIT工作流指南】【五】Pull_Request">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【GIT工作流指南】【五】Pull_Request</h1>
+            </a>
+            <p style="font-size: 10px;">2018-09-11&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p><code>GIT工作流指南</code>，由 <a href="https://github.com/xirong">xirong</a> 整理自 <a href="https://github.com/oldratlee">oldratlee</a> 的<code>GitHub</code>，方便统一的学习回顾，在此感谢下面两位的贡献。</p>
+<ol>
+<li>原文链接：<a href="https://www.atlassian.com/git/workflows">Git Workflows and Tutorials</a></li>
+<li>简体中文：由 <a href="https://github.com/oldratlee">oldratlee</a> 翻译在 <code>GitHub</code> 上 <a href="https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/README.md"><code>Git</code>工作流指南</a></li>
+</ol>
+<!-- more --> 
+<p><code>Pull requests</code>是<code>Bitbucket</code>提供的让开发者更方便地进行协作的功能，提供了友好的<code>Web</code>界面可以在提议的修改合并到正式项目之前对修改进行讨论。（虽然是通过<code>Bitbucket</code>讲解的，但是可以推广到<code>github</code>、<code>gogs</code>等站点）</p>
+<p><img src="/attaches/18361A7EF89C5820D578C0C238C01D38.png" alt="" class="img-responsive" /></p>
+<p>开发者向团队成员通知功能开发已经完成，<code>Pull Requests</code>是最简单的用法。开发者完成功能开发后，通过<code>Bitbucket</code>账号发起一个<code>Pull Request</code>。这样让涉及这个功能的所有人知道要去做<code>Code Review</code>和合并到<code>master</code>分支。</p>
+<p>但是，<code>Pull Request</code>远不止一个简单的通知，而是为讨论提交的功能的一个专门论坛。如果变更有任何问题，团队成员反馈在<code>Pull Request</code>中，甚至<code>push</code>新的提交微调功能。所有的这些活动都直接跟踪在<code>Pull Request</code>中。</p>
+<p><img src="/attaches/CA1871A23C2EA729EA2A4085A7EA3CE4.png" alt="" class="img-responsive" /></p>
+<p>相比其它的协作模型，这种分享提交的形式有助于打造一个更流畅的工作流。
+<code>SVN</code>和<code>Git</code>都能通过一个简单的脚本收到通知邮件；但是，讨论变更时，开发者通常只能去回复邮件。这样做会变得杂乱，尤其还要涉及后面的几个提交时。<code>Pull Requests</code>把所有相关功能整合到一个和<code>Bitbucket</code>仓库界面集成的用户友好<code>Web</code>界面中。</p>
+<h2>解析<code>Pull Request</code></h2>
+<p>当要发起一个<code>Pull Request</code>，你所要做的就是请求（<code>Request</code>）另一个开发者（比如项目的维护者）来<code>pull</code>你仓库中一个分支到他的仓库中。这意味着你要提供4个信息以发起<code>Pull Request</code>：
+源仓库、源分支、目的仓库、目的分支。</p>
+<p><img src="/attaches/D967FDFD90461DC0BBAD961016464245.png" alt="" class="img-responsive" /></p>
+<p>这几值多数<code>Bitbucket</code>都会设置上合适的缺省值。但取决你用的协作工作流，你的团队可能会要指定不同的值。上图显示了一个<code>Pull Request</code>请求合并一个功能分支到正式的<code>master</code>分支上，但可以有多种不同的<code>Pull Request</code>用法。</p>
+<h2>工作方式</h2>
+<p><code>Pull Request</code>可以和功能分支工作流、<code>Gitflow</code>工作流或<code>Forking</code>工作流一起使用。但一个<code>Pull Request</code>要求要么分支不同要么仓库不同，所以不能用于集中式工作流。在不同的工作流中使用<code>Pull Request</code>会有一些不同，但基本的过程是这样的：</p>
+<ol>
+<li>开发者在本地仓库中新建一个专门的分支开发功能。</li>
+<li>开发者<code>push</code>分支修改到公开的<code>Bitbucket</code>仓库中。</li>
+<li>开发者通过<code>Bitbucket</code>发起一个<code>Pull Request</code>。</li>
+<li>团队的其它成员<code>review</code> <code>code</code>，讨论并修改。</li>
+<li>项目维护者合并功能到官方仓库中并关闭<code>Pull Request</code>。</li>
+</ol>
+<p>本文后面内容说明，<code>Pull Request</code>在不同协作工作流中如何应用。</p>
+<h2>在功能分支工作流中使用<code>Pull Request</code></h2>
+<p>功能分支工作流用一个共享的<code>Bitbucket</code>仓库来管理协作，开发者在专门的分支上开发功能。
+但不是立即合并到<code>master</code>分支上，而是在合并到主代码库之前开发者应该开一个<code>Pull Request</code>发起功能的讨论。</p>
+<p><img src="/attaches/DDC3A26C98D99DFAEE17D2CC691F0DBE.png" alt="" class="img-responsive" /></p>
+<p>功能分支工作流只有一个公开的仓库，所以<code>Pull Request</code>的目的仓库和源仓库总是同一个。通常开发者会指定他的功能分支作为源分支，<code>master</code>分支作为目的分支。</p>
+<p>收到<code>Pull Request</code>后，项目维护者要决定如何做。如果功能没问题，就简单地合并到<code>master</code>分支，关闭<code>Pull Request</code>。但如果提交的变更有问题，他可以在<code>Pull Request</code>中反馈。之后新加的提交也会评论之后接着显示出来。</p>
+<p>在功能还没有完全开发完的时候，也可能发起一个<code>Pull Request</code>。比如开发者在实现某个需求时碰到了麻烦，他可以发一个包含正在进行中工作的<code>Pull Request</code>。其它的开发者可以在<code>Pull Request</code>提供建议，或者甚至直接添加提交来解决问题。</p>
+<h2>在<code>Gitflow</code>工作流中使用<code>Pull Request</code></h2>
+<p><code>Gitflow</code>工作流和功能分支工作流类似，但围绕项目发布定义一个严格的分支模型。在<code>Gitflow</code>工作流中使用<code>Pull Request</code>让开发者在发布分支或是维护分支上工作时，可以有个方便的地方对关于发布分支或是维护分支的问题进行交流。</p>
+<p><img src="/attaches/6AA37B8B7CDD2C6AABCDA7D0D06456BB.png" alt="" class="img-responsive" /></p>
+<p><code>Gitflow</code>工作流中<code>Pull Request</code>的使用过程和上一节中完全一致：当一个功能、发布或是热修复分支需要<code>Review</code>时，开发者简单发起一个<code>Pull Request</code>，团队的其它成员会通过<code>Bitbucket</code>收到通知。</p>
+<p>新功能一般合并到<code>develop</code>分支，而发布和热修复则要同时合并到<code>develop</code>分支和<code>master</code>分支上。<code>Pull Request</code>可能用做所有合并的正式管理。</p>
+<h2>在<code>Forking</code>工作流中使用<code>Pull Request</code></h2>
+<p>在<code>Forking</code>工作流中，开发者<code>push</code>完成的功能到他自己的仓库中，而不是共享仓库。然后，他发起一个<code>Pull Request</code>，让项目维护者知道他的功能已经可以<code>Review</code>了。</p>
+<p>在这个工作流，<code>Pull Request</code>的通知功能非常有用，因为项目维护者不可能知道其它开发者在他们自己的仓库添加了提交。</p>
+<p><img src="/attaches/D8533A6910CBECB1D9BABC278FE16BCB.png" alt="" class="img-responsive" /></p>
+<p>由于各个开发有自己的公开仓库，<code>Pull Request</code>的源仓库和目标仓库不是同一个。源仓库是开发者的公开仓库，源分支是包含了修改的分支。如果开发者要合并修改到正式代码库中，那么目标仓库是正式仓库，目标分支是<code>master</code>分支。</p>
+<p><code>Pull Request</code>也可以用于正式项目之外的其它开发者之间的协作。比如，如果一个开发者和一个团队成员一起开发一个功能，他们可以发起一个<code>Pull Request</code>，用团队成员的<code>Bitbucket</code>仓库作为目标，而不是正式项目的仓库。然后使用相同的功能分支作为源和目标分支。</p>
+<p><img src="/attaches/1C9477CBC31291037920997F6095D4CE.png" alt="" class="img-responsive" /></p>
+<p>2个开发者之间可以在<code>Pull Request</code>中讨论和开发功能。完成开发后，他们可以发起另一个<code>Pull Request</code>，请求合并功能到正式的<code>master</code>分支。在<code>Forking</code>工作流中，这样的灵活性让<code>Pull Request</code>成为一个强有力的协作工具。</p>
+<h2>示例</h2>
+<p>下面的示例演示了<code>Pull Request</code>如何在在<code>Forking</code>工作流中使用。也同样适用于小团队的开发协作和第三方开发者向开源项目的贡献。</p>
+<p>在示例中，小红是个开发，小明是项目维护者。他们各自有一个公开的<code>Bitbucket</code>仓库，而小明的仓库包含了正式工程。</p>
+<h3>小红<code>fork</code>正式项目</h3>
+<p><img src="/attaches/822A9FA7E949C59C75006CB2C2BE864D.png" alt="" class="img-responsive" /></p>
+<p>小红先要<code>fork</code>小明的<code>Bitbucket</code>仓库，开始项目的开发。她登陆<code>Bitbucket</code>，浏览到小明的仓库页面，点<code>Fork</code>按钮。</p>
+<p><img src="/attaches/D4A17569BD6A95903715D27F5A1D6455.png" alt="" class="img-responsive" /></p>
+<p>然后为<code>fork</code>出来的仓库填写名字和描述，这样小红就有了服务端的项目拷贝了。</p>
+<h3>小红克隆她的<code>Bitbucket</code>仓库</h3>
+<p><img src="/attaches/C92E0E53F3CF46ADA85F6930030123FF.png" alt="" class="img-responsive" /></p>
+<p>下一步，小红克隆自己刚才<code>fork</code>出来的<code>Bitbucket</code>仓库，以在本机上准备出工作拷贝。命令如下：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://user@bitbucket.org/user/repo.git</span><br></pre></td></tr></tbody></table></figure>
+<p>请记住，<code>git clone</code>会自动创建<code>origin</code>远程别名，是指向小红<code>fork</code>出来的仓库。</p>
+<h3>小红开发新功能</h3>
+<p><img src="/attaches/CEE05262641433BA9C02BF7107DA01A3.png" alt="" class="img-responsive" /></p>
+<p>在开始改代码前，小红要为新功能先新建一个新分支。她会用这个分支作为<code>Pull Request</code>的源分支。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b some-feature</span><br><span class="line"># 编辑代码</span><br><span class="line">git commit -a -m &quot;Add first draft of some feature&quot;</span><br></pre></td></tr></tbody></table></figure>
+<p>在新功能分支上，小红按需要添加提交。甚至如果小红觉得功能分支上的提交历史太乱了，她可以用交互式<code>rebase</code>来删除或压制提交。对于大型项目，整理功能分支的历史可以让项目维护者更容易看出在<code>Pull Request</code>中做了什么内容。</p>
+<h3>小红<code>push</code>功能到她的<code>Bitbucket</code>仓库中</h3>
+<p><img src="/attaches/05BE8414D252AEF093F3B09E25289F24.png" alt="" class="img-responsive" /></p>
+<p>小红完成了功能后，<code>push</code>功能到她自己的<code>Bitbucket</code>仓库中（不是正式仓库），用下面简单的命令：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin some-branch</span><br></pre></td></tr></tbody></table></figure>
+<p>这时她的变更可以让项目维护者看到了（或者任何想要看的协作者）。</p>
+<h3>小红发起<code>Pull Request</code></h3>
+<p><img src="/attaches/9A386A88AD463281919BDF36A97852FA.png" alt="" class="img-responsive" /></p>
+<p><code>Bitbucket</code>上有了她的功能分支后，小红可以用她的<code>Bitbucket</code>账号浏览到她的<code>fork</code>出来的仓库页面，点右上角的<code>Pull Request</code>按钮，发起一个<code>Pull Request</code>。弹出的表单自动设置小红的仓库为源仓库，询问小红以指定源分支、目标仓库和目标分支。</p>
+<p>小红想要合并功能到正式仓库，所以源分支是她的功能分支，目标仓库是小明的公开仓库，而目标分支是<code>master</code>分支。另外，小红需要提供<code>Pull Request</code>的标题和描述信息。如果需要小明以外的人审核批准代码，她可以把这些人填在Reviewers文本框中。</p>
+<p><img src="/attaches/E19F8AB1788765DA95AA2BA7DCBBDF19.png" alt="" class="img-responsive" /></p>
+<p>创建好了<code>Pull Request</code>，通知会通过<code>Bitbucket</code>系统消息或邮件（可选）发给小明。</p>
+<h3>小明review <code>Pull Request</code></h3>
+<p><img src="/attaches/EDF2CAE01B1F307CF083C98318500DF4.png" alt="" class="img-responsive" /></p>
+<p>在小明的<code>Bitbucket</code>仓库页面的<code>Pull Request</code>Tab可以看到所有人发起的<code>Pull Request</code>。点击小红的<code>Pull Request</code>会显示出<code>Pull Request</code>的描述、功能的提交历史和每个变更的差异（<code>diff</code>）。</p>
+<p>如果小明想要合并到项目中，只要点一下<code>Merge</code>按钮，就可以同意<code>Pull Request</code>并合并到<code>master</code>分支。</p>
+<p>但如果像这个示例中一样小明发现了在小红的代码中的一个小<code>Bug</code>，要小红在合并前修复。小明可以在整个<code>Pull Request</code>上加上评注，或是选择历史中的某个提交加上评注。</p>
+<p><img src="/attaches/DAA4F7CCCCC6ACC8A8707937DC527777.png" alt="" class="img-responsive" /></p>
+<h3>小红补加提交</h3>
+<p>如果小红对反馈有任何疑问，可以在<code>Pull Request</code>中响应，把<code>Pull Request</code>当作是她功能讨论的论坛。</p>
+<p>小红在她的功能分支新加提交以解决代码问题，并<code>push</code>到她的<code>Bitbucket</code>仓库中，就像前一轮中的做法一样。这些提交会进入的<code>Pull Request</code>，小明在原来的评注旁边可以再次<code>review</code>变更。</p>
+<h3>小明接受<code>Pull Request</code></h3>
+<p>最终，小明接受变更，合并功能分支到<code>Master</code>分支，并关闭<code>Pull Request</code>。至此，功能集成到项目中，其它的项目开发者可以用标准的<code>git pull</code>命令<code>pull</code>这些变更到自己的本地仓库中。</p>
+<p>到了这里，你应该有了所有需要的工具来集成<code>Pull Request</code>到你自己的工作流。请记住，<code>Pull Request</code>并不是为了替代任何基于<code>Git</code>的协作工作流，而是它们的一个便利的补充，让团队成员间的协作更轻松方便。</p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/GIT">#GIT</a>
+            <a href="/tags/工作流指南">#工作流指南</a>
+            <a href="/tags/Pull_Request">#Pull_Request</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【GIT工作流指南】【五】Pull_Request";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

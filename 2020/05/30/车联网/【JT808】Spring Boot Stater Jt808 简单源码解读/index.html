@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="车联网,JT808">
+<meta name="description" content="【JT808】Spring Boot Stater Jt808 简单源码解读">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【JT808】Spring Boot Stater Jt808 简单源码解读</h1>
+            </a>
+            <p style="font-size: 10px;">2020-05-30&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/车联网" class="custom-color-red">车联网</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p>新开源 <a href="https://github.com/zhoyq/spring-boot-starter-jt808">Spring Boot Starter Jt808</a> 已经有一段时间了，新版本已经支持了 <code>2011</code>、<code>2013</code>、<code>2019</code> 版本的协议解析，并完善了自定义消息的功能，还是值得期待的。</p>
+<p>本文主要说明 <a href="https://github.com/zhoyq/spring-boot-starter-jt808">Spring Boot Starter Jt808</a> 的启动流程，配置项以及一些细节，读懂本文需要先了解字节码和 <code>SpringBoot</code> 等技术知识。</p>
+<!-- more -->
+<h2>启动服务</h2>
+<p>项目依赖 <code>SpringBoot</code>，所以启动按照 <code>Spring</code> 的逻辑需要有一个启动注解。于是我们先从 <code>EnableJt808Server</code> 这个注解开始。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// ...</span><br><span class="line">@Import({Jt808Starter.class, Jt808Config.class, SimpleBeanConfig.class})</span><br><span class="line">public @interface EnableJt808Server {}</span><br></pre></td></tr></tbody></table></figure>
+<p><code>EnableJt808Server</code> 通过 <code>Import</code> 注解引入了 <code>Jt808Starter</code>、<code>Jt808Config</code>、<code>SimpleBeanConfig</code> 三个 Bean，我们依次看一下这三个 Bean 都是什么作用。</p>
+<p><strong>Jt808Config</strong></p>
+<p>顾名思义，<code>Jt808Config</code> 是用来承载 jt808 服务的配置的，关于配置项的详细信息可以在下文中找到。这里只说明这个类的作用。</p>
+<p>配置类使用直接赋值的方式为配置项添加默认值。</p>
+<p><strong>SimpleBeanConfig</strong></p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// ...</span><br><span class="line">@Bean</span><br><span class="line">@ConditionalOnMissingBean(DataService.class)</span><br><span class="line">public DataService dataService() {</span><br><span class="line">    log.info(&quot;use default data service Bean.&quot;);</span><br><span class="line">    return new SimpleDataServiceAdapter(byteArrHelper);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">@Bean</span><br><span class="line">@ConditionalOnMissingBean(CacheService.class)</span><br><span class="line">public CacheService sessionService(){</span><br><span class="line">    log.info(&quot;use default session service Bean.&quot;);</span><br><span class="line">    return new HashMapCacheService();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在 1.2.2 版本里为了简化用户入门难度增加了默认 Bean 配置，所以用户如果不定义缓存 Bean <code>CacheService</code> 的话应该会有默认的 Bean 顶替，但是持久化服务还是需要用户提供的，默认提供的Bean <code>DataService</code> 是不能接收消息的，只是能够保证启动成功。同时用户的主要业务逻辑也是在 <code>DataService</code> 实现类里。</p>
+<ul>
+<li>系统里默认提供了基于 <code>ConcurrentHashMap</code> 的缓存。</li>
+<li>数据层提供的类仅仅是添加了日志记录而已，并且不能通过任何客户端的鉴权。</li>
+</ul>
+<p><strong>Jt808Starter</strong></p>
+<p>这里定义了启动逻辑，首先定义了处理持久化需要的线程池，线程命名使用 <code>jt808-mina-thread-pool-db</code> 前缀，方便调试。</p>
+<p>然后是加载 <code>com.zhoyq.server.jt808.starter</code> 包下的所有 Bean。</p>
+<p>再次是程序启动事件 <code>ApplicationStartedEvent</code> 程序启动成功后会运行 <code>onApplicationEvent</code> 方法中的逻辑。</p>
+<ul>
+<li>检查是否启用 Jt808 服务。</li>
+<li>获取数据库中的历史数据，并存储到缓存中。</li>
+<li>获取用户配置使用的底层服务实现（Mina或者Netty），并启动。</li>
+</ul>
+<blockquote>
+<p>这里需要注意的是，在启动完成后 <code>PackHandlerManagement</code> 也处理了一部分启动逻辑，这里把消息包处理器全部收集起来并存储到缓存中待用。</p>
+</blockquote>
+<p>下面就是 <code>Mina</code> 或者 <code>Netty</code> 的启动了。</p>
+<p><code>Mina</code> 启动的时候，加载的关于编码解码的工厂类是 <code>Jt808CodecFactory</code>，这里定义了处理消息包边界的方法逻辑。<code>Netty</code> 启动的时候，加载的解码器和编码器是 <code>Jt808NettyDecoder</code>、<code>Jt808NettyEncoder</code>，同样是处理消息边界的方法和逻辑。</p>
+<blockquote>
+<p>这里由于编码解码没有进一步封装，会有部分源码重复，会在后期优化的时候处理掉。</p>
+</blockquote>
+<p>下面是核心逻辑：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">// 有数据进入 开始读取数据</span><br><span class="line">if (in.remaining() &gt; 0) {</span><br><span class="line">    // 标记数据位置 待还原</span><br><span class="line">    in.mark();</span><br><span class="line">    // 读取第一个字节</span><br><span class="line">    byte byteBuf = in.get();</span><br><span class="line">    // 判断第一个字节是否等于 MSG_BROKER = 0x7E</span><br><span class="line">    if( byteBuf == MSG_BROKER ){</span><br><span class="line">        // 等于 则 还原读取情况</span><br><span class="line">        in.reset();</span><br><span class="line">        // 读取前五个字节</span><br><span class="line">        byte[] bodyProp = new byte[5];</span><br><span class="line">        // 标记 待还原读取情况</span><br><span class="line">        in.mark();</span><br><span class="line">        // 获取消息体属性数据</span><br><span class="line">        in.get(bodyProp, 0, 5);</span><br><span class="line">        byte[] body = new byte[]{bodyProp[3],bodyProp[4]};</span><br><span class="line">        // 获取消息体属性中的消息长度信息</span><br><span class="line">        int sizeBuf = jt808Helper.getMsgBodyLength(body);</span><br><span class="line">        // 获取消息体中的分包信息</span><br><span class="line">        boolean b = jt808Helper.hasPackage(body);</span><br><span class="line">        int size;</span><br><span class="line">        if(b){</span><br><span class="line">            size = sizeBuf + MEG_MIN_LEN_WITH_PKG;</span><br><span class="line">        }else{</span><br><span class="line">            size = sizeBuf + MSG_MIN_LEN;</span><br><span class="line">        }</span><br><span class="line">        // 还原读取情况</span><br><span class="line">        in.reset();</span><br><span class="line">        log.trace(&quot;the real pkg length is &quot; + size);</span><br><span class="line"></span><br><span class="line">        // 通过 size 判断消息是否够一包 如果消息内容不够，则重置，相当于不读取</span><br><span class="line">        if (size &gt; in.remaining() || size &lt; MSG_MIN_LEN ) {</span><br><span class="line">            // 标记</span><br><span class="line">            in.mark();</span><br><span class="line">            // 读取以显示</span><br><span class="line">            byte[] bytes = new byte[in.remaining()];</span><br><span class="line">            in.get(bytes, 0, in.remaining());</span><br><span class="line">            // 还原</span><br><span class="line">            in.reset();</span><br><span class="line">            log.trace(&quot;short data length &quot;+in.remaining()+&quot; data &quot;+ byteArrHelper.toHexString(bytes) +&quot; go to reread &quot; + session.getRemoteAddress());</span><br><span class="line">            // 数据不全 最后返回 false 继续接收数据</span><br><span class="line">        } else {</span><br><span class="line">            // 消息内容够一包 则 继续读取</span><br><span class="line">            byte[] bytes = new byte[size];</span><br><span class="line">            in.get(bytes, 0, size);</span><br><span class="line">            // 验证得到的数据是否正确</span><br><span class="line">            if( bytes[bytes.length-1] == MSG_BROKER ){</span><br><span class="line">                log.trace(&quot;origin data &quot; + byteArrHelper.toHexString(bytes) + &quot; &quot; + session.getRemoteAddress());</span><br><span class="line">                // 这里转义还原</span><br><span class="line">                bytes = jt808Helper.retrans(bytes);</span><br><span class="line">                // 在这里验证校验码</span><br><span class="line">                if(jt808Helper.verify(bytes)){</span><br><span class="line">                    // 把字节转换为Java对象的工具类</span><br><span class="line">                    out.write(bytes);</span><br><span class="line">                }</span><br><span class="line">            }else{</span><br><span class="line">                log.trace(&quot;wrong data to drop &quot; + byteArrHelper.toHexString(bytes) + &quot; &quot; + session.getRemoteAddress());</span><br><span class="line">            }</span><br><span class="line">            // 不管是否完成本包数据读取 这一包数据都放弃继续解析</span><br><span class="line">            // 如果还有剩余 则 继续解析数据 没有剩余 则 继续接收数据</span><br><span class="line">            return in.remaining() &gt; 0;</span><br><span class="line">        }</span><br><span class="line">    } else {</span><br><span class="line">        // 不等于 则 删除前置错误数据 并继续接收数据</span><br><span class="line">        log.trace(&quot;wrong data structure &quot; + session.getRemoteAddress());</span><br><span class="line">        for(int i = 0;i&lt;in.remaining();){</span><br><span class="line">            // 读取到一包数据的 结束位置 返回</span><br><span class="line">            if( in.get() == MSG_BROKER ){</span><br><span class="line">                // 到此本包数据全部废弃 继续读取下一包</span><br><span class="line">                return true;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">// 没有可读取的数据 返回继续接收数据</span><br><span class="line">return false;</span><br></pre></td></tr></tbody></table></figure>
+<p>解码器处理的简单逻辑：</p>
+<ul>
+<li>当接收到的消息刚好时，截断，继续接收下一批内容。</li>
+<li>当接收到的消息不够时，等下一批数据拼接在当前数据之后继续读取。</li>
+<li>当接收到的消息太多时，读取一个消息包完成后，截断，进行下一次读取。</li>
+</ul>
+<p>到此底层服务也配置启动了。</p>
+<h2>配置选项</h2>
+<p>下面是目前可用的配置注释。</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">private String use = &quot;mina&quot;;             // 使用框架 默认 mina 可选 netty</span><br><span class="line">private String protocol = &quot;tcp&quot;;         // 使用协议 默认 tcp 可选 udp</span><br><span class="line">private Integer port = 10001;            // 服务监听端口</span><br><span class="line"></span><br><span class="line">private Integer processCount = 2;        // 一般是CPU数量 + 1</span><br><span class="line">private Integer corePoolSize = 1;        // 解析线程数量</span><br><span class="line">private Integer maximumPoolSize = 10;    // 解析线程最大数量</span><br><span class="line">private Integer keepAliveTime = 1000;    // 解析线程保持时间 单位 毫秒</span><br><span class="line">private Integer idleTime = 10;           // 解析线程空闲时间 单位 秒</span><br><span class="line">private Integer idleCount = 6;           // 解析线程空闲时间次数 </span><br><span class="line">private Integer readBufferSize = 2048;   // mina 读取缓存</span><br><span class="line">private Integer packageLength = 1024;    // 处理包最大长度（超长会分包）</span><br><span class="line"></span><br><span class="line">private Integer masterSize = 1;          // netty master线程数量</span><br><span class="line">private Integer slaveSize = 10;          // netty slave线程数量</span><br><span class="line"></span><br><span class="line">private Boolean tcpNoDelay = true;       // 配置TCP延迟</span><br><span class="line">private Boolean keepAlive = true;        // 配置是否长连接</span><br><span class="line">private Integer rsaHandleUnit = 117;     // rsa 超长数据处理单元 默认最长117 暂时不可用 解析包里还没有处理 RSA相关功能</span><br><span class="line">private Boolean enabled = true;          // 是否启用服务器</span><br><span class="line"></span><br><span class="line">private Integer threadCorePoolSize = 1;      // 持久化线程数量</span><br><span class="line">private Integer threadMaximumPoolSize = 10;  // 持久化线程最大数量</span><br><span class="line">private Integer threadKeepAliveTime = 1000;  // 持久化线程持续时间</span><br></pre></td></tr></tbody></table></figure>
+<h2>消息处理</h2>
+<p>下面是消息在下方到用户处理逻辑前的核心逻辑：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">// 按照协议解析相应数据位的字节码</span><br><span class="line">byte[] msgId, msgBodyProp, protocolVersion, phoneNum, streamNum, pkgCount = null, pkgNum = null, res = null;</span><br><span class="line">// 偏移标识</span><br><span class="line">int offset = 0;</span><br><span class="line">msgId = new byte[]{originData[offset++],originData[offset++]};</span><br><span class="line">msgBodyProp = new byte[]{originData[offset++],originData[offset++]};</span><br><span class="line">// 通过消息体属性中的版本标识位 判断是否是 2019版本协议 并增加相关解析</span><br><span class="line">boolean isVersion2019 =  jt808Helper.isVersion2019(msgBodyProp);</span><br><span class="line">if (isVersion2019) {</span><br><span class="line">    protocolVersion = new byte[]{originData[offset++]};</span><br><span class="line">    phoneNum = new byte[]{</span><br><span class="line">            originData[offset++],originData[offset++],originData[offset++],originData[offset++],originData[offset++],</span><br><span class="line">            originData[offset++],originData[offset++],originData[offset++],originData[offset++],originData[offset++]</span><br><span class="line">    };</span><br><span class="line">} else {</span><br><span class="line">    phoneNum = new byte[]{</span><br><span class="line">            originData[offset++],originData[offset++],originData[offset++],</span><br><span class="line">            originData[offset++],originData[offset++],originData[offset++]</span><br><span class="line">    };</span><br><span class="line">}</span><br><span class="line">streamNum = new byte[]{originData[offset++],originData[offset++]};</span><br><span class="line">boolean hasPackage = jt808Helper.hasPackage(msgBodyProp);</span><br><span class="line">if( hasPackage ){</span><br><span class="line">    pkgCount = new byte[]{originData[offset++],originData[offset++]};</span><br><span class="line">    pkgNum = new byte[]{originData[offset++],originData[offset]};</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">// 将电话字节码转化成字符串</span><br><span class="line">String phone = byteArrHelper.toHexString(phoneNum);</span><br><span class="line"></span><br><span class="line">// 相同身份的终端建立链接 原链接需要断开 也就是加入之前需要判断是否存在终端 存在关闭后在加入</span><br><span class="line">if(sessionManagement.contains(phone)){</span><br><span class="line">    IoSession preSession = (IoSession) sessionManagement.get(phone);</span><br><span class="line">    if (preSession.getId() != session.getId()) {</span><br><span class="line">        preSession.closeNow();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">// session 加入会话缓存</span><br><span class="line">sessionManagement.set(phone, session);</span><br><span class="line"></span><br><span class="line">// 分包处理</span><br><span class="line">if( hasPackage ){</span><br><span class="line">    // 获取 整型 参数</span><br><span class="line">    int totalPkgNum = byteArrHelper.twobyte2int(pkgCount);</span><br><span class="line">    int currentPkgNum = byteArrHelper.twobyte2int(pkgNum);</span><br><span class="line">    // 序号必须小于等于总包数 条件达成之后进行分包处理 否则不处理分包且不处理数据</span><br><span class="line">    if(totalPkgNum &gt;= currentPkgNum){</span><br><span class="line">        if(!cacheService.containsPackages(phone)){</span><br><span class="line">            ConcurrentHashMap&lt;Integer,byte[]&gt; buf = new ConcurrentHashMap&lt;&gt;(totalPkgNum);</span><br><span class="line">            cacheService.setPackages(phone, buf);</span><br><span class="line">        }</span><br><span class="line">        Map&lt;Integer,byte[]&gt; pkgBuf = cacheService.getPackages(phone);</span><br><span class="line">        pkgBuf.put(currentPkgNum, originData);</span><br><span class="line">    }</span><br><span class="line">    // 分包结束时需要对分包数据进行解析处理并返回应答 通过总包数和序号对比 判断是不是最后一包</span><br><span class="line">    if( totalPkgNum == currentPkgNum ){</span><br><span class="line">        // 如果是最后一包</span><br><span class="line">        if(jt808Helper.pkgAllReceived(phone, totalPkgNum)){</span><br><span class="line">            // 合并所有包 并解析</span><br><span class="line">            res = data(jt808Helper.allPkg(phone, totalPkgNum));</span><br><span class="line">        }else{</span><br><span class="line">            // 没有全部收到 需要补传 最初一包的流水号</span><br><span class="line">            byte[] originStreamNum = null;</span><br><span class="line">            // 补传id列表</span><br><span class="line">            byte[] idList = new byte[]{};</span><br><span class="line">            // 补传数量</span><br><span class="line">            byte num = 0;</span><br><span class="line">            Map&lt;Integer,byte[]&gt; map = cacheService.getPackages(phone);</span><br><span class="line">            for(int i = 1;i&lt;=totalPkgNum;i++){</span><br><span class="line">                // 这里需要判断版本 并获取 流水号</span><br><span class="line">                if(originStreamNum == null){</span><br><span class="line">                    if (isVersion2019) {</span><br><span class="line">                        originStreamNum = byteArrHelper.subByte(map.get(1), 15, 17);</span><br><span class="line">                    } else {</span><br><span class="line">                        originStreamNum = byteArrHelper.subByte(map.get(1), 10, 12);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                if(!map.containsKey(i)){</span><br><span class="line">                    num++;</span><br><span class="line">                    if (isVersion2019) {</span><br><span class="line">                        idList = byteArrHelper.union(idList, byteArrHelper.subByte(map.get(i), 19, 21));</span><br><span class="line">                    } else {</span><br><span class="line">                        idList = byteArrHelper.union(idList, byteArrHelper.subByte(map.get(i), 14, 16));</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            // 最后下发 消息包重传指令</span><br><span class="line">            if(originStreamNum != null) {</span><br><span class="line">                res = resHelper.getPkgReq(phoneNum, originStreamNum, num, idList);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">} else {</span><br><span class="line">    // 未分包 直接解析</span><br><span class="line">    res =  data(originData);</span><br><span class="line">}</span><br><span class="line">if( res == null ){</span><br><span class="line">    // 没有解析应答 则 直接返回平台通用应答 成功</span><br><span class="line">    res = resHelper.getPlatAnswer(phoneNum, streamNum, msgId, (byte) 0x00);</span><br><span class="line">}</span><br><span class="line">// 返回消息前判断 是否需要分包</span><br><span class="line">int msgLen = jt808Config.getPackageLength();</span><br><span class="line">if( res.length &gt; msgLen ){</span><br><span class="line">    // 分包发送</span><br><span class="line">    jt808Helper.sentByPkg(res, session);</span><br><span class="line">}else{</span><br><span class="line">    // 直接返回</span><br><span class="line">    session.write(res);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>消息先查看是否分包，分包则先不解析，待接收完整（接收到最后一包数据之后，会检查数据完整性，如果不完整会下发重传指令，如果完整）再解析；消息未分包则直接解析。</li>
+<li>消息解析时，交由对应消息ID的消息包处理器进行处理。</li>
+<li>消息解析时，会检查鉴权，如果没有鉴权仅能访问终端注册和终端鉴权两个消息包。</li>
+<li>消息包处理的逻辑都在 <code>com.zhoyq.server.jt808.starter.pack</code> 包下，希望了解更多的，可以直接查看源代码。</li>
+<li>默认处理方式中，所有查询应答类消息都会通过持久化接口的 <code>terminalAnswer</code> 方法存储，待进一步查询。</li>
+</ul>
+<h2>2019 兼容性处理逻辑</h2>
+<p>v1.2.2 版本增加了 2019 版本协议的解析内容，关于兼容性处理有以下几点：</p>
+<ul>
+<li>消息体属性中的版本标识位，为2019版本独有。</li>
+<li>2019 版本电话号码长度增加了，大部分兼容性可以通过电话号码位数判断。</li>
+<li>部分消息ID是2019独有的所以可以单独处理。</li>
+<li>终端注册和驾驶员身份信息上报可以根据消息长度可以判断是2013还是2011版本协议。</li>
+</ul>
+<h2>帮助类</h2>
+<p>帮助类处理了大部分底层逻辑，有兴趣可以看相关源码，帮助类可以使用 @Autowired 注解直接引入。</p>
+<ul>
+<li>ByteArrHelper（二进制处理帮助类）</li>
+<li>Jt808Helper（协议逻辑相关帮助类）</li>
+<li>ResHeler（应答消息类）</li>
+</ul>
+<h2>关于开源</h2>
+<p>推荐邮件（feedback#zhoyq.com）或者使用 <code>ISSUE</code>（包括<a href="https://github.com/zhoyq/spring-boot-starter-jt808">GITHUB</a>和<a href="https://gitee.com/zhoyq/spring-boot-starter-jt808">GITEE</a>） 这两种方式报告 <code>BUG</code>，我会第一时间修复。</p>
+<ul>
+<li><strong>JT808二次开发包</strong> - 采用MIT协议开源，<a href="https://github.com/zhoyq/spring-boot-starter-jt808">开源地址</a>，<a href="https://space.bilibili.com/37839961/channel/detail?cid=111071">重构过程</a>。视频里重构完成后的版本是 <code>1.0.0</code>，文章发布时二次开发包版本是 <code>1.2.2</code>。</li>
+<li><strong>JT808二次开发包文档</strong> - <a href="https://www.bilibili.com/video/BV1cg4y167jW?from=search&amp;seid=2999996325245827500">开发入门视频</a>，<a href="https://github.com/zhoyq/spring-boot-starter-jt808/blob/master/README.md">开发入门文档</a>，以及本系列文章。</li>
+<li><strong>JT808模拟测试终端</strong> - 基于electron的版本正在制作中，计划以MIT协议开源。</li>
+<li><strong>完整可用于生产的808服务</strong> - 计划内。</li>
+<li><strong>完整可用于生产的809服务</strong> - 计划外。</li>
+<li><strong>车联网平台</strong> - 计划内（主要技术：SpringBoot、Vue）。</li>
+<li><strong>相关文档会慢慢完善</strong> - 暂时不约定期限。</li>
+</ul>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/JT808">#JT808</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【JT808】Spring Boot Stater Jt808 简单源码解读";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

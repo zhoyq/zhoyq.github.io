@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="技术笔记,docker,实践">
+<meta name="description" content="【docker】【二】docker实践">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【docker】【二】docker实践</h1>
+            </a>
+            <p style="font-size: 10px;">2018-08-20&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/技术笔记" class="custom-color-red">技术笔记</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <blockquote>
+<p>本文是记录常用的<code>docker</code>实例的笔记，尽量使用简单的文字介绍<code>docker</code>实例的使用。所有操作仅在CENTOS7上测试过，但是<code>docker</code>命令是通用的，不同的是配置文件目录位置或者系统命令。</p>
+</blockquote>
+<!-- more -->
+<h2>docker 常用系统镜像</h2>
+<ol>
+<li>busybox</li>
+<li>alpine</li>
+<li>debian</li>
+<li>ubuntu</li>
+<li>centOS</li>
+<li>fedora</li>
+</ol>
+<h2>为镜像添加SSH服务 基于ubuntu_14.04</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 示例中$为宿主机内，@代表docker容器内</span><br><span class="line">$ docker run -it ubuntu:14.04 /bin/bash</span><br><span class="line">@ apt-get update</span><br><span class="line">@ apt-get install openssh-server -y</span><br><span class="line">@ mkdir -p /var/run/sshd</span><br><span class="line">@ /usr/sbin/sshd -D &amp;</span><br><span class="line"># 可以检查端口22 查看程序运行情况</span><br><span class="line"># 修改ssh服务安全登陆配置 取消pam登陆限制</span><br><span class="line">@ sed -ri 's/session required pam_loginuid.so/#session required pam_loginuid.so/g' /etc/pam.d/sshd</span><br><span class="line">@ mkdir /root/.ssh</span><br><span class="line"># 编辑文件 复制信息到文件中 可以通过 ssh-keygen-t rsa 命令生成</span><br><span class="line">@ vi /root/.ssh/authorized_keys</span><br><span class="line"># 创建自动启动脚本</span><br><span class="line">@ vi /run.sh</span><br><span class="line">@ chmod +x /run.sh</span><br><span class="line">@ exit </span><br></pre></td></tr></tbody></table></figure>
+<p>run.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">/usr/sbin/sshd -D</span><br></pre></td></tr></tbody></table></figure>
+<p>或者使用Dockerfile直接生成镜像：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu:14.04</span><br><span class="line">MAINTAINER docker_user(user@docker.com)</span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y openssh-server</span><br><span class="line">RUN mkdir -p /var/run/sshd</span><br><span class="line">RUN mkdir -p /root/.ssh</span><br><span class="line">RUN sed -ri 's/session required pam_loginuid.so/#session required pam_loginuid.so/g' /etc/pam.d/sshd</span><br><span class="line">ADD authorized_keys /root/.ssh/authorized_keys</span><br><span class="line">ADD run.sh /run.sh</span><br><span class="line">RUN chmod 755 /run.sh</span><br><span class="line">EXPOSE 22</span><br><span class="line">CMD [&quot;/run.sh&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>使用命令生成镜像：</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 运行命令</span><br><span class="line">docker build -t sshd:Docerfile</span><br></pre></td></tr></tbody></table></figure>
+<h2>apache WEB服务与应用</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FROM httpd:2.4</span><br><span class="line">COPY ./public-html /usr/local/apache2/htdocs/</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 构建</span><br><span class="line">docker build -t apache2-image .</span><br><span class="line"># 运行</span><br><span class="line">docket run -it --rm --name apache-container -p 80:80 apache2-image</span><br><span class="line">docker run -it --rm --name my-apache-app -p 80:80 -v &quot;$PWD&quot;:/usr/local/apache2/htdocs/ httpd:2.4</span><br></pre></td></tr></tbody></table></figure>
+<p>使用自定义镜像</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">FROM sshd:Dockerfile</span><br><span class="line">MAINTAINER docker\_user(user@docker.com)</span><br><span class="line">ENV DEBIAN\_FRONTEND noninteractive</span><br><span class="line">RUN apt-get -yq install apache2 &amp;&amp; \\</span><br><span class="line">    rm -rf /var/lib/apt/lists/*</span><br><span class="line">RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \\</span><br><span class="line">    dpkg-reconfigure -f noninteractive tzdata</span><br><span class="line">ADD run.sh /run.sh</span><br><span class="line">RUN chmod 755 /*.sh</span><br><span class="line">RUN mkdir -p /var/lock/apache2 &amp;&amp; mkdir -p /app &amp;&amp; rm -rf /var/www/html &amp;&amp; ln -s /app /var/www/html</span><br><span class="line">COPY sample/ /app</span><br><span class="line">ENV APACHE\_RUN\_USER www-data</span><br><span class="line">ENV APACHE\_RUN\_GROUP www-data</span><br><span class="line">ENV APACHE\_LOG\_DIR /var/log/apache2</span><br><span class="line">ENV APACHE\_PID\_FILE /var/run/apache2.pid</span><br><span class="line">ENV APACHE\_RUN\_DIR /var/run/apache2</span><br><span class="line">ENV APACHE\_LOCK\_DIR /var/lock/apache2</span><br><span class="line">ENV APACHE\_SERVERADMIN admin@localhost</span><br><span class="line">ENV APACHE\_SERVERNAME localhost</span><br><span class="line">ENV APACHE\_SERVERALIAS docker.localhost</span><br><span class="line">ENV APACHE\_DOCUMENTROOT /var/www</span><br><span class="line">EXPOSE 80</span><br><span class="line">WORKDIR /app</span><br><span class="line">CMD [&quot;/run.sh&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>run.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/sbin/sshd &amp;</span><br><span class="line">exec apache2 -D FOREGROUND</span><br></pre></td></tr></tbody></table></figure>
+<h2>nginx WEB服务与应用</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FROM nginx</span><br><span class="line">COPY ./index.html /usr/sahre/nginx/html</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 构建</span><br><span class="line">docker build -t my-nginx .</span><br><span class="line"># 运行</span><br><span class="line">docker run --name nginx-container -d my-nginx</span><br><span class="line"># 直接运行</span><br><span class="line">docker run --name nginx-container -p 80:80 -v index.html:/usr/share/nginx/html:ro -d nginx</span><br></pre></td></tr></tbody></table></figure>
+<h2>tomcat WEB服务与应用</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">FROM sshd:Dockerfile</span><br><span class="line">MAINTAINER docker\_user(user@docker.com)</span><br><span class="line">ENV DEBIAN\_FRONTEND noninteractive</span><br><span class="line">RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; \\</span><br><span class="line">    dpkg-reconfigure -f noninteractive tzdata</span><br><span class="line">RUN apt-get install -yq --no-install-recommends wget pwgen ca-certificates &amp;&amp; \\</span><br><span class="line">    apt-get clean &amp;&amp; \\</span><br><span class="line">    rm -rf /var/lib/apt/lists/*</span><br><span class="line">ENV CATALINA\_HOME /tomcat</span><br><span class="line">ENV JAVA\_HOME /jdk</span><br><span class="line">ADD apache-tomcat-7.0.56 /tomcat</span><br><span class="line">ADD jdk /jdk</span><br><span class="line">ADD create\_tomcat\_admin\_user.sh /create\_tomcat\_admin\_user.sh</span><br><span class="line">ADD run.sh /run.sh</span><br><span class="line">RUN chmod +x /*.sh</span><br><span class="line">RUN chmod +x /tomcat/bin/*.sh</span><br><span class="line">EXPOSE 8080</span><br><span class="line">CMD [&quot;/run.sh&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>create_tomcat_admin_user.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">if[-f /.tomcat\_admin\_created ];then</span><br><span class="line">echo &quot;Tomcat 'admin' user already created&quot;</span><br><span class="line">exit 0</span><br><span class="line">fi</span><br><span class="line">PASS=${TOMCAT_PASS:-$(pwgen -s 12 1)}</span><br><span class="line">\_word=$([${TOMCAT\_PASS}] &amp;&amp; echo &quot;preset&quot; || echo &quot;random&quot;)</span><br><span class="line">echo &quot;=&gt; Creating and admin user with a ${_word} password in Tomcat&quot;</span><br><span class="line">sed -i -r 's/&lt;\/tomcat-users&gt;//' ${CATALINA\_HOME}/conf/tomcat-users.xml</span><br><span class="line">echo '&lt;role rolename=&quot;manager-gui&quot;/&gt;' &gt;&gt; ${CATALINA_HOME}/conf/tomcat_users.xml</span><br><span class="line">echo '&lt;role rolename=&quot;manager-script&quot;/&gt;' &gt;&gt; ${CATALINA\_HOME}/conf/tomcat\_users.xml</span><br><span class="line">echo '&lt;role rolename=&quot;manager-jmx&quot;/&gt;' &gt;&gt; ${CATALINA_HOME}/conf/tomcat_users.xml</span><br><span class="line">echo '&lt;role rolename=&quot;admin-gui&quot;/&gt;' &gt;&gt; ${CATALINA\_HOME}/conf/tomcat\_users.xml</span><br><span class="line">echo '&lt;role rolename=&quot;admin-script&quot;/&gt;' &gt;&gt; ${CATALINA_HOME}/conf/tomcat_users.xml</span><br><span class="line">echo '&lt;user username=&quot;admin&quot; password=&quot;${PASS}&quot; roles=&quot;manager-gui,manager-script,manager-jmx,admin-gui,admin-script&quot; /&gt;' &gt;&gt; ${CATALINA_HOME}/conf/tomcat_users.xml</span><br><span class="line">echo '&lt;/tomcat-users&gt;' &gt;&gt; ${CATALINA\_HOME}/conf/tomcat\_users.xml</span><br><span class="line">echo '==&gt; Done!'</span><br><span class="line">touch /.tomcat\_admin\_created</span><br><span class="line">echo '===================================================='</span><br><span class="line">echo 'You can now configure to this Tomcat Server using'</span><br><span class="line">echo &quot;&quot;</span><br><span class="line">echo &quot;admin:${PASS}&quot;</span><br><span class="line">echo &quot;&quot;</span><br><span class="line">echo '===================================================='</span><br></pre></td></tr></tbody></table></figure>
+<p>run.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [! -f /.tomcat_admin_created];then </span><br><span class="line">/create_tomcat_admin_user.sh &amp; </span><br><span class="line">fi</span><br><span class="line">/usr/sbin/sshd -D &amp;</span><br><span class="line">exec ${CATALINA\_HOME}/bin/catalina.sh run</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 构架</span><br><span class="line">docker build -t tomcat7.0:jdk1.6 .</span><br><span class="line"># 运行</span><br><span class="line">docker run -d -P tomcat7.0:jdk1.6</span><br><span class="line"># 获取密码</span><br><span class="line">docker logs &lt;容器ID或者名称&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h2>jetty WEB服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:8080 -p 443:8443 jetty</span><br></pre></td></tr></tbody></table></figure>
+<h2>LAMP 服务与应用</h2>
+<p>LAMP 即 Linux + Apache + Mysql + Php</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 -it linode/lamp /bin/bash</span><br><span class="line">@ systemctl start apache2</span><br><span class="line">@ systemctl start mysql</span><br><span class="line"># 或者</span><br><span class="line">docker run -p 80:80 -p 3306:3306 -d tutum/lamp</span><br></pre></td></tr></tbody></table></figure>
+<h2>可持续开发与管理 服务与应用</h2>
+<p>Jenkins + Gitlab</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 -p 50000:50000 -v /your/path:/var/jenkins\_home jenkins</span><br><span class="line">docker run --detach --hostname gitlab.example.com --publish 443:443 --publish 80:80 --publish 23:23 --name gitlib --restart always --volume /srv/gitlib/config:/etc/gitlib --volume /srv/gitlib/logs:/var/log/gitlib --volume /srv/gitlib/data:/var/opt/gitlib gitlib/gitlib-ce:latest</span><br></pre></td></tr></tbody></table></figure>
+<h2>mysql 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 运行 自定义密码和配置文件</span><br><span class="line">docker run --name hi-mysql -eMYSQL\_ROOT\_PASSWORD=123 -v /my/custom:/etc/mysql/conf.d -d mysql:5.6.40</span><br><span class="line"># 链接使用mysql</span><br><span class="line">docker run --name some-app --link some-mysql:mysql -d application-that-uses-mysql</span><br><span class="line"># 备份</span><br><span class="line">docker exec hi-mysql /bin/sh -c 'exec mysqldump -uroot -p&quot;123456&quot; &lt;db名称&gt; | gzip' &gt; /root/backup/back-$(date +%Y%m%d).sql.gz</span><br><span class="line"># 备份所有</span><br><span class="line">docker exec hi-mysql /bin/sh -c 'exec mysqldump --all-databases -uroot -p&quot;123456&quot; | gzip' &gt; /root/backup/back-$(date +%Y%m%d).sql.gz</span><br></pre></td></tr></tbody></table></figure>
+<h2>mongo 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mongo-container -d mongo</span><br><span class="line">docker run -it --link mongo-container:db alpine sh</span><br><span class="line"># 直接进入数据命令交互模式</span><br><span class="line">docker run -it --link mongo-container:db --entrypoint mongo mongo --host db</span><br></pre></td></tr></tbody></table></figure>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FROM sshd</span><br><span class="line">MAINTAINER docker\_user(user@docker.com)</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y mongodb pwgen &amp;&amp; apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/* </span><br><span class="line">RUN mkdir -p /data/db</span><br><span class="line">VOLUME /data/db</span><br><span class="line">ENV AUTH yes</span><br><span class="line">ADD run.sh /run.sh</span><br><span class="line">ADD set\_mongodb\_password.sh /set\_mongodb\_password.sh</span><br><span class="line">RUN chmod 755 /*.sh</span><br><span class="line">EXPOSE 27017</span><br><span class="line">EXPOSE 28017</span><br><span class="line">CMD [&quot;/run.sh&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>set_mongodb_password.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">if [-f /.mongodb\_password\_set];then</span><br><span class="line">echo &quot;MongoDB password already set!&quot;</span><br><span class="line">exit 0</span><br><span class="line">fi</span><br><span class="line">/usr/bin/mongod --smallfiles --nojournal &amp; </span><br><span class="line">PASS=${MONGODB_PASS:-$(pwgen -s 12 1)}</span><br><span class="line">\_word=$([${MONGODB\_PASS}] &amp;&amp; echo &quot;preset&quot; || echo &quot;random&quot;)</span><br><span class="line">RET=1</span><br><span class="line">while [[RET -ne 0]];do</span><br><span class="line">echo &quot;=&gt; Waiting for confirmation of MongoDB service startup&quot;</span><br><span class="line">sleep 5</span><br><span class="line">mongo admin --eval &quot;help&quot; &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">RET=$?</span><br><span class="line">done</span><br><span class="line">echo &quot;=&gt; Creating an admin user with a ${\_word} password in MongoDB&quot;</span><br><span class="line">mongo admin --eval &quot;db.addUser({user:'admin',pwd:'$PASS',roles:['userAdminAnyDatabase','dbAdminAnyDatabase']});&quot;</span><br><span class="line">mongo admin --eval &quot;db.shutdownServer();&quot;</span><br><span class="line">echo &quot;=&gt; Done!&quot;</span><br><span class="line">touch /.mongodb_password_set</span><br><span class="line">echo &quot;=================================================&quot;</span><br><span class="line">echo &quot;You can now connect to this MongoDB server using&quot;</span><br><span class="line">echo &quot;&quot;</span><br><span class="line">echo &quot;mongo admin -u admin -p $PASS --host &lt;host&gt; --port &lt;port&gt;&quot;</span><br><span class="line">echo &quot;&quot;</span><br><span class="line">echo &quot;Please remember to change the above password as soon as possible!&quot;</span><br><span class="line">echo &quot;=================================================&quot;</span><br></pre></td></tr></tbody></table></figure>
+<p>run.sh 内容</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if [-f /.mongodb\_password\_set];then</span><br><span class="line">/set\_mongodb\_password.sh</span><br><span class="line">fi </span><br><span class="line">if [&quot;$AUTH&quot; == &quot;yes&quot;];then</span><br><span class="line">export mongodb='/usr/bin/mongod --nojournal --auth --httpinterface --rest'</span><br><span class="line">else </span><br><span class="line">export mongodb='/usr/bin/mongod --nojournal --httpinterface --rest'</span><br><span class="line">fi</span><br><span class="line">if [!-f /data/db/mongod.lock];then</span><br><span class="line">eval $mongodb</span><br><span class="line">else</span><br><span class="line">export mongodb=$mongodb' --dbpath /data/db'</span><br><span class="line">rm /data/db/mongod.lock</span><br><span class="line">mongod --dbpath /data/db --repair &amp;&amp; eval $mongodb</span><br><span class="line">fi</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 构建</span><br><span class="line">docker build -t mongodb-image .</span><br><span class="line"># 运行</span><br><span class="line">docker run -d -p 27017:17017 -p 28017:28017 mongodb</span><br><span class="line"># 使用 docker logs &lt;容器名称或者ID&gt; 获取密码</span><br><span class="line"># 指定密码运行</span><br><span class="line">docker run -d -p 27017:17017 -p 28017:28017 -eMONGODB\_PASS=&quot;mypass&quot; mongodb</span><br><span class="line"># 不需要密码</span><br><span class="line">docker run -d -p 27017:17017 -p 28017:28017 -eAUTH=no mongodb</span><br></pre></td></tr></tbody></table></figure>
+<h2>redis 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name redis-container -d redis</span><br></pre></td></tr></tbody></table></figure>
+<h2>memcached 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 限制内存使用大小</span><br><span class="line">docker run --name memcached-container -d memcached -m 64 </span><br></pre></td></tr></tbody></table></figure>
+<h2>CouchDB 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name couchdb-container couchdb</span><br></pre></td></tr></tbody></table></figure>
+<h2>Cassandra 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name my-cassandra -d cassandra:latest</span><br></pre></td></tr></tbody></table></figure>
+<p>搭建集群</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run --name my-cassandra -d -e CAS-SANDRA\_BROADCAST\_ADDRESS=10.42.42.42 -p 7000:7000 cassandra:latest</span><br><span class="line">docker run --name my-cassandra -d -e CAS-SANDRA\_BROADCAST\_ADDRESS=10.43.43.43 -p 7000:7000 -e CASSANDRA\_SEEDS=10.42.42.42 cassandra:latest</span><br></pre></td></tr></tbody></table></figure>
+<h2>RabbitMQ 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 安装以及链接命令</span><br><span class="line">docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3</span><br><span class="line">docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ\_ERLANG\_COOKIE='secret cookie here' rabbitmq:3</span><br><span class="line">docker run -it --rm --link some-rabbit:my-rabbit -e RABBITMQ\_ERLANG\_COOKIE='secret cookie here' rabbitmq:3 bash</span><br><span class="line">@ rabbitmqctl -n rabbit@my-rabbit list\_users</span><br><span class="line"></span><br><span class="line">docker run -it --rm --link some-rabbit:my-rabbit -e RABBITMQ\_ERLANG\_COOKIE='secret cookie here' -e RABBITMQ\_NODENAME=rabbit@my-rabbit rabbitmq:3 bash</span><br><span class="line">@ rabbitmqctl list\_users</span><br><span class="line"># 管理</span><br><span class="line">docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 rabbitmq:3-management</span><br><span class="line"># 默认用户名密码 guest guest</span><br><span class="line">docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ\_DEFAULT\_USER=user -e RABBITMQ\_DEFAULT\_PASS=password rabbitmq:3-management</span><br><span class="line"># vhost </span><br><span class="line">docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ\_DEFAULT\_VHOST=my\_vhost rabbitmq:3-management</span><br><span class="line">docker run --name some-app --link some-rabbit:rabbit -d application-that-uses-rabbitmq</span><br></pre></td></tr></tbody></table></figure>
+<h2>Celery 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 官方镜像</span><br><span class="line">docker run --link some-rabbit:rabbit --name some-celery -d celery:latest</span><br><span class="line"># 检查集群状态</span><br><span class="line">docker run --link some-rabbit:rabbit --rm celery celery status</span><br><span class="line"># 启动celery worker</span><br><span class="line">docker run --link some-redis:redis -e CELERY\_BROKER\_URL=redis://redis --name some-celery -d celery</span><br></pre></td></tr></tbody></table></figure>
+<h2>Hadoop 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 使用官方镜像</span><br><span class="line">docker run -it sequenceiq/hadoop-docker:2.7.0 /etc/bootstrap.sh -bash</span><br></pre></td></tr></tbody></table></figure>
+<h2>Spark 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 官方</span><br><span class="line">docker pull sequenceiq/spark:1.6.0</span><br><span class="line">docker run -it -p 8088:8088 -p 8042:8042 -h sandbox sequenceiq/spark:1.6.0 bash</span><br></pre></td></tr></tbody></table></figure>
+<h2>Storm 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/denverdino/dockerstorm.git</span><br><span class="line">cd docker-swarm/local</span><br><span class="line">docker-compose build</span><br><span class="line">docker-compose up -d</span><br><span class="line">docker-compose scale supervisor=3</span><br><span class="line">docker-compose start topology</span><br></pre></td></tr></tbody></table></figure>
+<h2>Elasticsearch 服务与应用</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d elesticsearch</span><br><span class="line">docker run -d elesticsearch -Des.node.name=&quot;TestNode&quot;</span><br><span class="line"># 自定义配置</span><br><span class="line">docker run -d -v &quot;$PWD/config&quot;:/usr/share/elasticsearch/config elesticsearch</span><br><span class="line"># 数据持久化</span><br><span class="line">docker run -d -v &quot;$PWD/esdata&quot;:/usr/share/elasticsearch/data elesticsearch</span><br><span class="line"># 9200 对外服务 9300 内部通信</span><br></pre></td></tr></tbody></table></figure>
+<h2>C/C++ 开发环境</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM gcc:4.9</span><br><span class="line">COPY . /usr/src/myapp</span><br><span class="line">WORKDIR /usr/src/myapp</span><br><span class="line">RUN gcc -o myapp main.c</span><br><span class="line">CMD [&quot;./myapp&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker build -t gcc-image .</span><br><span class="line">docker run -it --rm --name gcc-container gcc-image</span><br><span class="line">docker run --rm --v &quot;$PWD&quot;:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o myapp main.c</span><br></pre></td></tr></tbody></table></figure>
+<h2>LLVM</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull imiell/llvm</span><br></pre></td></tr></tbody></table></figure>
+<h2>Clang</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull bowery/clang</span><br></pre></td></tr></tbody></table></figure>
+<h2>Java 开发环境</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM java:7</span><br><span class="line">COPY . /usr/src/javaapp</span><br><span class="line">WORKDIR /usr/src/javaapp</span><br><span class="line">RUN javac HelloWorld.java</span><br><span class="line">CMD [&quot;java&quot;,&quot;HelloWorld&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<p>构建并运行</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker build -t java-image</span><br><span class="line">docker run -it --rm --name java-container java-image</span><br><span class="line">docker run --rm -v &quot;$PWD&quot;:/usr/src/javaapp -w /usr/src/javaapp java:7 javac HelloWorld.java</span><br></pre></td></tr></tbody></table></figure>
+<h2>Python 开发环境</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FROM python:3-onbuild</span><br><span class="line">CMD [&quot;python3.5&quot;,&quot;./py3-sameple.py&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<h2>PyPy</h2>
+<p>Dockerfile</p>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FROM pypy:3-onbuild</span><br><span class="line">CMD [&quot;pypy3&quot;,&quot;./hi.py&quot;]</span><br></pre></td></tr></tbody></table></figure>
+<h2>Javascript 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull node:4-onbuild</span><br></pre></td></tr></tbody></table></figure>
+<h2>Go 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull golang</span><br><span class="line"># beego</span><br><span class="line">git clone https://github.com/astaxie/beego.git</span><br><span class="line"># Gogs</span><br><span class="line">docker run --rm --name gogs -p 8300:3000 -p 8322:22 -v /srv/lxc/gogs/data:/data   gogs/gogs</span><br></pre></td></tr></tbody></table></figure>
+<h2>Php 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull php:5.6-cli</span><br></pre></td></tr></tbody></table></figure>
+<h2>Ruby 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull ruby:2.1.2-onbuild</span><br><span class="line">docker pull jruby:1.7.24-onbuild</span><br></pre></td></tr></tbody></table></figure>
+<h2>Perl 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull perl</span><br></pre></td></tr></tbody></table></figure>
+<h2>R 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull r-base</span><br></pre></td></tr></tbody></table></figure>
+<h2>Erlang 开发环境</h2>
+<figure class="well highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull erlang:latest</span><br></pre></td></tr></tbody></table></figure>
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/docker">#docker</a>
+            <a href="/tags/实践">#实践</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【docker】【二】docker实践";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

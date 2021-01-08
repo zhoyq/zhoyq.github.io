@@ -1,0 +1,43 @@
+figure.highlight{
+  padding: 0px;
+}
+figure table {
+  width: 100%;
+}
+.blog .blog-content .blog-body h1::before,
+.blog .blog-content .blog-body h2::before,
+.blog .blog-content .blog-body h3::before,
+.blog .blog-content .blog-body h4::before,
+.blog .blog-content .blog-body h5::before,
+.blog .blog-content .blog-body h6::before {
+    content: '# ';
+    color: #d32f2f;
+    font-weight: normal;
+}
+blockquote {
+    font-size: 16px;
+    border-left: 4px solid #d32f2f;
+    position: relative;
+}
+.custom-color-red {
+    color: #d32f2f;
+}
+.custom-background-color-red {
+    background-color: #d32f2f;
+}
+.custom-profile {
+    mix-blend-mode: difference;
+}
+.blog code {
+    color: #d32f2f;
+}
+.timeline-header-title {
+    background-color: #d32f2f;
+}
+.list-group.bg-trans a.list-group-item:hover:not(.active) {
+    color: white;
+    background-color: #d32f2f;
+}
+.highlight .gutter {
+    width: 30px;
+}

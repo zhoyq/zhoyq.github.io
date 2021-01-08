@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="转载,敏捷,SCRUM">
+<meta name="description" content="【SCRUM】敏捷好，敏捷坏">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>衷于栖</title>
+<!--[if lte IE 10]><script>window.location.href='/upgrade.html';</script><![endif]-->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/nifty.min.css" rel="stylesheet">
+<link href="/css/custom2.css" rel="stylesheet">
+<script type="text/javascript">
+var ctx = '';
+
+var springStartTime = new Date('2020/01/25 00:00:00').getTime();
+var springEndTime = new Date('2020/02/01 00:00:00').getTime();
+var nowTime = new Date().getTime();
+if (springStartTime < nowTime && springEndTime > nowTime) {
+    document.write('<link href="/css/themes/type-a/theme-well-red.min.css" rel="stylesheet">');
+    document.write('<link href="/css/custom.css" rel="stylesheet">');
+}
+</script>
+<link href="/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
+<link href="/premium/icon-sets/icons/solid-icons/premium-solid-icons.min.css" rel="stylesheet">
+<link href="/css/pace.min.css" rel="stylesheet">
+<script src="/js/pace.min.js"></script></head>
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-out">
+
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                    <div class="brand-title">
+                        <span class="brand-text">衷于栖</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-content clearfix">
+                <ul class="hidden-sm hidden-md hidden-lg nav navbar-top-links pull-left">
+                    <li>
+                        <i class="psi-deer brand-icon" style="font-size: 36px; color: #ffb300;padding: 10px;"></i>
+                        <div class="brand-title pull-right">
+                            <span class="brand-text" style="color: #dbdbdb;">衷于栖</span>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <div class="custom-search-form">
+                            <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                <i class="pli-magnifi-glass"></i>
+                            </label>
+                            <div class="search-container collapse" id="nav-searchbox">
+                                <input id="search-input" type="text" class="form-control" placeholder="搜索..." autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links">
+                    <li>
+                        <a href="/">
+                            <i class="pli-home" style="margin-top: -3px;margin-right: 3px;"></i>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/archives">
+                            <i class="pli-big-data" style="margin-top: -3px;margin-right: 3px;"></i>归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="pli-robot" style="margin-top: -3px;margin-right: 3px;"></i>关于
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <hr class="new-section-sm bord-no">
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel">
+                            <div class="fixed-fluid">
+                                <div class="fixed-sm-250 pull-sm-right">
+<div class="pad-btm bord-btm">
+    <div class="panel widget">
+        <div class="widget-header bg-purple">
+            <img class="widget-bg img-responsive custom-profile" src="/img/avatar.jpg" alt="Image">
+        </div>
+        <div class="widget-body text-center">
+            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="/img/profile-photos/5.png">
+            <h4 class="mar-no text-main">衷于栖</h4>
+            <p class="text-muted mar-no">自由开发者</p>
+            <div class="pad-ver btn-groups">
+                <a href="mailto:feedback@zhoyq.com" class="btn btn-icon pli-email icon-lg add-tooltip" data-original-title="邮箱" data-container="body"></a>
+                <a href="https://gitee.com/liu-lu" class="btn btn-icon pli-cloud icon-lg add-tooltip" data-original-title="码云" data-container="body"></a>
+                <a href="https://weibo.com/liulu010" class="btn btn-icon pli-pinterest icon-lg add-tooltip" data-original-title="微博" data-container="body"></a>
+                <a href="/atom.xml" class="btn btn-icon pli-rss icon-lg add-tooltip" data-original-title="RSS订阅" data-container="body"></a>
+            </div>
+        </div>
+    </div>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">分类目录</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="/categories/三维技术" class="list-group-item list-item-sm">三维技术<span class="badge badge-success custom-background-color-red">4</span></a>
+    <a href="/categories/介绍" class="list-group-item list-item-sm">介绍<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/应用" class="list-group-item list-item-sm">应用<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/异常" class="list-group-item list-item-sm">异常<span class="badge badge-success custom-background-color-red">1</span></a>
+    <a href="/categories/技术笔记" class="list-group-item list-item-sm">技术笔记<span class="badge badge-success custom-background-color-red">17</span></a>
+    <a href="/categories/游戏" class="list-group-item list-item-sm">游戏<span class="badge badge-success custom-background-color-red">2</span></a>
+    <a href="/categories/源码解读" class="list-group-item list-item-sm">源码解读<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/管理" class="list-group-item list-item-sm">管理<span class="badge badge-success custom-background-color-red">5</span></a>
+    <a href="/categories/读书笔记" class="list-group-item list-item-sm">读书笔记<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/车联网" class="list-group-item list-item-sm">车联网<span class="badge badge-success custom-background-color-red">3</span></a>
+    <a href="/categories/转载" class="list-group-item list-item-sm">转载<span class="badge badge-success custom-background-color-red">11</span></a>
+    <a href="/categories/随笔" class="list-group-item list-item-sm">随笔<span class="badge badge-success custom-background-color-red">3</span></a>
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">热门标签</p>
+<ul class="hidden-xs list-inline mar-hor pad-btm bord-btm">
+    <li class="tag tag-sm"><a href="/tags/GIT"><i class="pli-tag"></i> GIT</a></li>
+    <li class="tag tag-sm"><a href="/tags/工作流指南"><i class="pli-tag"></i> 工作流指南</a></li>
+    <li class="tag tag-sm"><a href="/tags/docker"><i class="pli-tag"></i> docker</a></li>
+    <li class="tag tag-sm"><a href="/tags/SCRUM"><i class="pli-tag"></i> SCRUM</a></li>
+    <li class="tag tag-sm"><a href="/tags/JT808"><i class="pli-tag"></i> JT808</a></li>
+    <li class="tag tag-sm"><a href="/tags/自定义扩展"><i class="pli-tag"></i> 自定义扩展</a></li>
+    <li class="tag tag-sm"><a href="/tags/百度地图"><i class="pli-tag"></i> 百度地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/狼人杀"><i class="pli-tag"></i> 狼人杀</a></li>
+    <li class="tag tag-sm"><a href="/tags/敏捷"><i class="pli-tag"></i> 敏捷</a></li>
+    <li class="tag tag-sm"><a href="/tags/可维护"><i class="pli-tag"></i> 可维护</a></li>
+    <li class="tag tag-sm"><a href="/tags/CentOS"><i class="pli-tag"></i> CentOS</a></li>
+    <li class="tag tag-sm"><a href="/tags/高德地图"><i class="pli-tag"></i> 高德地图</a></li>
+    <li class="tag tag-sm"><a href="/tags/集中式"><i class="pli-tag"></i> 集中式</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭麒麟"><i class="pli-tag"></i> 郭麒麟</a></li>
+    <li class="tag tag-sm"><a href="/tags/郭德纲"><i class="pli-tag"></i> 郭德纲</a></li>
+    <li class="tag tag-sm"><a href="/tags/进阶"><i class="pli-tag"></i> 进阶</a></li>
+    <li class="tag tag-sm"><a href="/tags/路由节点编辑器"><i class="pli-tag"></i> 路由节点编辑器</a></li>
+    <li class="tag tag-sm"><a href="/tags/谷歌瓦片"><i class="pli-tag"></i> 谷歌瓦片</a></li>
+    <li class="tag tag-sm"><a href="/tags/语言特性"><i class="pli-tag"></i> 语言特性</a></li>
+    <li class="tag tag-sm"><a href="/tags/覆盖物"><i class="pli-tag"></i> 覆盖物</a></li>
+</ul><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">微信订阅</p>
+<div class="hidden-xs pad-btm bord-btm img-gallery">
+    <img class="img-responsive img-round" style=" width: 240px; margin: auto;" src="/img/wechatsub.jpg" alt="Image">
+</div><p class="hidden-xs pad-hor mar-top text-main text-bold text-sm text-uppercase">友情链接</p>
+<div class="hidden-xs list-group bg-trans pad-btm bord-btm">
+    <a href="https://blog.wanghaida.com/" target="_blank" class="list-group-item list-item-sm">王海达博客</a>
+    <a href="http://steve-yegge.blogspot.com/" target="_blank" class="list-group-item list-item-sm">Steve Yegge</a>
+    <a href="https://www.debuginn.cn/" target="_blank" class="list-group-item list-item-sm">Debug 客栈</a>
+    <a href="http://codelei.cn/" target="_blank" class="list-group-item list-item-sm">Codelei's Blog</a>
+    <a href="http://fangzheng.xyz" target="_blank" class="list-group-item list-item-sm">笛卡尔积</a>
+    <a href="http://blog.hxpgxt.cn/" target="_blank" class="list-group-item list-item-sm">Java九点半课堂</a>
+    <a href="http://tiaocaoer.com/" target="_blank" class="list-group-item list-item-sm">薛定喵君</a>
+</div>                                </div>
+                                <div class="fluid">
+                                    <div class="blog panel-body">
+    <div class="blog-title media-block">
+        <div class="media-right textright">
+            <a href="#" class="btn btn-icon demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+            <a href="#" class="btn btn-icon demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+        </div>
+        <div class="media-body">
+            <a href="#" class="btn-link">
+                <h1>【SCRUM】敏捷好，敏捷坏</h1>
+            </a>
+            <p style="font-size: 10px;">2018-02-08&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="psi-start-2 icon-fw custom-color-red"
+                   style="margin-top: -3px;"></i><a href="/categories/转载" class="custom-color-red">转载</a>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="blog-content">
+        <div class="blog-body">
+            <p>该文章引用自 《程序员的呐喊》， 作者：<a href="https://en.wikipedia.org/wiki/Steve_Yegge">Steve Yegge</a>，译者：徐旭铭。</p>
+<p>“争球（Scrums）是橄榄球里最危险的词，因为摔倒或是动作不当可能会导致前排运动员受伤，基至可能会扭坏脖子” —— 维基百科</p>
+<!-- more -->
+<p>在我小的时候，胆固醇还是个坏东西。大家都知道。脂肪，不好。胆固醇，不好。盐，不好。所有的东西都不好。但是现在胆固醇里也分好坏，好像我们能区分它们似的。这种转变非常奇怪，就好像食品药物监督管理局突然发布声明，宣布老鼠药其实有两种：一种是好的，另一种是坏的，你应该吃很多好的老鼠药，不要吃坏的老鼠药，而且绝对不要混在一起吃。</p>
+<p>差不多在一年前，我对所谓的“敏捷”编程还只是抱着相当单一的看法，觉得这玩意儿基本上又是某种愚蠢的营销骗局，是专门忽悠那些从来没读过《没有银弹》的菜鸟程序员的科技病毒，那种会去延长保险期，会买自助教科书，相信老板真的关心他们，把他们当人看的程序员，那种专门去各种研讨会认识朋友，不知道怎么在机场躲开和挥舞小本本的狂热分子眼神接触的程序员，还有那些真的相信在小卡片上乱写一通就能瞬间简化软件开发的家伙。</p>
+<p>这些人都是傻瓜。只有这个词可以形容他们。我体内坏的那部分胆固醇告诉我，敏捷方法论就是忽悠那些傻瓜用的。</p>
+<p>不过最近我有了很多机会观察不同风格的敏捷主义，现在我觉得这种看法只有九成是对的，其实还是有好的敏捷的，只不过我花了很长时间，拨开各种对scrum等敏捷流程狂热顶礼膜拜的迷雾后，才看出这一点，现在我应该看得很清楚了。</p>
+<p>欢迎你们来参加我的研讨班，只要499.95美元，绝对低价!哈哈哈，傻瓜!</p>
+<p>好啦，开个玩笑，研讨班里只有坏的敏捷，要是将来有一天你发现我摇身一变，打着敏捷咨询师的头衔到处招摇撞骗，让无知群众来交钱听我对敏捷开发的深层思考和理念的话，你有权来戳穿我的西洋镜。要是我借口说我只是在说笑，告诉我说我告诉过你我会那么说。要是我辩解说自己其实是泰勒·德顿，命令你不得对我不利，告诉我说我肯定说过自己会说这句话，然后毫不留情地干掉我吧。</p>
+<p>现在我会告诉你好的敏捷是什么样子的，免费哦。</p>
+<p>要把好的敏捷和坏的敏捷孤立起来讲是很难的，所以可能会把它们放在一起说。不过放心，好的那种我会用一只快乐的小老鼠来标注，而标的那种则会用一只悲伤的死老鼠来标注，这样你就能分清楚啦。</p>
+<h2>坏的那种</h2>
+<p>(死老鼠)</p>
+<p>远古时代，大多数公司都会采用这样的软件开发流程：</p>
+<ul>
+<li>雇一堆工程师，然后再雇用更多的工程师。</li>
+<li>幻想一个项目出来。</li>
+<li>定一个打算发布的日期。</li>
+<li>指派一些工程师开始干活。</li>
+<li>不断催进度，要么最后项目发布，要么全体阵亡，要么干完的同时阵亡。</li>
+<li>然后或许可以搞一个廉价可怜的小聚会。这一步不是必须的。</li>
+<li>然后重新来过。</li>
+</ul>
+<p>谢天谢地，你的公司应该不是这样的吧？好险好险！</p>
+<p>有趣的是，这也是非技术公司(比如克莱斯勒)开发软件的方式，只不过他们没有雇工程师，而是临时招募了一堆软件咨询师，然后丢给他们一份为期两年的项目文档，要求他们不但要按时完成，还要在签署合同后接受客户拍脑袋想出来的各种变化和修改。结果最后做得一塌糊涂，没人愿意付钱，弄得所有人都不开心。</p>
+<p>于是有些咨询师开始琢磨：“嘿，要是这些公司坚持这么幼稚的话，那我们就应该把他们当小孩子!”他们也的确是这么做的。当甲方说“我们要一个A到Z的特性”时，咨询师就会在这些大大的索引卡片上写下“A”，然后再在第二张上写下“B”，依次类推，每张卡片上还有一个时间估算，最后把它们都贴在墙上。每当客户要加什么东西的时候，咨询师就会指指墙壁说：“没问题，伙计。你打算换掉上面哪张卡？伙计？”</p>
+<p>难道没有人质疑过为什么克莱斯勒最后取消了项目吗？（<a href="">https://en.wikipedia.org/wiki/Extreme_programming#History</a>）</p>
+<p>有一天，这帮丢了大客户的咨询师们正在酒吧里消磨时间，其中一个（名叫罗恩·贺伯特）说道：“这种按代码数量收钱的办法太烂了。你们知道怎么才能赚大饯吗？自己开宗立派才是王道。”于是极限编程和科学教诞生了。</p>
+<p>很快，人们就发现所谓的极限编程完全是胡说八道。就拿结对编程来说吧，这算得上是极限编程里最夸张的一项了。敏捷大师都不喜欢谈论它，现实是：根本没人这么工作。它背后的理念是：“如果一个程序员坐在屏幕前能写出好代码，那么10个程序员肯定能做得更好，因为越多越好嘛！可惜大多数屏幕前最多就能挤两个程序员，不然坐着不舒服，所以我们就叫它结对编程吧！”</p>
+<p>这你得原谅他们。这么多年来，和他们打交道的那些公司基本上都是学龄前的智商，时间一长真的会拉低一个人的水平。</p>
+<p>可棘手的地方在于，病毒很难杀干净，特别是那种渗入基因里的东西。当所有人都接受敏捷那套东西后（因为大家都希望工作更有效率），要承认失败的代价是很大的，太丢人了。于是就出现了一些新的敏捷“方法论”，他们宣称尽管那些方法论行不通，但是他们的理论是可行的！</p>
+<p>你自己去看看他们的网站吧（<a href="">http://www.controlchaos.com/</a>）<sup>[1]</sup>。告诉我这些玩意儿不是电视导购。来，试试看。光是看一眼就够丢人了。（作者注:6年了，现在看还是很丢人。）</p>
+<p>由于巴纳姆效应的存在，这帮人还是迅速按到了不少饯，就像科学教一样。这不是他们的错。有的人就是不把自己的钱当回事，更不用提什么尊严了。</p>
+<p>只要观察一下常见营销法则，我们就能明白敏捷方法论有多么不靠谱：</p>
+<ul>
+<li>任何自称“方法论”的东西基本上都是愚蠢的。</li>
+<li>任何需要“传道士”或是喜欢办研讨班的东西，都是专门骗钱的。</li>
+<li>从来不提竞争对手或是替换方案的东西很可能都是自私自利的。</li>
+<li>一般来说，缺乏数学细节的图表都是愚蠢的。</li>
+</ul>
+<p>这単所说的“愚蠢”，是指“专门针对笨蛋的那些了不起的营销手段”。</p>
+<p>无论如何，咨询师们得以继续在各种路演上挥舞光鲜亮丽的小册子。我觉得他们开始的目标只是大公司，反正只要签订灵活的合约，让他们可以不断地在“两个星期”内发布“不管什么东西”，知道客户破产就好了。不过我也觉得应该不会有那么多笨蛋客户会答应签这种合约。</p>
+<p>这就是那些咨询师开始跑来忽悠你的原因。为什么不打入公司内部，直接向开发人员推销呢？很多公司都采用了在上面提到过的那种催进度的开发流程，要是能说服中层经理和技术主管相信这种低成本的方式能救他们于水火，那肯定会有人买账的。</p>
+<p>我的朋友啊，这时开始，他们这些人就从“无害的小丑”变成了“潜在的危险”，因为在这之前，他们只不过是忽悠一下那些连自己开发软件都不会的土豪公司，而现在却可能给我们身边的经理洗脑。大多数情况下，我们对这种尴尬的状况束手无策：一个本来好好的经理现在却深受其害，挥舞着极限编程的书和索引卡，滔滔不绝地鼓吹这种新形式的官僚主义对提升团队生产力有多大帮助。</p>
+<p>我们怎么知道它没有改善生产力呢？这个问题不好答。因为要是很明显的话，它的谎言早就被揭穿了。但是软件工程师的生产力本来就很难衡量，个中原因大家都明白。要科学验证软件开发就更是天方夜谭了。你不能让同一支团队把一个项目做两遍，因为第二次的时候，很多因素都会发生变化。你也不能让两支团队去做同一个项目，因为有太多不可控的因素在里面，而且尝试的代价太高，谁也负担不起，让同一支团队接连去做两个不同项目也不能算是有效的实验。</p>
+<p>最好的办法可能是从很多团队做的很多项目里收集一些统计数据出来，然后看看能不能发现一些相似的地方，然后做一点回归测试，以期发现一些有意义的相关性。但是这些数据要从哪里来？就算公司有保留这种资料，它们也不会给你看的。况且大多数公司也不会保存，它们只会掩盖自己计划的失败，然后乐观地开始下一个项目。（作者注：很多敏捷脑残粉都试图说服我说，有人曾经证明敏捷在某个真正科学的实验里是“行之有效”的。他们在说话的时候，眼睛都是望向别处的。）</p>
+<p>既然没法进行实验和证明，那么它的科学性就值得质疑了，这就是这个问题很难回答的原因，食物肓从现象如此大行其道也是这个原因。人们从心里希望那些减肥食品真的有效，老实说，连我都这么期望。比如隔壁乔家的吃了这个玩意儿以后，成功减掉了35磅这种压根毫无统计意义的个案，会让想要减肥的人听说以后想：“反正试试看也没什么坏处啊。”</p>
+<p>每次我听到别人想要在自己的团队里尝试敏捷方法论的时候，用的也是这个理由。这可不是巧合，</p>
+<p>但是只写坏的敏捷肯定效果不好。就好像不管你怎么吐槽科学教，怎么驳斥食物盲从，谁知道对方有没有听进去呢。消灭这种文化上的东西比戒烟要难多了。我知道是因为我都经历过。想要产生正确的影响，一定要同时另指一条明路，我以前吃过亏就是因为当时没方向，表达不出来。</p>
+<p>坏的敏捷里，最大的问题之一就是它把非敏捷的开发流程武断地分成两类：瀑布式和牛仔式。大家都知道瀑布式不好，这基本上已经是公认的了。那么牛仔式编程又如何呢？敏捷大师们将之定义为“团队里的每个成员都按照自己认为的最佳方式来行事”。</p>
+<p>难道开发流程就只有这些了吗？牛仔式编程一定是不好的吗？敏捷大师们的口气听起来好像是显而易见的，但是除了默认它是“混乱的”外，又说不出具体怎么不好，为什么不好。</p>
+<p>去年我有幸同时观察到了好的敏捷和坏的敏捷，我问了这些团队以及各自的技术主管（同时采用好的和坏的敏捷）很多问题：效果如何，感觉如何，具体流程是怎么样的。我确实很好奇，一方而是因为我去年圣诞节的时候就答应说要尝试一下敏捷（“嘿，反正也没坏处”），结果因为和一个组员争论到底什么数据可以放到索引上而闹得不欢而散，最后不了了之。另一方面，其他组的朋友似乎被这种玩命似的冲进度搞得精疲力竭，这种事情在Google可不常见。</p>
+<p>所以我花了整整一年的时间去深入地观察学习。</p>
+<h2>好的那种</h2>
+<p>（快乐的小老鼠）</p>
+<p>我先来聊一聊Google的开发流程。我说的肯定不完整，但是对今天的讨论来说应该足够了。我在Google待了有一年半了，虽然当初花了点时间，不过我想我已经基本弄明白了。我还在学习。所以这里分享的都是我目前了解到的东西。</p>
+<p>从大局上来看，Google的流程在那些有着比较传统的软件公司出身的人眼里的确很混乱。新人加入的时候，首先引起注意的就是：</p>
+<ul>
+<li>经理也至少有一半时间在写代码，所以他们更像是技术主管。</li>
+<li>工程师可以在任何时候换组，或者换项目，不会有人质疑你。只要一句话，第二天就会有人来帮你把东西都搬到新的组那边去。</li>
+<li>Google的理念是不去告诉工程师要做什么，他们也是这样严格执行的。</li>
+<li>鼓励工程师花20%的时间（这里指的是周一到周五，早上8点到下午5点，不包括周末或是私人时间）去做任何想做的事情，而不是日常工作。</li>
+<li>很少开会，我估计一个工程师平均一周大概开3次会吧，这还包括了和主管的一对一沟通。</li>
+<li>安静的环境。工程师或单独，或三五一组，都非常安静地专注于自己的工作。</li>
+<li>没有甘特图，或是日期-任务-负责人的表格，或是任何看得到的项目管理工具，反正我没见过。</li>
+<li>就算真的碰到项目吃紧的时候（其实很少），大家还是会去吃午饭和晚饭，都是免费的哦，味道也很好（这点还是很出名的），除非自愿，没人会长时间拼命工作。</li>
+</ul>
+<p>当然了，这些说得还是很笼统的。资深一点的员工肯定会有不同的看法，就好像我对亚马逊的看法也不是完全客观一样，毕竟我从1998年开始就在那儿了，遥想当年还是很了不起的。不过我估计大多数Google员工还是会基本同意我的总结的。</p>
+<p>那么这样的形式怎么行得通昵？</p>
+<p>很多人都这么问过我。老实说，连我自己都这么问过自己。那么到底是什么促使工程师去解决那些麻烦的项目，去对付那些满是bug的运维噩梦的呢？要是工程师可以任意选择自己想做的事情，他们又是怎么和公司的目标保持一致的呢？最重要的那些项目是怎么招募到充足合适的人才的？为什么工程师不会肥到堵塞防火通道，逼得救火员要破墙救人？</p>
+<p>我先回答最后一个问题，然后再解释其他的。简单来说，我们有一种Noogler Fifteen的说法,这个名字取自Frosh Fifteen：就是说很多大学新生初来乍到，踏上这片压力和比萨之地后，体重都会增加15磅左右。Google的解决办法就是在防火通道里加润滑剂。</p>
+<p>至于剩下的问题，我想大多数的答案都是类似的。</p>
+<p>首先，应该也是最重要的，Google通过利益来驱动行为。通常做比较重要的项目所得到的奖励比做那些不那么重要的项目要来得高，你当然可以选择去做一个研究性质的，看起来很遥远的项目，或许永远也无法实用化，但是它本身必须是有价值的。要是最后证明你对了，其他人都错了（创业公司的梦想），你的小项目确实产生了巨大的影响，那么你肯定会得到奖励。</p>
+<p>具体的奖励和激励形式多种多样，这里是说不完的，经济上的奖励小至礼品卡和按摩券，大到巨额奖金和股票奖励，这里我不想给“巨额”下一个精确的定义，不过以Google的规模，再加上点想象力，你也能猜个大概吧。</p>
+<p>另外还有其他的奖励。其中一个就是Google以同行评审为导向的文化，赢得同事们的尊重可谓意义重大。我个人认为比其他地方都更重要。一部分原因是因为文化就是这样的，一开始是人为，后来渐渐就变成了习以为常的东西。另外，你的同事都是很聪明的人，能赢得他们的尊重可不是件容易的事。你的年终总结也是以此为依据，所以对个人收入也算有间接的影响。</p>
+<p>还有一个就是每个季度，公司都会雷打不动地集会，向大家展示每一个发布的项目，并且打上名字和头像（总是很小），大家都会鼓掌欢呼。光是想想也会让人兴奋不己。Google对产品发布非常认真，我觉得做出了不起的东西并且得到认可是这个公司里最强大的驱动力。至少对我来说是这样的。</p>
+<p>激励并不止如此，我还可以列出很多。对外人来说，各种奖励、自豪感、归属感等梦幻般的一切都太不真实，让人觉得招聘官完全是在忽悠，这个世界上怎么可能有公司对所有的员工都那么慷慨，真的是所有员工哦，甚至连清理厨房的阿姨们都会得到“Google厨房员工”的T恤和套头衫。</p>
+<p>地球上应该找不到第二家这样的公司了。在Google工作有多爽，我三天三夜也说不完。因为每周都有新花样，新福利，新变化，新的调研，来问我们怎么才能让大家在Google过得更舒服。</p>
+<p>当然我也可能是错的，每个季度在大屏幕上看到自己的名字和头像或许并不是最大的动力，驱使大家去做正确的事的动因是感激，这超过了所有的因素，基至比所有的因素加在一起还要多。你会忍不住想要做到最好，因为Google对你的照顾无微不至，让人觉得好像欠了它似的。</p>
+<p>动力这个话题就说到这儿吧。你应该了解了吧。我想，至少大致概念有了。每次有朋友（所有的朋友，不光是我之前工作的地方的朋友）问我在Google工作的感觉如何时，我的感觉就像是，你刚刚出狱，而你的狱友（假设全是幼年被判刑，没见过什么市面）写信问你“外面的世界怎么样”时的那种感觉。你会怎么说？</p>
+<p>我会说，还可以吧，马马虎虎，总的来说还不错。</p>
+<p>虽然以奖励为本的文化确实是一个很重要的因素，但它只能骧动工程师去做“正确的”事，却无法做到高效。所以下而我打算说说他们是怎么做项目的。</p>
+<h2>新生特质 vs. 鞭子</h2>
+<p>项目管理的基本理念就是要带领项目走向完成。这是一个公开显式的过程，需要全程呵护：这离不开有力的领导，组织性，纯粹的意志力，你要做到原本不可能自己发生的事情。</p>
+<p>项目管理的风格多种多样，从轻量级到重量级，但是它们都有相同的特质，那就是对团队施加外力。</p>
+<p>可Googlt却是完全相反，项目启动是因为它处在系统的基态。</p>
+<p>在继续之前，我必须承认，我要说的东西很大胆，而且并不完全属实。我们并不是没有项目经理、产品经理、人事经理、技术主管等职位，但是他们在系统上所需的精力比其他业界都要少得多。说起来，它更像是时不时地轻推一下，而不是持续不断地推动。当团队需要更大的推动力的时候，管理高层就会介入，这一点和其他地方是一样的，但是这并不是持续的推动，</p>
+<p>不过Google是一家有礼貌的公司，所以不会有人对你大喊大叫，也不会有哀嚎、咬牙切齿这种事，更不会有事态升级，相互推诿指责，或是其他公司的高层经常大吼的各种繁文缛节。霍布斯告诉我们，组织是领导人的影像，这一点大家都知道。Google的高层都是温文尔雅的人，所以大家自然也都是如此。</p>
+<p>我之所以说项目启动是Google内部生态系统自然而然所产生的状态，是因为他们花了大量的精力把人引向那个方向。我刚刚也说过，你需要的一切都已经帮你准备好了，所以你可以安下心来。全心投入那些Google喜欢的事情。</p>
+<p>所以项目启动自然也就成了系统里的新生特质。</p>
+<p>这样一来就不需要那一大堆项目管理里常见的理念和方法了：那些对付偷懒的人，夸大估算，迫使大家在设计上达成一致的方法等。开会不用像打仗一样，也不再需要进度报告。因为大家已经有动力去做正确的事，也会一起合作。</p>
+<p>Google所采用的项目管理的技术更像是润滑剂而非汽油：他们是为了让项目进行得更顺利，而不是迫使项目向前进。这里有很多会议室，很多开放空间让人们交谈。团队总是围坐在一起，所以结对编程自然会在需要的时候发生（差不多有5%的时间），而非刻意进行。</p>
+<p>Google知道就算是在安静的公司里，一天的中午是最容易被打扰的，所以很多工程师都会选择很早来上班，或是待到很晚，方便自己有时间专心编程。所以会议都安排在中午，把会议安排在上午10点之前或是下午4点半以后都是很罕见的。在这个时间段外安排会议等于占用了工程师真正干活的时间，所以没人会这么做。</p>
+<p>Google并不是唯一这样管理项门的公司。仔细想一想，其实还有两个地方也是这样的：创业公司和研究生院。Google就像是创业公司和研究生院的结合体：一方面，它好像我们要动作快，先把东西做出来，越简单越好，然后在慢慢改善的创业风格。另一方面，它又很轻松，很低调，我们面临的问题很难，从来没有人解决过，这不是百米冲刺，而是一场马拉松，需要全心全意地专注，拼命开会不顶用。两者的交汇，创业公司和研究生院都是创新的沃土。参与者对结果都负有巨大的责任感。</p>
+<p>这并非原创，但令人惊艳的是Google在那种规模下做成功了。</p>
+<p>能做到这种规模绝非偶然。Google对待这个问题非常认真，他们知道在这种规模下什么情况都有可能发生，所以他们时刻都保持着警惕。正是这种居安思危的态度，才让他们能在壮大的过程中保持生命力和生产力不至衰退（甚至有所改进）。</p>
+<p>从软件工程的角度来讲，Google是一家非常有纪律性的公司，他们对待单元测试、设计文档、代码审查的认真态度，超过我所知的任何一家公司，他们努力保持井然有序，有严格的规章制度，防止某些工程师和团队肆意妄为，如此一来，整个代码库看起来整齐划一，如出自一人之手，所以换组和代码共享也要比其他地方容易得多。</p>
+<p>工程师需要称手的工具，所以Google很自然地会聘请最好的人才来打造自己的工具，而且只要工程师有意向，就会（通过各种激励）鼓励他们去做这方面的工作。如此一来，Google的工具堪称世界级水准，而且还会越来越好。</p>
+<p>这样的例子还有很多，Google的软件工程学实在是太了不起了，我几天几夜都说不完。总之最重要的就是做到那种规模（不光是技术层面，还有组织层面）绝非偶然。只要你适应了Google的风格，一切就会变得非常简单。当然啦，这是和一般意义上大多数公司的软件开发相比。</p>
+<h2>工程表的暴政</h2>
+<p>还有一点。最后我想说的是日期。传统的软件开发几乎毫无例外都是以日期为导向的编程。</p>
+<p>创收公司受制于投资人和预算，日期一定必须有个交代。大客户则能给咨师们设置目标日期。销售和产品经理会根据对市场情况的评估来设置日期。工程师会根据过去的经验来估算日期。所有的估算都是带着过于乐观的有色眼镜进行的，好了伤疤，谁还记得痛。</p>
+<p>所有人挑日期的时候都是随便说的。“这个看起来要3个星期”“要是能在4季度开始的时候市就好了”“大家加把劲，明天之前把它赶出来吧。”</p>
+<p>我们行业里大多数人都是被日期催着走的。永远有下一个里程碑，永远有一最后期限，永远有一个限定时日的目标。</p>
+<p>我能想到的例外大概只有：</p>
+<ol>
+<li>开源软件项目。</li>
+<li>研究生院的项目。</li>
+<li>Google。</li>
+</ol>
+<p>大多数人都默认你会定下一个日期。就算是我最欣赏的软件项目管理著作《人月神话》，也都假设你要定下估算。</p>
+<p>如果你习惯了事先宣布自己的软件，那么大众通常就会想要知道个时间表，这就隐含了日期。我想这就是Google通常不事先公开自己的产品的原因吧。他们是真的明白软件开发这种事情就和烹饪、生孩子一样是急不来的。</p>
+<p>如果上面列出的3个例外不受日期所限，那么又是什么在驱使它们呢？从某种意义上来说应该是对创新和想要做东西的渴望，所有出色的工程师都有这种欲望。（我们行业里有很多人只是想要“混口饭吃”，这种人网家以后就不会再想工作的事了。开源软件得以存在，正是因为这个世界上有比这种人更有激情的人。）</p>
+<p>不过这还不是全部：光有创新的欲望足不够的，因为它的方向感和激励不一定够。(Google肯定也是受制于时间的，它也想要尽可能快地做成一件事。外面不但有很多虎视眈眈的竞争对手，同时还要满足饥渴的投资人不断增长的需求。就连我们自己，也会有一些在有生之年希望能够完成的长远计划和目标。</p>
+<p>只不过区别在于，Google不蠢，也没有自以为是到可以宣城知道一件事应该要多久可以完成。所以在公司里，我唯一知道的日期就是每个季度末，因为大家都会想要挤上那块大大的产品发布的屏幕，希望得到掌声、礼物、奖金、团队旅游等各种只要发布能对Google产生重大影响的产品就能得到的好东西。</p>
+<p>而除此之外的日子就像流水一样，所有人都在以自己的最佳状态工作，当然人跟人是不同的。每个人对工作生活的平衡点定义都不一样，Google则可以让你选择任何合理的平衡点，并作出成绩来。最优的生产力离不开培训，Google为你提供了大量的培训，每周都会有来自内部和外部的讲师做技术演讲，这些演讲都会永久存档，任何时候都可以去看。Google会提供给你任何完成工作所需要的资源，或是学习完成工作需要的知识。最优的生产力和工作用的机器环境也有关系代码的质量，工具，文档，计算平台，团队，甚至是每天的时间（有东西吃，尽量避免打扰等）。</p>
+<p>你要做的就是给工作排排序。什么？数学？我这里有大把：把软件开发映射到排队理论上去。这可不是什么八杆子打不到一起的东西。我们行业里很多人都发现公司组织的模型其实和软件模型区别不大。</p>
+<p>有了这样一个工作队列（当然这是一个优先队列），你瞬间就获得了大部分敏捷方法论所宜称的那些神奇的好处。而且说实话，这比写在一堆索引卡片要实在多了。要是你还不信，那我只好把你的索引卡片都偷偷藏起来了。</p>
+<p>这个优先队列就好像是一个垃圾堆放场，随着项目不断深入展开，你可以把大家的各种想法（包括bug）排列进来。除非这个队列里没有任务了（表示项目可以发布了），否则工程师不会没事做。只要将一个任务放在队列里，附上合适的注解和文档，就知道它是被暂停了还是恢复了。项目还有多少工作量一目了然，愿意的话，还可以根据剩下的任务进行估算，你可以检验已经完成的任务，推断出回归率、个人生产力（如果有必要的话）等属性。你可以看到哪些任务经常被忽略，以此找出组织内部的问题根源。所有人都看得到工作队列，所以重复劳动的可能性很小。</p>
+<p>它的好处还有很多很多。</p>
+<p>但可惜，工作队列对研讨班和峰会来说不够华丽，缺乏魅力。听上去就像是一堆工作，因为它本来就是啊。</p>
+<h2>再议坏的敏捷</h2>
+<p>前而我大致勾勒了公司开发软件的方式，它既不是敏捷方法论，也不是瀑布模型，更不是牛仔式编程，它就是普通的“敏捷”：Google速度很快，反应也很快。</p>
+<p>那么要是在这样一个优秀的软件开发流程之上再套一层敏捷方法论的话会怎么样？你可能会想：“反正也没什么坏处吧！”我去年也曾经这么大胆设想过一次。</p>
+<p>简单来说：其实是有害处的。首当其冲的就是，选择敏捷的技术主管和经理往往对现实缺乏足够的认识。坏的敏捷会在各个层面上伤害团队。</p>
+<p>首先，坏的敏捷会以最糟糕的方式关注日期：短周期，快速发布，不断的估算和重新估算，周期长至以月为单位（这大概还勉强可以接受），短至以天为单位，这是最精糕的。这完全是理想化的世界。</p>
+<p>而在现实世界里，项目的每个参与者都是人。人的状态是有起伏的，有时候你会精力充沛，一口气写18个小时的代码也没问题。有时候却心不在焉，不想写代码。有时候则会感到疲惫不堪，每个人的生物钟和生物节律都不一样，几乎无法控制。要是团队按照天或者半周为步调，我们很可能无法与之协调。</p>
+<p>此外还有私人事物：有些和工作无关的事情会在工作时间突然冒出来，需要你去处理。</p>
+<p>这些因素都不在坏的敏捷的考虑之列，就算完成一个大任务后仍然处于兴奋状态，你也小能继续拼命写代码，因为你要为下一次冲刺保存精力，所以只能放慢节奏。于是这种不一致硬生生将出色的工程师逼成了平庸之辈。</p>
+<p>此外还有所谓的业余时钟：就是那些在主要工作之外你想完成的事情。这通常是一些重要的清理工作，或是其他一些最终能改善整个团队生产力的事情。坏的敏捷对这种事情特别不友好，常常会在一个大的里程碑之后留出一大块时间，让大家去做这种工作，完全不考虑他们当时的状态如何。坏的敏捷只把注意力放在眼前的目标上，这对创新是有害的。虽然他们为自己留出了清理代码的时间，但是却不会无私地去帮助公司里的其他人。毕竟要是你只是机械地照章办事的话，怎么会想到去做别的事情呢？</p>
+<p>不知道为什么，早起的人似乎都很喜欢坏的敏捷，我觉得“天没亮就醒”，“喜欢静态类型，讨厌类型推导”，“连上厕所的时间都要安排好”，“喜欢开会”这些性格特点和“喜欢坏的敏捷”之间肯定存在某种神秘的联系。我说不清楚，但是却发现这种情况很常见。</p>
+<p>大多数工程师都不喜欢早起。我知道有一个组每周至少有一次8点的早会（可能不止一次）。结果他们像僵尸一样坐在那里，对着Email发愣，一直到中午，然后他们都回家睡觉去了。到了晚上他们会再回来工作，但个个都是熊猫眼，好像永远醒不过来似的。我和他们说话的时候，他们也不会心情不好，只是很少会说整句。</p>
+<p>我私下问他们觉得敏捷怎么样，他们的回答是“好像有点用，但是我觉得好像违反了某种工作守恒定律······”，还有“我不知道，我想我们在尝试吧，不过老实说我看不到价值”等。他们都是新人，所以不太敢说话，也没人确定到底是敏捷的问题，还是公司就是这样的。</p>
+<p>朋友，那不是“敏捷”，那只是一堆垃圾。只要你的老板是个容易上当的笨蛋，你就会落入这种处境。</p>
+<h2>好的敏捷应该放弃这个名字</h2>
+<p>时刻警惕而这两种主张：</p>
+<ul>
+<li>“他描绘的所有好东西都是真正的敏捷。”</li>
+<li>“他描绘的所有不好的东西都是执行上的问题”。</li>
+</ul>
+<p>你会不断地听到这种论调。我读了很多关于敏捷的书（所以才能看穿这玩意儿的真身：病毒），也读过很多对敏捷的批评。敏捷借助上面两条那样的诡计来躲避批评：功劳都是我的，坏的都是你们做错了。</p>
+<p>如果90%（甚至更高）的情况下，本意良好的聪明人还是做砸了，那么这个流程就是行不通的，推卸货任的次数是有限的。</p>
+<p>我担心现在“敏健”这个词已经变得太沉重，任何优秀的都应该彻底避开它。我已经解释了“敏捷编程”的两种形式，其实还有第三种（高端、大气、上档次）试图通过技术来提升生产力（比如灵活性）的风格。这种书的名字一般都是《Ruby on Rails敏捷开发》、《敏捷AJAX〉、《敏捷C++》之类的。在我看来，这些名字本身没什么太大的问题，但是它们实在是有点滥用“敏捷”这个词了。</p>
+<p>坦白说，市面上大多数的敏捷其实都是坏的敏捷。</p>
+<p>如果我是你，我就会去掉自己简历里的敏捷字样。我会默默合上讲SCRUM和XP的书，锁进柜子。我会把要干的活都放到bug数据库或者其他工作队列的软件上，丢掉那些索引卡片。我会尽快把敏捷从公司里消灭干净。</p>
+<p>然后我会把精力放在真正的敏捷上（而不是什么方法论）。</p>
+<p>这只是我个人的观点，而且现在都已经早上4点了。你可以有你自己的结论。无论如何，我都不觉得我明天会很早起床。</p>
+<p>哦，对了，差点忘了免贵声明：我的观点不代表Google。这些只是我自己的
+观点，他们看到这篇博客的时候会和你一样惊讶。只不过我希望这更像是“生日惊
+喜”，而不是。在“野外惊到一只犀牛”的那种。走着瞧呗!</p>
+<p>[1] 邮件内容备份：
+Hi! Ken Schwaber here. Jeff Sutherland and I developed the Scrum process for complex product development over the last twenty years, and have been friends and co-workers over the last thirty years. We both had become somewhat discouraged as waterfall ate into our pleasure of bringing sophisticated products to market, and Scrum became our effort to redeem our professional lives and professions. I still remember the epiphany I had at DuPont's Advanced Research Facility, when I discovered that our research not only had legs, but was based on first principles .... complex processes require empirical process control!</p>
+<p>Over the last ten years, I’ve developed and signed the Agile Manifesto, and founded and chaired first the Agile Alliance and then the Scrum Alliance. These have all helped Agile and Scrum become accepted as successful alternatives to waterfall and predictive processes, and have been excellent community focal points. We’ve sometimes floundered, such as during certifications, but our profession is a better place to be now than it was ten years ago.</p>
+<p>Agile is now used in more development organizations than waterfall, and in 2009, 86% of all Agile development was based in Scrum. Does this mean that Scrum is superior? No, it simply means that Scrum is simple, well-explained, and easy for people to understand as a community and Scrum teams. However, Scrum is not a silver-bullet. It does not bring success. Intelligent, hard working people can use Scrum to overcome waterfall habits and build the best possible products, but the effort is great and those that succeed will be in the minority. I predicted five years ago that only 25% of all organizations that embraced Scrum would fully benefit, and I see now reason to change my projections.</p>
+<p>This fall, I’m leaving behind my community based work with the various Alliances. I’ve enjoyed the experience and the company. However, I think I can best serve my profession by focusing on working just with those that have the determination to do better, regardless. Those that embrace change to reach excellence. Accordingly, I’ve started Scrum.org. A small number of those with a similar determination and mind-set to mine will be working with me there to help those who are want to reclaim their profession, marketplace dominance, and professional excellence. We will focus on self-assessment, training, coaching, consulting, and superlatives.</p>
+<p>This site, the first home of Scrum, will remain standing with a library of materials that I’ve created on the journey so far. Also, I’ll publish a list of sessions when I will work with the general public in workshops. I look forward to our continued journey, For now, I refer you to www.scrum.org.</p>
+<p>Best regards,
+Ken Schwaber</p>
+<h2>作者手记：</h2>
+<p>这篇文章在当时是我写过的文章里最毒辣的。“敏捷”当时正在渗透Google，而它也不怎么受欢迎。所以我只用一只手就扼杀它了。</p>
+<p>写这篇文章我花了好几个星期的时间来斟酌。问过很多人的意见和措辞，甚至包括（当时还是）敏捷的狂热支持者。所以我真的是很用心在写这篇文章。</p>
+<p>在我的文章发表之前，敏捷几乎已经快要成为“主流”了，我的意思是要是你不喜欢它的话，就会被归为异类。而这种唯我独尊的状态也是很危险的。它的危害可能要好多年才会过去。</p>
+<p>正因为我看到这一点，所以主动发起进攻，以期一击毙命。为此也得罪了一些人。但我不在乎。你要敏捷是你的事情，但你没资格逼我同流合污。</p>
+<p>最后我赢了。“我们”赢了。有一些博主也在差不多时候加入我的行列-这也算是一种趋同演化吧，掀起了一场反革命。我们成功传达了一条信息，那就是：你可以拒绝敏捷。这句话可以刻在我的墓碑上。事实上，连“敏捷”那两个字都可以去掉。你永远都有权利说不。</p>
+<p>对我们这一代搞软件工程的人来说这是一大胜利。你根本想不到它的意义有多重大。现在，敏捷已经被戳穿得差不多了，咨询师们基本上已经放弃这个词了，开始用更时髦的“精益”等词汇，妄图救回这课摇钱树。但敏捷的热潮确实是从我的文章发表以后开始消退的。是我给了它致命一击。百足之虫死而不僵，在投入了那么多人力物力去推广行销之后，真的要看它死掉还是要花点时间的。但那已经无可挽回，只是时间的问题罢了。</p>
+<p>正所谓笔端可挽千钧力，要是真的有激情，就为它写文章吧！</p>
+<h2>我的感受：</h2>
+<p>教条式的敏捷被笔者批的一无是处，理性看待所谓的敏捷我想是企业团队管理以及发展过程中重要的事情，我本人的观点基本上与作者类似，但是我看到的并没有作者多，既然公司推行敏捷我还是想看看到底敏捷最后会做成什么样子。究竟是会让天才沦为平庸、企业倒闭还是别的什么好的东西。方法有很多，希望对敏捷的尝试不要做成“信仰”就行了。还是要着手眼前的工作，不忘初心。</p>
+<p>不过，就这篇文章看中国的软件工程业也发展也真的是落后美国十几年不止啊。或者说的更精确点是落后Google十几年不止。</p>
+<p>PS.我倒是觉的SCRUM更适合销售团队，激情永驻~</p>
+<h2>附录</h2>
+<p><a href="https://www.zhihu.com/question/29454095">在百度、阿里巴巴、腾讯等公司工作是种怎样的体验</a> - 据说腾讯自己开发了TAPD产品但是这种产品催生的工作以及效率和压力又是什么样子的呢？我觉得企业特别是软件企业不只要关注效率产品，还有更重要的员工心里（你没看错，不是理），毕竟他是帮助企业发展的核心力量。</p>
+
+        </div>
+    </div>
+    <div class="blog-footer">
+        <div class="media-left">
+            <a href="/tags/敏捷">#敏捷</a>
+            <a href="/tags/SCRUM">#SCRUM</a>
+        </div>
+<!--        <div class="media-body text-right">-->
+<!--            <span class="mar-rgt">-->
+<!--                <i class="pli-heart-2 icon-fw"></i>0-->
+<!--            </span>-->
+<!--            <i class="pli-speech-bubble-5 icon-fw"></i>0-->
+<!--        </div>-->
+    </div>
+    
+<hr class="new-section-sm bord-no">
+<p class="text-lg text-main text-bold text-uppercase">留言</p>
+<form role="form" id="comment-form">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="昵称">
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" placeholder="电子邮件">
+            </div>
+            <div class="form-group">
+                <input name="website" type="url" class="form-control" placeholder="个人网站">
+            </div>
+            <div class="form-group">
+                <button id="comment-submit" type="button" class="btn btn-success btn-block"><i class="fa fa-comment"></i> 留言</button>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="9" placeholder="留言（不超过1000字）"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr class="new-section-sm">
+<p class="text-lg text-main text-bold text-uppercase pad-btm">最近留言</p>
+
+<div id="comments"></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" style="height:65px;text-align: center;">
+    <p>Copyright &#0169; 2021 zhoyq.com. All rights reserved.</p>
+    <p>
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备 17068495号-1</a>
+    </p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button></div>
+<div id="search-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                <h4 class="modal-title" id="search-modal-title"></h4>
+            </div>
+            <div class="modal-body panel-body" >
+                <ul id="search-modal-body"></ul>
+            </div>
+        </div>
+    </div>
+</div><script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/nifty.min.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // 此处获取 文章标题 作为id
+    var articleTitle = "【SCRUM】敏捷好，敏捷坏";
+</script>
+<script type="text/javascript" src="/js/comment.js"></script>
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e7eca3e34db2b061a85a917b15c506c8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
